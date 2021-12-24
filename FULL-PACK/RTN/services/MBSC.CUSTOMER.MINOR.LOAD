@@ -1,0 +1,34 @@
+*-----------------------------------------------------------------------------
+    SUBROUTINE MBSC.CUSTOMER.MINOR.LOAD
+*-----------------------------------------------------------------------------
+    $INSERT I_COMMON
+    $INSERT I_EQUATE
+    $INSERT I_F.CUSTOMER
+	$INSERT I_MBSC.CUSTOMER.MINOR.COMMON
+	$INSERT I_F.MBSC.MN.CUSTOMER
+*-----------------------------------------------------------------------------
+
+
+
+	FN.CUS = 'F.CUSTOMER'
+    F.CUS = ''
+    CALL OPF(FN.CUS,F.CUS)
+	
+	FN.MN.CUS = 'F.MBSC.MN.CUSTOMER'
+    F.MN.CUS = ''
+    CALL OPF(FN.MN.CUS,F.MN.CUS)
+
+
+	FN.DATA = 'F.MBSC.MINOR.DATA'
+    F.DATA = ''
+    CALL OPF(FN.DATA,F.DATA)
+	
+	
+	
+	
+*-----------------------------------------------------------------------------	
+	
+	   
+
+RETURN
+END

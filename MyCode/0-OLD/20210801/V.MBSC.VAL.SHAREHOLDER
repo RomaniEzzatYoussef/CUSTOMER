@@ -1,0 +1,38 @@
+*-----------------------------------------------------------------------------
+* <Rating>-22</Rating>
+*-----------------------------------------------------------------------------
+*  AUTHOR           : ROMANI EZZAT
+*  DATE             : 01 AUG 2021
+*  CLIENT           : BDC
+*  MODULE			: CUSTOMER
+*  DESCRIPTION      : shareholder name auto filled incase of inserting customer cif
+*  ATTACHED TO		: CUSTOMER,MBSC.CUS.SHAREHOLDER
+*-----------------------------------------------------------------------------
+    SUBROUTINE V.MBSC.VAL.SHAREHOLDER
+*-----------------------------------------------------------------------------
+    $INSERT I_COMMON
+    $INSERT I_EQUATE
+    $INSERT I_F.CUSTOMER
+*-----------------------------------------------------------------------------
+	*DEBUG
+*-----------------------------------------------------------------------------
+
+	FN.CUSTOMER = 'F.CUSTOMER'
+	F.CUSTOMER  = ''
+	CALL OPF(FN.CUSTOMER,F.CUSTOMER)
+	
+	CALL GET.LOC.REF("CUSTOMER","SHARE.HOLDER",SHAREHOLDER.POS)
+	CALL GET.LOC.REF("CUSTOMER","SHARE.HOLD.NAME",SH.NAME.POS)
+
+	CUS.ID = R.NEW(EB.CUS.LOCAL.REF)<1,SHAREHOLDER.POS>
+	CALL F.READ(FN.CUSTOMER,CUS.ID,R.CUSTOMER,F.CUSTOMER,CUSTOMER.ERROR)
+	
+	SHORT.NAME    = R.CUSTOMER<EB.CUS.SHORT.NAME>
+	GB.SHORT.NAME = FIELD(SHORT.NAME,VM,1)
+	AR.SHORT.NAME = FIELD(SHORT.NAME,VM,2)
+	
+	R.NEW(EB.CUS.LOCAL.REF)<1,SH.NAME.POS> = GB.SHORT.NAME
+
+*-----------------------------------------------------------------------------
+RETURN
+END

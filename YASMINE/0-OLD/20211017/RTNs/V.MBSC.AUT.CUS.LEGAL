@@ -1,0 +1,146 @@
+*  AUTHOR           : HASSAN MOHAMED
+*  DATE             : 22 JUL 2019
+*  CLIENT           : BDC
+*  DESCRIPTION      : AUTHOURIZATION ROUTINE TO WRITE CUSTOMER LEGAL ID TO CONCAT TABLE TO USED IN CHECK DUPLICATION 
+*-----------------------------------------------------------------------------
+    SUBROUTINE  V.MBSC.AUT.CUS.LEGAL
+*-----------------------------------------------------------------------------
+
+    $INSERT I_COMMON
+    $INSERT I_EQUATE
+	$INSERT I_F.CUSTOMER
+	*$INSERT I_F.MBSC.CUS.LEG.ID
+	$INSERT I_F.MBSC.CUST.DUPLICATE
+*-----------------------------------------------------------------------------
+	GOSUB INITIALISE
+
+*-----------------------------------------------------------------------------
+INITIALISE:
+
+LEGAL.ID.TYPE = ''
+LEGAL.ID.NO = ''
+LEGAL.COUNT = ''
+ISSUE.DATE = ''
+EXP.DATE = ''
+LEGAL.AUTH = ''
+CUS.ID.ID = ''
+CUST.LEG.ID = ''
+
+FN.CUSTOMER = 'F.CUSTOMER'
+F.CUSTOMER =''
+CALL OPF(FN.CUSTOMER,F.CUSTOMER)
+
+*FN.MBSC.CUS.LEG.ID = 'F.MBSC.CUS.LEG.ID'
+*F.MBSC.CUS.LEG.ID =''
+*CALL OPF(FN.MBSC.CUS.LEG.ID,F.MBSC.CUS.LEG.ID)
+
+FN.MBSC.CUST.DUPLICATE = 'F.MBSC.CUST.DUPLICATE'
+F.MBSC.CUST.DUPLICATE =''
+CALL OPF(FN.MBSC.CUST.DUPLICATE,F.MBSC.CUST.DUPLICATE)
+
+
+
+
+*===============================================
+L.CUST.ID = ''
+L.CUST.ID = ID.NEW
+
+
+
+R.LEGAL =''
+
+CUST.CBE.ID = ''
+CALL GET.LOC.REF(APPLICATION,"CBE.NUMBER",CBE.POS)
+CUST.CBE.ID = 'CBE':R.NEW(EB.CUS.LOCAL.REF)<1,CBE.POS>
+
+
+*CUST.ARCHIVE.ID = ''
+*CALL GET.LOC.REF(APPLICATION,"ARCHIVE.NUM",ARCH.POS)
+*CUST.ARCHIVE.ID = 'ARCHIVE':R.NEW(EB.CUS.LOCAL.REF)<1,ARCH.POS>
+
+
+*==============================================================
+
+R.LEGAL<CUST.CUSTOMER.ID> = L.CUST.ID
+IF CUST.CBE.ID NE 'CBE' THEN
+CALL F.WRITE(FN.MBSC.CUST.DUPLICATE,CUST.CBE.ID,R.LEGAL)
+END
+
+*IF CUST.ARCHIVE.ID NE 'ARCHIVE' THEN
+*CALL F.WRITE(FN.MBSC.CUST.DUPLICATE,CUST.ARCHIVE.ID,R.LEGAL)
+*END
+
+*=======================================================================
+LEGAL.COUNT = DCOUNT(R.NEW(EB.CUS.LEGAL.ID),@VM)	
+				FOR I = 1 TO LEGAL.COUNT
+				  LEGAL.ID.NO = R.NEW(EB.CUS.LEGAL.ID)<1,I>
+				  LEGAL.ID.TYPE    = R.NEW(EB.CUS.LEGAL.DOC.NAME)<1,I>
+				  LEGAL.AUTH    = R.NEW(EB.CUS.LEGAL.ISS.AUTH)<1,I>
+				  
+				  EXP.DATE = R.NEW(EB.CUS.LEGAL.EXP.DATE)<1,I>
+				  ISSUE.DATE = R.NEW(EB.CUS.LEGAL.ISS.DATE)<1,I>
+				  GOSUB LEGALIDVALIDATE
+				NEXT I
+				
+
+
+
+
+RETURN
+
+********************************************************************************
+
+				
+				
+LEGALIDVALIDATE:	
+*===============
+
+
+BEGIN CASE
+CASE LEGAL.ID.TYPE = 'COMM.REGISTER' 
+
+CALL GET.LOC.REF(APPLICATION,"CUS.CR.CITY",CITY.POS)
+CUST.LEG.ID = ''
+CUST.LEG.ID = 'CR':R.NEW(EB.CUS.LOCAL.REF)<1,CITY.POS>:LEGAL.ID.NO
+
+
+R.LEGAL<CUST.CUSTOMER.ID> = L.CUST.ID
+CALL F.WRITE(FN.MBSC.CUST.DUPLICATE,CUST.LEG.ID,R.LEGAL)
+
+*================================================================================			
+*CASE LEGAL.ID.TYPE = 'NATIONAL.ID'
+*CUST.NAT.ID = ''
+*CUST.NAT.ID = 'NATIONALID':LEGAL.ID.NO	
+
+
+*R.LEGAL<CUST.CUSTOMER.ID> = L.CUST.ID
+*CALL F.WRITE(FN.MBSC.CUST.DUPLICATE,CUST.NAT.ID,R.LEGAL)
+
+*CASE LEGAL.ID.TYPE = 'PASSPORT'
+*CUST.PASSPORT = ''
+*CUST.PASSPORT = 'PASSPORT':LEGAL.ID.NO	
+
+
+*R.LEGAL<CUST.CUSTOMER.ID> = L.CUST.ID
+*CALL F.WRITE(FN.MBSC.CUST.DUPLICATE,CUST.PASSPORT,R.LEGAL)
+
+CASE LEGAL.ID.TYPE = 'BIRTH.CERTIFICATE'
+CUST.NAT.ID = ''
+CUST.NAT.ID = 'BIRTHCERT':LEGAL.ID.NO	
+
+
+R.LEGAL<CUST.CUSTOMER.ID> = L.CUST.ID
+CALL F.WRITE(FN.MBSC.CUST.DUPLICATE,CUST.NAT.ID,R.LEGAL)
+
+
+*=================================================================================
+END CASE
+
+RETURN 
+
+*===============================================================================================
+
+RETURN
+END
+
+**********************

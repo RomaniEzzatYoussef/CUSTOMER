@@ -1,0 +1,44 @@
+*  AUTHOR           : HASSAN MOHAMED
+*  DATE             : 20200623
+*  CLIENT           : BDC
+*  DESCRIPTION      : VALIDATE ON PREPRINTING NUMBER IN NATIONAL ID DOCUMENT
+*-----------------------------------------------------------------------------
+    SUBROUTINE  V.MBSC.CUS.VAL.PRINTNO
+*-----------------------------------------------------------------------------
+
+    $INSERT I_COMMON
+    $INSERT I_EQUATE
+	$INSERT I_F.CUSTOMER
+	
+*-----------------------------------------------------------------------------
+PRIN.NO = ''
+COMI.LEN = ''
+PRIN.NO = COMI
+COMI.LEN = LEN(COMI)
+
+CALL GET.LOC.REF(APPLICATION,"PREPRINT.NO",PRINT.POS)
+
+IF PRIN.NO NE '' THEN
+	FOR I = 1 TO COMI.LEN
+
+		CHARACTER =  COMI[ I, 1]
+			
+		IF ( CHARACTER <= CHAR(47)) THEN ETEXT = 'EB-CUS.MBSC.REPRINT.FORMAT.1' ; EXIT
+		IF ( CHARACTER >= CHAR(58) AND CHARACTER <= CHAR(64)) THEN ETEXT = 'EB-CUS.MBSC.REPRINT.FORMAT.1' ; EXIT
+	    IF ( CHARACTER >= CHAR(91) AND CHARACTER <= CHAR(96)) THEN ETEXT = 'EB-CUS.MBSC.REPRINT.FORMAT.1' ; EXIT
+        IF ( CHARACTER >= CHAR(123) ) THEN ETEXT = 'EB-CUS.MBSC.REPRINT.FORMAT.1' ; EXIT
+           
+	NEXT I
+
+	IF (NUM(PRIN.NO[1,2]) OR NOT(NUM(PRIN.NO[3,7])))   THEN
+		AF = EB.CUS.LOCAL.REF
+		AV = PRINT.POS
+		ETEXT = 'EB-CUS.MBSC.REPRINT.FORMAT.1'
+		CALL STORE.END.ERROR
+	END
+END
+
+RETURN
+END
+
+**********************

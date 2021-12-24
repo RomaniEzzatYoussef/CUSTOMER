@@ -1,0 +1,23 @@
+* I_F.MBSC.REGION Created 27 OCT 21 at 07:49PM by t24dev/ROMANYEZZAT
+*      PREFIX[CUS.REGION]
+                         EQU CUS.REGION.DESC TO 1,   MbscRegion_Desc TO 1,
+                       CUS.REGION.RESERVED.9 TO 2,   MbscRegion_Reserved9 TO 2,
+                       CUS.REGION.RESERVED.8 TO 3,   MbscRegion_Reserved8 TO 3,
+                       CUS.REGION.RESERVED.7 TO 4,   MbscRegion_Reserved7 TO 4,
+                       CUS.REGION.RESERVED.6 TO 5,   MbscRegion_Reserved6 TO 5,
+                       CUS.REGION.RESERVED.5 TO 6,   MbscRegion_Reserved5 TO 6,
+                       CUS.REGION.RESERVED.4 TO 7,   MbscRegion_Reserved4 TO 7,
+                       CUS.REGION.RESERVED.3 TO 8,   MbscRegion_Reserved3 TO 8,
+                       CUS.REGION.RESERVED.2 TO 9,   MbscRegion_Reserved2 TO 9,
+                       CUS.REGION.RESERVED.1 TO 10,  MbscRegion_Reserved1 TO 10,
+                        CUS.REGION.LOCAL.REF TO 11,  MbscRegion_LocalRef TO 11,
+                         CUS.REGION.OVERRIDE TO 12,  MbscRegion_Override TO 12,
+                    CUS.REGION.RECORD.STATUS TO 13,  MbscRegion_RecordStatus TO 13,
+                          CUS.REGION.CURR.NO TO 14,  MbscRegion_CurrNo TO 14,
+                         CUS.REGION.INPUTTER TO 15,  MbscRegion_Inputter TO 15,
+                        CUS.REGION.DATE.TIME TO 16,  MbscRegion_DateTime TO 16,
+                       CUS.REGION.AUTHORISER TO 17,  MbscRegion_Authoriser TO 17,
+                          CUS.REGION.CO.CODE TO 18,  MbscRegion_CoCode TO 18,
+                        CUS.REGION.DEPT.CODE TO 19,  MbscRegion_DeptCode TO 19,
+                     CUS.REGION.AUDITOR.CODE TO 20,  MbscRegion_AuditorCode TO 20,
+                  CUS.REGION.AUDIT.DATE.TIME TO 21,  MbscRegion_AuditDateTime TO 21

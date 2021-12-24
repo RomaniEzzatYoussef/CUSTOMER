@@ -1,0 +1,11 @@
+* I_F.MBSC.MN.CUSTOMER Created 29 JUL 19 at 11:16AM by bdcisb/AYA01
+*      PREFIX[SR.FL]
+                EQU SR.FL.RECORD.STATUS TO 1,   MbscMnCustomer_RecordStatus TO 1,
+                          SR.FL.CURR.NO TO 2,   MbscMnCustomer_CurrNo TO 2,
+                         SR.FL.INPUTTER TO 3,   MbscMnCustomer_Inputter TO 3,
+                        SR.FL.DATE.TIME TO 4,   MbscMnCustomer_DateTime TO 4,
+                       SR.FL.AUTHORISER TO 5,   MbscMnCustomer_Authoriser TO 5,
+                          SR.FL.CO.CODE TO 6,   MbscMnCustomer_CoCode TO 6,
+                        SR.FL.DEPT.CODE TO 7,   MbscMnCustomer_DeptCode TO 7,
+                     SR.FL.AUDITOR.CODE TO 8,   MbscMnCustomer_AuditorCode TO 8,
+                  SR.FL.AUDIT.DATE.TIME TO 9,   MbscMnCustomer_AuditDateTime TO 9

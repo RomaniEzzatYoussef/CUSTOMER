@@ -1,0 +1,82 @@
+4,99
+CUSTOMER
+
+MNEMONIC
+
+CUSTOMER.CODEMNEMONICSHORT.NAMENAME.1STREETADDRESSTOWN.COUNTRYRELATION.CODEREL.CUSTOMERSECTORACCOUNT.OFFICERINDUSTRYTARGETNATIONALITYCUSTOMER.STATUSRESIDENCEDATE.OF.BIRTHSMS.1EMAIL.1CUSTOMER.SINCE
+Customer numberMnemonicShort nameNameStreetAddressTown/CountryRelation codeRel CustomerSectorAccount officerIndustryTargetNationalityCustomer statusResidenceDate of BirthMobile NumberEmail AddressCustomer Open
+
+
+
+ANDANDANDANDANDANDANDANDANDANDANDANDANDANDANDANDANDAND
+
+
+ID1@IDHEADER1MNEMONICSHORT.NAMEACCOUNT.OFFICERNATIONALITYRESIDENCESECTORINDUSTRYZERORECORDSNULLGENRETAIL.RANGECOS.RETAILCOS.CORPCOS.CHECKCUSTOMER.SINCE
+@ID@ID"Customer Details"MNEMONICSHORT.NAMEACCOUNT.OFFICERNATIONALITYRESIDENCESECTORINDUSTRY"No Customer records to display"""GENDER"1000 1999""COS CUSTOMER.OVERVIEW.CSM""COS CUSTOMER.OVERVIEW.CORP.CSM"IF SECTOR RG RETAIL.RANGE COS.RETAIL COS.CORPCUSTOMER.SINCE
+41,0112254768016
+10R10R10L30L20L25L25L4L4L10R11R
+L DEPT.ACCT.OFFICER,NAMEL COUNTRY,COUNTRY.NAMEL COUNTRY,COUNTRY.NAME
+
+LLANGUAGELANGUAGE
+ONCENONE
+CustomerMnemonicNameOfficerNationalityResidenceSectorIndustryCustomer Open
+CLASS-ENQ.H.TITLECLASS-ENQ.NORECS
+HEADERHEADER
+
+
+
+
+
+
+
+
+
+
+SSSSSSSSSSS
+COS.CHECK
+CURRENT.CUSTOMER>@ID
+@ID 2
+Single Customer View[custscv.gif
+16 234567891012131415161718
+
+0 
+0 
+2 111
+0 
+2 172
+
+
+
+
+
+
+
+
+
+ZERORECORDDISPLAYNO.SELECTION
+
+Find Customer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5
+1_HASSAN7__OFS_BROWSERTC
+1911240509
+1_HASSAN7_OFS_BROWSERTC
+EG0010001
+1

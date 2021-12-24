@@ -1,0 +1,29 @@
+*  AUTHOR           : Hassan Mohamed
+*  DATE             : 20200721
+*  CLIENT           : BDC
+*  DESCRIPTION      :
+*  VERSION	        :
+*-----------------------------------------------------------------------------
+    SUBROUTINE B.MBSC.CUST.AUTH(ENQ.LIST)
+*-----------------------------------------------------------------------------
+    $INSERT I_COMMON
+    $INSERT I_EQUATE
+	$INSERT I_ENQUIRY.COMMON
+	$INSERT I_F.CATEGORY
+	$INSERT I_F.ACCOUNT.CLASS
+*-----------------------------------------------------------------------------
+RR.SELECT = ''
+RR.SELECT = "CUSTOMER,MBSC.QUICK.CUST CUSTOMER,MBSC.QUICK.CORP CUSTOMER,MBSC.PROSPECT.INPUTT CUSTOMER,MBSC.INPUT CUSTOMER,MBSC.CORP.INPUT CUSTOMER,MBSC.CORP.ESTABLISH.INPUT CUSTOMER,MBSC.CUST.AMEND CUSTOMER,MBSC.CORP.AMEND"
+
+
+    CRIT.CNT = DCOUNT(ENQ.LIST<2>, VM)
+
+	ENQ.LIST<2,CRIT.CNT + 1> = "VERSION"
+	ENQ.LIST<3,CRIT.CNT + 1> = "EQ"
+	ENQ.LIST<4,CRIT.CNT + 1> = RR.SELECT
+	
+
+
+	RETURN 
+*-------------------------------------------------------------------------------------------- 
+END 

@@ -1,0 +1,76 @@
+*  AUTHOR           : NOURHAN MOKHTAR
+*  DATE             : 17 JANUARY 2017
+*  CLIENT           : BDC
+*  DESCRIPTION      : CHECK RECORD RTN ON FATCA FOR REFLECTION FIELDS FROM CUSTOMER 
+*-----------------------------------------------------------------------------
+    SUBROUTINE V.MBSC.CHK.FATCA.CUS
+*-----------------------------------------------------------------------------
+    $INSERT I_COMMON
+    $INSERT I_EQUATE
+	$INSERT I_F.FATCA.CUSTOMER.SUPPLEMENTARY.INFO
+	$INSERT I_F.CUSTOMER
+*-----------------------------------------------------------------------------
+	GOSUB OPEN.FILE
+	GOSUB WRITE.CUS
+       
+	
+	RETURN
+*-----------------------------------------------------------------------------
+OPEN.FILE:
+*==========
+
+       FN.CUSTOMER = "F.CUSTOMER"
+	   F.CUSTOMER  = ""
+	   CALL OPF(FN.CUSTOMER, F.CUSTOMER)
+	  
+	  RETURN
+	  
+*------------------------------------------------------------------------------
+WRITE.CUS:
+*=======
+		CUS.ID = ID.NEW 
+		CALL F.READ(FN.CUSTOMER,CUS.ID,R.CU,F.CUSTOMER,ERR.CUSTOMER)
+		*CALL GET.LOC.REF('CUSTOMER','BIRTH.PLACE',BIRTH.POS)
+		
+		
+		IF R.NEW(FA.FI.CITIZENSHIP) EQ '' THEN	  
+		R.NEW(FA.FI.CITIZENSHIP)			  = R.CU<EB.CUS.NATIONALITY>
+		END
+		
+		IF R.NEW(FA.FI.ADDR.COUNTRY) EQ '' THEN	  
+		R.NEW(FA.FI.ADDR.COUNTRY)			  = R.CU<EB.CUS.COUNTRY>
+		END
+		
+		IF R.NEW(FA.FI.ADDRESS) EQ '' THEN	  
+		R.NEW(FA.FI.ADDRESS)			  = R.CU<EB.CUS.ADDRESS>
+		END
+		
+		
+			
+RETURN
+			
+			
+*------------------------------------------------------------------------------------------------------------------------------------
+			
+			
+        END	
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			

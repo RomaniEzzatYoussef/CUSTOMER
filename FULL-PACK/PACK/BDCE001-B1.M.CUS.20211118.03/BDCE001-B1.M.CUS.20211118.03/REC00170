@@ -1,0 +1,82 @@
+4,99
+SECTOR
+
+
+
+@IDDESCRIPTION
+IdDescription
+
+
+
+AND
+
+
+HEADER@IDDESCRIPTIONSHORT.NAME
+"Sector List"@IDDESCRIPTIONSHORT.NAME
+1,0123
+10L35L15L
+
+
+LANGUAGELANGUAGE
+
+IDDescriptionShort Name
+CLASS-ENQ.ID.LABEL
+HEADER
+
+
+
+
+
+
+
+
+
+
+S
+SECTOR,MBSC.ADMIN.INPUT I @IDSECTOR,MBSC.ADMIN.INPUT I
+
+@ID 2@ID 2
+Amend[edit.gifInput[new.gif
+4 1234
+
+0 
+0 
+0 
+0 
+1 2
+
+
+
+
+
+
+
+
+
+NO.SELECTION
+
+Sector List
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2
+8_HASSAN1__OFS_BROWSERTC
+1909180317
+8_HASSAN1_OFS_BROWSERTC
+EG0010001
+1

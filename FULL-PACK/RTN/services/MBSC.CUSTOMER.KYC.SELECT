@@ -1,0 +1,38 @@
+*-----------------------------------------------------------------------------
+    SUBROUTINE MBSC.CUSTOMER.KYC.SELECT
+*-----------------------------------------------------------------------------
+
+    $INSERT I_COMMON
+    $INSERT I_EQUATE
+    $INSERT I_F.CUSTOMER
+	$INSERT I_MBSC.CUSTOMER.MINOR.COMMON
+	$INSERT I_F.MBSC.MN.CUSTOMER
+    $INSERT I_F.DATES
+
+*-----------------------------------------------------------------------------
+
+	
+    Y.NXT.WR.DAYS = R.DATES(EB.DAT.NEXT.WORKING.DAY)
+    Y.TODAY	= TODAY
+
+    GOSUB PROCESS
+    RETURN
+
+********
+PROCESS:
+********
+
+	
+    SEL.CMD = "SELECT ":FN.CUS:" WITH AUTO.NEXT.KYC.REVIEW.DATE EQ ":Y.TODAY 
+	
+    CALL EB.READLIST(SEL.CMD,Y.LIST,"",NO.OF.REC,REA.ERR)
+
+    CALL BATCH.BUILD.LIST("",Y.LIST)
+	
+	
+
+*-----------------------------------------------------------------------------	
+	
+	RETURN
+  
+END

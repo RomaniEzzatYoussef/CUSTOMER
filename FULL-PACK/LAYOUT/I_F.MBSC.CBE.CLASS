@@ -1,0 +1,23 @@
+* I_F.MBSC.CBE.CLASS Created 29 MAY 21 at 05:36PM by t24dev/HASSAN8
+*      PREFIX[CBE.CLS]
+                  EQU CBE.CLS.DESCRIPTION TO 1,   MbscCbeClass_Description TO 1,
+                       CBE.CLS.RESERVED.9 TO 2,   MbscCbeClass_Reserved9 TO 2,
+                       CBE.CLS.RESERVED.8 TO 3,   MbscCbeClass_Reserved8 TO 3,
+                       CBE.CLS.RESERVED.7 TO 4,   MbscCbeClass_Reserved7 TO 4,
+                       CBE.CLS.RESERVED.6 TO 5,   MbscCbeClass_Reserved6 TO 5,
+                       CBE.CLS.RESERVED.5 TO 6,   MbscCbeClass_Reserved5 TO 6,
+                       CBE.CLS.RESERVED.4 TO 7,   MbscCbeClass_Reserved4 TO 7,
+                       CBE.CLS.RESERVED.3 TO 8,   MbscCbeClass_Reserved3 TO 8,
+                       CBE.CLS.RESERVED.2 TO 9,   MbscCbeClass_Reserved2 TO 9,
+                       CBE.CLS.RESERVED.1 TO 10,  MbscCbeClass_Reserved1 TO 10,
+                        CBE.CLS.LOCAL.REF TO 11,  MbscCbeClass_LocalRef TO 11,
+                         CBE.CLS.OVERRIDE TO 12,  MbscCbeClass_Override TO 12,
+                    CBE.CLS.RECORD.STATUS TO 13,  MbscCbeClass_RecordStatus TO 13,
+                          CBE.CLS.CURR.NO TO 14,  MbscCbeClass_CurrNo TO 14,
+                         CBE.CLS.INPUTTER TO 15,  MbscCbeClass_Inputter TO 15,
+                        CBE.CLS.DATE.TIME TO 16,  MbscCbeClass_DateTime TO 16,
+                       CBE.CLS.AUTHORISER TO 17,  MbscCbeClass_Authoriser TO 17,
+                          CBE.CLS.CO.CODE TO 18,  MbscCbeClass_CoCode TO 18,
+                        CBE.CLS.DEPT.CODE TO 19,  MbscCbeClass_DeptCode TO 19,
+                     CBE.CLS.AUDITOR.CODE TO 20,  MbscCbeClass_AuditorCode TO 20,
+                  CBE.CLS.AUDIT.DATE.TIME TO 21,  MbscCbeClass_AuditDateTime TO 21

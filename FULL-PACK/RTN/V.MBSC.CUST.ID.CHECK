@@ -1,0 +1,72 @@
+*  AUTHOR           : HASSAN MOHAMED
+*  DATE             :
+*  MODIFIED         :
+*  CLIENT           :
+*  DESCRIPTION      : 
+*  VERSION          :   NEW CUSTOMER VERSION
+*  MODIFIED         :
+*-----------------------------------------------------------------------------
+    SUBROUTINE V.MBSC.CUST.ID.CHECK
+*-----------------------------------------------------------------------------
+
+    $INSERT I_COMMON
+    $INSERT I_EQUATE
+    $INSERT I_F.CUSTOMER
+
+	
+
+FN.CUSTOMER = 'F.CUSTOMER'
+F.CUSTOMER = ''
+CALL OPF(FN.CUSTOMER,F.CUSTOMER)
+
+
+FN.CUSTOMERNAU = 'F.CUSTOMER$NAU'
+F.CUSTOMERNAU = ''
+CALL OPF(FN.CUSTOMERNAU,F.CUSTOMERNAU)
+
+
+		R.CUSTOMER = ''
+		YERR = ''
+		CALL F.READ(FN.CUSTOMER,ID.NEW,R.CUSTOMER,F.CUSTOMER,YERR)  
+
+IF R.NEW(EB.CUS.CUSTOMER.STATUS) EQ '3' THEN
+		R.NEW(EB.CUS.INDUSTRY) = '20024'
+END
+
+		IF R.CUSTOMER THEN 
+			E = 'YOU CAN NOT EDIT THIS CUSTOMER!'
+			
+		END ELSE
+			R.CUSTOMERNAU = ''
+			YERRNAU = ''
+			CALL F.READ(FN.CUSTOMERNAU,ID.NEW,R.CUSTOMERNAU,F.CUSTOMERAU,YERRNAU)  
+			
+			IF R.CUSTOMERNAU THEN
+			
+				CALL GET.LOC.REF("CUSTOMER","USER.BRANCH",BR.POS)
+				
+				CR.BR = R.NEW(EB.CUS.LOCAL.REF)<1,BR.POS>
+				
+				
+			
+				IF CR.BR NE ID.COMPANY THEN
+					E = 'YOU CAN NOT INSERT NAU CUSTOMER FROM ANOTHER BRANCH!'
+				END
+			END
+
+		END
+
+
+
+
+
+
+
+			
+
+
+    RETURN
+
+*-----------------------------------------------------------------------------
+END
+*---------------c--------------------------------------------------------------

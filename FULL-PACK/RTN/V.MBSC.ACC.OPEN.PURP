@@ -1,0 +1,42 @@
+*  AUTHOR           : HASSAN MOHAMED
+*  DATE             : 11 JUN 2020
+*  CLIENT           : BDC
+*  DESCRIPTION      : VALIDATE ON ACCOUNT OPENING PURPOSAL
+*-----------------------------------------------------------------------------
+    SUBROUTINE  V.MBSC.ACC.OPEN.PURP
+*-----------------------------------------------------------------------------
+
+    $INSERT I_COMMON
+    $INSERT I_EQUATE
+	$INSERT I_F.CUSTOMER
+	
+*-----------------------------------------------------------------------------
+GOSUB INITIALISE
+RETURN
+*-----------------------------------------------------------------------------
+INITIALISE:
+*==========
+ACC.OPEN.PURP = ''
+ACC.OPEN.PURP = ''
+
+CALL GET.LOC.REF(APPLICATION,"ACC.OPEN.PURP",ACCOPENPURPOSAL.POS)
+CALL GET.LOC.REF(APPLICATION,"ACC.OPEN.OTHER",ACCOPENOTHER.POS)
+
+ACC.OPEN.PURP = R.NEW(EB.CUS.LOCAL.REF)<1,ACCOPENPURPOSAL.POS>
+ACC.OPEN.OTHER = R.NEW(EB.CUS.LOCAL.REF)<1,ACCOPENOTHER.POS>
+
+IF ACC.OPEN.PURP EQ '999' AND ACC.OPEN.OTHER EQ '' THEN
+AF = EB.CUS.LOCAL.REF
+AV = ACCOPENOTHER.POS
+*ETEXT = 'Enter Purpose of opening account in Text Please ! '
+ETEXT = 'EB-CUS.MBSC.ACC.OPEN.PURP.1'
+CALL STORE.END.ERROR
+END
+
+
+RETURN
+
+END
+*************************************************************************************************
+
+

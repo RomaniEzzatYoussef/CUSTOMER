@@ -1,0 +1,23 @@
+* I_F.MBSC.CUS.INTER.CLASSIFY Created 11 JUL 21 at 09:03AM by t24dev/ROMANYEZZAT
+*      PREFIX[CUS.INT.CLASSIFY]
+                  EQU CUS.INT.CLASSIFY.DESCRIPTION TO 1,   MbscCusInterClassify_Description TO 1,
+                       CUS.INT.CLASSIFY.RESERVED.9 TO 2,   MbscCusInterClassify_Reserved9 TO 2,
+                       CUS.INT.CLASSIFY.RESERVED.8 TO 3,   MbscCusInterClassify_Reserved8 TO 3,
+                       CUS.INT.CLASSIFY.RESERVED.7 TO 4,   MbscCusInterClassify_Reserved7 TO 4,
+                       CUS.INT.CLASSIFY.RESERVED.6 TO 5,   MbscCusInterClassify_Reserved6 TO 5,
+                       CUS.INT.CLASSIFY.RESERVED.5 TO 6,   MbscCusInterClassify_Reserved5 TO 6,
+                       CUS.INT.CLASSIFY.RESERVED.4 TO 7,   MbscCusInterClassify_Reserved4 TO 7,
+                       CUS.INT.CLASSIFY.RESERVED.3 TO 8,   MbscCusInterClassify_Reserved3 TO 8,
+                       CUS.INT.CLASSIFY.RESERVED.2 TO 9,   MbscCusInterClassify_Reserved2 TO 9,
+                       CUS.INT.CLASSIFY.RESERVED.1 TO 10,  MbscCusInterClassify_Reserved1 TO 10,
+                        CUS.INT.CLASSIFY.LOCAL.REF TO 11,  MbscCusInterClassify_LocalRef TO 11,
+                         CUS.INT.CLASSIFY.OVERRIDE TO 12,  MbscCusInterClassify_Override TO 12,
+                    CUS.INT.CLASSIFY.RECORD.STATUS TO 13,  MbscCusInterClassify_RecordStatus TO 13,
+                          CUS.INT.CLASSIFY.CURR.NO TO 14,  MbscCusInterClassify_CurrNo TO 14,
+                         CUS.INT.CLASSIFY.INPUTTER TO 15,  MbscCusInterClassify_Inputter TO 15,
+                        CUS.INT.CLASSIFY.DATE.TIME TO 16,  MbscCusInterClassify_DateTime TO 16,
+                       CUS.INT.CLASSIFY.AUTHORISER TO 17,  MbscCusInterClassify_Authoriser TO 17,
+                          CUS.INT.CLASSIFY.CO.CODE TO 18,  MbscCusInterClassify_CoCode TO 18,
+                        CUS.INT.CLASSIFY.DEPT.CODE TO 19,  MbscCusInterClassify_DeptCode TO 19,
+                     CUS.INT.CLASSIFY.AUDITOR.CODE TO 20,  MbscCusInterClassify_AuditorCode TO 20,
+                  CUS.INT.CLASSIFY.AUDIT.DATE.TIME TO 21,  MbscCusInterClassify_AuditDateTime TO 21

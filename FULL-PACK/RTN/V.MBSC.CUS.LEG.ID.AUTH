@@ -1,0 +1,54 @@
+*  AUTHOR           : HANYA ABDELLATIF
+*  DATE             : 20190721
+*  CLIENT           : BDC
+*  DESCRIPTION      : AUTHORIZATION ROUTINE RELATED TO LEGAL DOCUMENT ISSUES
+*-----------------------------------------------------------------------------
+    SUBROUTINE V.MBSC.CUS.LEG.ID.AUTH
+*-----------------------------------------------------------------------------
+    $INSERT I_COMMON
+    $INSERT I_EQUATE
+    $INSERT I_F.CUSTOMER
+
+*-----------------------------------------------------------------------------
+GOSUB INITIALISE
+*-----------------------------------------------------------------------------
+INITIALISE:
+
+LEGAL.DOC.NAME = ''
+LEGAL.ID.NO = ''
+LEGAL.COUNT = ''
+NAT.ID = ''
+*-----------------------------------------------------------------------------
+FN.CUSTOMER = 'F.CUSTOMER'
+F.CUSTOMER =''
+CALL OPF(FN.CUSTOMER,F.CUSTOMER)
+
+  
+				LEGAL.COUNT = DCOUNT(R.NEW(EB.CUS.LEGAL.ID), @VM)
+				
+				FOR I = 1 TO LEGAL.COUNT
+				
+				LEGAL.ID.NO = R.NEW(EB.CUS.LEGAL.ID)<1,I>
+                LEGAL.DOC.NAME = R.NEW(EB.CUS.LEGAL.DOC.NAME)<1,I>
+				
+				IF LEGAL.DOC.NAME EQ 'NATIONAL.ID' THEN
+				GOSUB SET.NATIONAL.ID
+				END
+				
+				IF LEGAL.DOC.NAME EQ 'BIRTH.CERTIFICATE' THEN
+				GOSUB SET.NATIONAL.ID
+				END
+				
+				NEXT I
+				
+RETURN
+
+********************************************************************************
+SET.NATIONAL.ID:	
+
+	CALL GET.LOC.REF('CUSTOMER','NATIONALID',NATION.ID.POS)
+	R.NEW(EB.CUS.LOCAL.REF)<1,NATION.ID.POS> = LEGAL.ID.NO
+
+RETURN
+RETURN
+END

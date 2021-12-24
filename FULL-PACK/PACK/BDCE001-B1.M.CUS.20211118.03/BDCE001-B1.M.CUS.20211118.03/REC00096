@@ -1,0 +1,82 @@
+4,99
+CUSTOMER
+CUSTOMER.TYPE EQ PROSPECT
+
+
+CUSTOMER.CODEMNEMONICSHORT.NAMESTREETNATIONALITYCUSTOMER.STATUSRESIDENCEINTRODUCERREVIEW.FREQUENCY
+Prospect IDMnemonicShort nameStreetNationalityProspect statusResidenceIntroducerReview frequency
+
+
+
+
+
+
+@IDHEADERMNEMONICSHORT.NAMEACCOUNT.OFFICERSECTOR.NAMETARGETTARGET.DESCNATIONALITYRESIDENCECUSTOMER.TYPESECTORZERORECORDSNULLVER.1VER.2GENVER.CHECKSEC.RANGEVER.DECIDE
+@ID"Prospect Details"MNEMONICSHORT.NAMEACCOUNT.OFFICERIDESC SECTOR.NAMETARGETF TARGETNATIONALITYRESIDENCECUSTOMER.TYPESECTOR"No Prospect records for activation""""CUSTOMER,MBSC.CUST.AMEND""CUSTOMER,MBSC.CORP.AMEND"GENDERIF SECTOR EQ 401 VER.1 VER.DECIDE"401"IF SECTOR RG SEC.RANGE VER.2 VER.1
+11,023911131416171
+10R10L35L25L25L4R25L25L25L25L4R6R
+L DEPT.ACCT.OFFICER,NAMEL TARGET,SHORT.NAMEL COUNTRY,COUNTRY.NAMEL COUNTRY,COUNTRY.NAME
+
+LLLL
+NONE
+Prospect NoMnemonicNameRelationship OfficerSectorTargetNationalityResidenceCustomer Type
+CLASS-ENQ.H.TITLECLASS-ENQ.NORECS
+HEADERHEADER
+HIDDENHIDDENHIDDENHIDDEN
+
+
+
+
+
+
+
+
+
+SSMSSSSSSSS
+VER.DECIDE I @IDVER.DECIDE R @ID
+
+@ID 1@ID 1
+Activate Prospect[reexecute.gifDelete Prospect[txndelete.gif
+19 12345678910111214151617181920
+
+1 4
+0 
+1 13
+0 
+2 201
+
+
+
+
+
+
+
+
+Prospect Details
+NO.SELECTIONZERORECORDDISPLAY
+
+Prospect Details
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3
+11_HASSAN8__OFS_BROWSERTC
+1911100506
+11_HASSAN8_OFS_BROWSERTC
+EG0010001
+1

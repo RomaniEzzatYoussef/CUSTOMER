@@ -1,0 +1,71 @@
+*  DATE             : 20200625
+*  CLIENT           : BDC
+*  MODULE			: CUSTOMER
+*  AUTHOR			: AHMED ADEL
+
+    SUBROUTINE V.MBSC.GUARANTOR.CUS
+*-----------------------------------------------------------------------------
+
+    $INSERT I_COMMON
+    $INSERT I_EQUATE
+	$INSERT I_F.CUSTOMER
+	$INSERT I_F.MBSC.GUARANTOR.PARAM
+	 
+*-----------------------------------------------------------------------------
+	FN.CUS	= 'F.CUSTOMER'
+	F.CUS	= ''
+	CALL OPF(FN.CUS, F.CUS)
+	
+	
+
+	Y.GURANTOR = COMI
+	
+	IF COMI NE '' THEN
+	CALL GET.LOC.REF('CUSTOMER',"GUARANTOR",GUR.POS)
+	
+	*===================================
+		IF ID.NEW = COMI THEN
+			AF = EB.CUS.LOCAL.REF
+			AV = GUR.POS
+
+			ETEXT = 'INVALED GUARANTOR ID.'
+			CALL STORE.END.ERROR
+		END
+	*====================================
+
+  
+		FN.GUAR	= 'F.MBSC.GUARANTOR.PARAM'
+		F.GUAR	= ''
+		CALL OPF(FN.GUAR, F.GUAR)
+		
+		
+		
+		CALL F.READ(FN.GUAR, Y.GURANTOR, R.GUAR, F.GUAR, ERR.GUAR)
+	
+		IF R.GUAR NE '' THEN
+			Y.CUS = R.GUAR<GUAR.PARAM.CUSTOMER>
+			
+			CUS.NO = DCOUNT(Y.CUS,VM)
+			
+			IF CUS.NO GT '1' THEN
+			
+				CURR.NO = ''
+				TEXT ='MBSC.GUARANTOR.MULTI'
+				CALL STORE.OVERRIDE(CURR.NO)
+				
+			END ELSE
+				
+				IF Y.CUS NE ID.NEW THEN
+				
+					CURR.NO = ''
+					TEXT ='MBSC.GUARANTOR.MULTI'
+					CALL STORE.OVERRIDE(CURR.NO)
+				
+				END
+			END
+		END
+	END  
+	
+ RETURN
+*-----------------------------------------------------------------------------
+END    

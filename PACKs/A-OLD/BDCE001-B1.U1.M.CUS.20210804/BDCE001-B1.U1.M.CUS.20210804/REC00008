@@ -1,0 +1,82 @@
+4,99
+CUSTOMER
+
+
+
+
+
+
+
+
+
+
+
+CTYPE@IDHEADERMNEMONICSHORT.NAMEACCOUNT.OFFICERTARGETTARGET.DESCSECTORSECTOR.NAMENATIONALITYRESIDENCECUSTOMER.TYPENULLGENCORP2INDVJOINTPROSCORP1INDVIDESTABBANKCORPVER1VER4VER.DECIDEZERORECORDSCOMPANY.BOOKCUSTOMER.SINCECBE.CLASSPOST.RESTRICT
+CUSTOMER.TYPE@ID"Customer Details"MNEMONICSHORT.NAMEACCOUNT.OFFICERTARGETF TARGETSECTORF SECTORNATIONALITYRESIDENCECUSTOMER.TYPE""GENDERIF CUSTOMER.STATUS EQ 76 BANK CORP1IF CUSTOMER.STATUS EQ 3 JOINT INDVID"CUSTOMER,MBSC.QUICK.CUST.JOINT""CUSTOMER,MBSC.PROSPECT.INPUTT""CUSTOMER,MBSC.CORP.INPUT""CUSTOMER,MBSC.INPUT""CUSTOMER,MBSC.CORP.ESTABLISH.INPUT""CUSTOMER,MBSC.QUICK.BANK"IF POSTING.RESTRICT EQ 15 ESTAB CORP2IF CUSTOMER.TYPE EQ PROSPECT PROS INDV"CUSTOMER,MBSC.CORP.INPUT"IF SECTOR EQ 401 VER1 CORP"No Customer records to display "COMPANY.BOOKCUSTOMER.SINCEIDESC CBE.CLASSPOSTING.RESTRICT
+11,02391113141617118192021
+35R10R10L30LR4R25L4R25L30L30L35L6R11L11R8R35R
+L DEPT.ACCT.OFFICER,NAMEL TARGET,SHORT.NAMEL SECTOR,SHORT.NAMEL COUNTRY,COUNTRY.NAMEL COUNTRY,COUNTRY.NAMEL POSTING.RESTRICT,DESCRIPTION
+
+LLANGUAGELANGUAGELANGUAGELANGUAGE
+NONE
+Customer No# Customer MnemonicShort NameAccount Officer# TargetTarget NameSectorSector Name# Nationality# ResidenceCustomer TypeCustomer Branch NameCustomer OpenCBE ClassificationPosting Restrict
+CLASS-ENQ.H.TITLECLASS-ENQ.NORECS
+HEADERHEADER
+HIDDENHIDDENHIDDENHIDDENHIDDEN
+
+
+
+
+
+
+
+
+
+SSSMSSSSSSSSSSSM
+VER.DECIDE S @ID
+
+@ID 2
+View Record[view.gif
+31 12345678910111213141516171819202122232425262729303132
+
+2 532
+0 
+1 28
+0 
+2 272
+
+
+
+
+
+
+
+
+Customer Details
+NO.SELECTION
+
+Customer Details
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+37
+62_ROMANIEZZAT__OFS_BROWSERTC
+2108041441
+62_ROMANIEZZAT_OFS_BROWSERTC
+EG0010001
+1

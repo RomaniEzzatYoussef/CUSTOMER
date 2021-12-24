@@ -1,0 +1,45 @@
+    SUBROUTINE MBSC.CUST.PARAMETER
+* ----------------------------------------------------------------------------
+* <region name= Inserts>
+    	   $INSERT I_COMMON
+    $INSERT I_EQUATE
+    $INSERT I_Table
+    $INSERT I_METHODS.AND.PROPERTIES
+	$INSERT I_F.CUSTOMER.STATUS
+$INSERT I_F.POSTING.RESTRICT
+
+* </region>
+    C_METHODS = ''
+    C_PROPERTIES = ''
+*-----------------------------------------------------------------------------
+    C_PROPERTIES<P_NAME>               = 'MBSC.CUST.PARAMETER' 		;* Full application name
+    C_PROPERTIES<P_TITLE>              = 'MBSC.CUST.PARAMETER'      		;* Screen title
+    C_PROPERTIES<P_STEREOTYPE>         = 'H'      				;* H, U, L, W or T
+    C_PROPERTIES<P_PRODUCT>            = 'EB'     				;* Must be on EB.PRODUCT
+    C_PROPERTIES<P_SUB.PRODUCT>        = ''      			    ;* Must be on EB.SUB.PRODUCT
+    C_PROPERTIES<P_CLASSIFICATION>     = 'INT'   			    ;* As per FILE.CONTROL
+    C_PROPERTIES<P_SYS.CLEAR.FILE>     = 'Y'     			    ;* As per FILE.CONTROL
+    C_PROPERTIES<P_RELATED.FILES>      = ''      			    ;* As per FILE.CONTROL
+    C_PROPERTIES<P_PC.FILE>            = ''      			    ;* As per FILE.CONTROL
+    C_PROPERTIES<P_EQUATE.PREFIX>      = 'CUS.PA'         	    ;* Use to create I_
+	
+*-----------------------------------------------------------------------------
+    C_PROPERTIES<P_ID.PREFIX>          = ''       ;* Used by EB.FORMAT.ID if set
+    C_PROPERTIES<P_BLOCKED.FUNCTIONS>  = ''       ;* Space delimeted list
+    C_PROPERTIES<P_TRIGGER>            = ''       ;* Trigger field used for OPERATIO
+*-------------------------------------------------------------------------
+
+    C_METHODS<M_INITIALISE>            = ''       ;* Use this to load a common area
+    C_METHODS<M_ID>                    = ''       ;* Check ID
+    C_METHODS<M_RECORD>                = ''       ;* Check Record
+    C_METHODS<M_VALIDATE>              = ''       ;* Cross validation
+    C_METHODS<M_OVERRIDES>             = ''       ;* Overrides
+    C_METHODS<M_FUNCTION>              = ''       ;* Check Function
+    C_METHODS<M_PREVIEW>               = ''       ;* Delivery Preview
+    C_METHODS<M_PROCESS>               = ''       ;* The main processing routine
+    C_METHODS<M_AUTHORISE>             = ''       ;* Any work that needs to be done
+    C_METHODS<M_DEFAULT>               = ''       ;* Any defaulting
+*-------------------------------------------------------------------------
+    CALL THE.TEMPLATE
+    RETURN
+END

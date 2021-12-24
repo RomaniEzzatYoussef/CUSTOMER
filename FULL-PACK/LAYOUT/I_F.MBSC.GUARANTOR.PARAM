@@ -1,0 +1,19 @@
+* I_F.MBSC.GUARANTOR.PARAM Created 27 OCT 21 at 07:49PM by t24dev/ROMANYEZZAT
+*      PREFIX[GUAR.PARAM]
+                     EQU GUAR.PARAM.CUSTOMER TO 1,   MbscGuarantorParam_Customer TO 1,
+                GUAR.PARAM.DATE.OF.GUARANTEE TO 2,   MbscGuarantorParam_DateOfGuarantee TO 2,
+                GUAR.PARAM.PERC.OF.GUARANTEE TO 3,   MbscGuarantorParam_PercOfGuarantee TO 3,
+                 GUAR.PARAM.AMT.OF.GUARANTEE TO 4,   MbscGuarantorParam_AmtOfGuarantee TO 4,
+                          GUAR.PARAM.COMPANY TO 5,   MbscGuarantorParam_Company TO 5,
+                          GUAR.PARAM.LOAN.ID TO 6,   MbscGuarantorParam_LoanId TO 6,
+                       GUAR.PARAM.RESERVED.9 TO 7,   MbscGuarantorParam_Reserved9 TO 7,
+                       GUAR.PARAM.RESERVED.8 TO 8,   MbscGuarantorParam_Reserved8 TO 8,
+                       GUAR.PARAM.RESERVED.7 TO 9,   MbscGuarantorParam_Reserved7 TO 9,
+                       GUAR.PARAM.RESERVED.6 TO 10,  MbscGuarantorParam_Reserved6 TO 10,
+                       GUAR.PARAM.RESERVED.5 TO 11,  MbscGuarantorParam_Reserved5 TO 11,
+                       GUAR.PARAM.RESERVED.4 TO 12,  MbscGuarantorParam_Reserved4 TO 12,
+                       GUAR.PARAM.RESERVED.3 TO 13,  MbscGuarantorParam_Reserved3 TO 13,
+                       GUAR.PARAM.RESERVED.2 TO 14,  MbscGuarantorParam_Reserved2 TO 14,
+                       GUAR.PARAM.RESERVED.1 TO 15,  MbscGuarantorParam_Reserved1 TO 15,
+                        GUAR.PARAM.LOCAL.REF TO 16,  MbscGuarantorParam_LocalRef TO 16,
+                         GUAR.PARAM.OVERRIDE TO 17,  MbscGuarantorParam_Override TO 17

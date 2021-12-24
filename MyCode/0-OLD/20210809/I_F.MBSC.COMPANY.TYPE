@@ -1,0 +1,23 @@
+* I_F.MBSC.COMPANY.TYPE Created 09 AUG 21 at 03:53PM by t24dev/ROMANYEZZAT
+*      PREFIX[CO.TYPE]
+                  EQU CO.TYPE.DESCRIPTION TO 1,   MbscCompanyType_Description TO 1,
+                       CO.TYPE.RESERVED.9 TO 2,   MbscCompanyType_Reserved9 TO 2,
+                       CO.TYPE.RESERVED.8 TO 3,   MbscCompanyType_Reserved8 TO 3,
+                       CO.TYPE.RESERVED.7 TO 4,   MbscCompanyType_Reserved7 TO 4,
+                       CO.TYPE.RESERVED.6 TO 5,   MbscCompanyType_Reserved6 TO 5,
+                       CO.TYPE.RESERVED.5 TO 6,   MbscCompanyType_Reserved5 TO 6,
+                       CO.TYPE.RESERVED.4 TO 7,   MbscCompanyType_Reserved4 TO 7,
+                       CO.TYPE.RESERVED.3 TO 8,   MbscCompanyType_Reserved3 TO 8,
+                       CO.TYPE.RESERVED.2 TO 9,   MbscCompanyType_Reserved2 TO 9,
+                       CO.TYPE.RESERVED.1 TO 10,  MbscCompanyType_Reserved1 TO 10,
+                        CO.TYPE.LOCAL.REF TO 11,  MbscCompanyType_LocalRef TO 11,
+                         CO.TYPE.OVERRIDE TO 12,  MbscCompanyType_Override TO 12,
+                    CO.TYPE.RECORD.STATUS TO 13,  MbscCompanyType_RecordStatus TO 13,
+                          CO.TYPE.CURR.NO TO 14,  MbscCompanyType_CurrNo TO 14,
+                         CO.TYPE.INPUTTER TO 15,  MbscCompanyType_Inputter TO 15,
+                        CO.TYPE.DATE.TIME TO 16,  MbscCompanyType_DateTime TO 16,
+                       CO.TYPE.AUTHORISER TO 17,  MbscCompanyType_Authoriser TO 17,
+                          CO.TYPE.CO.CODE TO 18,  MbscCompanyType_CoCode TO 18,
+                        CO.TYPE.DEPT.CODE TO 19,  MbscCompanyType_DeptCode TO 19,
+                     CO.TYPE.AUDITOR.CODE TO 20,  MbscCompanyType_AuditorCode TO 20,
+                  CO.TYPE.AUDIT.DATE.TIME TO 21,  MbscCompanyType_AuditDateTime TO 21

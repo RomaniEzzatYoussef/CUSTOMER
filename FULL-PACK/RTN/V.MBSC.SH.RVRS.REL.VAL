@@ -1,0 +1,53 @@
+*-----------------------------------------------------------------------------
+* <Rating>-22</Rating>
+*-----------------------------------------------------------------------------
+*  AUTHOR           : ROMANI EZZAT
+*  DATE             : 15 SEP 2021
+*  CLIENT           : BDC
+*  MODULE			: CUSTOMER
+*  DESCRIPTION      : INPUT RTN for shareholder reverse relation on CORP (create/amend) versions
+*  ATTACHED TO		: CUSTOMER,MBSC.CORP.INPUT           CUSTOMER,MBSC.CORP.AMEND 
+*                   : CUSTOMER,MBSC.CORP.ESTABLISH.INPUT CUSTOMER,MBSC.CORP.ESTABLISH.AMEND
+
+*-----------------------------------------------------------------------------
+    SUBROUTINE V.MBSC.SH.RVRS.REL.VAL
+*-----------------------------------------------------------------------------
+    $INSERT I_COMMON
+    $INSERT I_EQUATE
+    $INSERT I_F.CUSTOMER
+    $INSERT I_F.RELATION
+*-----------------------------------------------------------------------------
+	*DEBUG
+*-----------------------------------------------------------------------------
+
+	FN.CUSTOMER = 'F.CUSTOMER'
+	F.CUSTOMER  = ''
+	CALL OPF(FN.CUSTOMER,F.CUSTOMER)
+	
+	FN.RELATION = 'F.RELATION'
+	F.RELATION  = ''
+	CALL OPF(FN.RELATION,F.RELATION)
+	
+	CALL GET.LOC.REF("CUSTOMER","SHAREH.RELATION",SHAREH.RELATION.POS)
+	CALL GET.LOC.REF("CUSTOMER","S.H.REVERSE.REL",S.H.REVERSE.REL.POS)
+
+	RELATION.ID = R.NEW(EB.CUS.LOCAL.REF)<1,SHAREH.RELATION.POS>
+	
+	REL.LEN = ''
+	REL.LEN = DCOUNT(RELATION.ID,SM)
+	
+	I=1
+	LOOP
+		IF RELATION.ID NE '' THEN
+			REL.ID = FIELD(RELATION.ID,SM,I)
+			CALL F.READ(FN.RELATION,REL.ID,R.RELATION,F.RELATION,RELATION.ERROR)
+			REVERSE.RELATION = R.RELATION<EB.REL.REVERSE.RELATION>
+			R.NEW(EB.CUS.LOCAL.REF)<1,S.H.REVERSE.REL.POS,I> = REVERSE.RELATION
+
+		END
+	I++
+	UNTIL I GT REL.LEN
+	REPEAT
+*-----------------------------------------------------------------------------
+RETURN
+END

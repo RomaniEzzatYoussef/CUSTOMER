@@ -1,0 +1,38 @@
+*  AUTHOR           : HASSAN MOHAMED
+*  DATE             : 20201014
+*  MODIFIED         :
+*  CLIENT           :
+*  DESCRIPTION      : 
+*  VERSION          :   NEW FATCA ID CHECK TO BE CORPORATE ONLY 
+*  MODIFIED         :
+*-----------------------------------------------------------------------------
+    SUBROUTINE V.MBSC.CORP.FATCA.ID.CHECK
+*-----------------------------------------------------------------------------
+
+    $INSERT I_COMMON
+    $INSERT I_EQUATE
+    $INSERT I_F.CUSTOMER
+
+FN.CUSTOMER = 'F.CUSTOMER'
+F.CUSTOMER = ''
+CALL OPF(FN.CUSTOMER,F.CUSTOMER)
+
+
+		R.CUSTOMER = ''
+		YERR = ''
+		CALL F.READ(FN.CUSTOMER,ID.NEW,R.CUSTOMER,F.CUSTOMER,YERR)  
+
+
+IF R.CUSTOMER THEN
+		IF R.CUSTOMER<EB.CUS.SECTOR>  EQ '401' OR R.CUSTOMER<EB.CUS.CUSTOMER.STATUS> EQ '76' THEN 
+		
+			E = 'Corporate Customer only accepted!'
+			
+		END    
+END
+
+    RETURN
+
+*-----------------------------------------------------------------------------
+END
+*---------------c--------------------------------------------------------------

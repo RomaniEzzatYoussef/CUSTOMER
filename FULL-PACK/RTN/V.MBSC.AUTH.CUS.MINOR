@@ -1,0 +1,34 @@
+*  AUTHOR           : AHMED ALAA     a.alaa@masaref-bdc.com
+*  DATE             : 29 - JUL- 19
+*  CLIENT           : BDC
+*  MODULE	    : CUSTOMER
+*  DESCRIPTION      : ROUTINE TO CHECK IF THE CUSTOMER IS MINOR AND DEFAULT DATE TO MATIRETY IN TEMPLATE
+*  ATTACHED TO	    : CUSTOMER
+*-----------------------------------------------------------------------------
+    SUBROUTINE V.MBSC.AUTH.CUS.MINOR
+*-----------------------------------------------------------------------------
+    $INSERT I_COMMON
+    $INSERT I_EQUATE
+    $INSERT I_F.CUSTOMER
+    $INSERT I_F.MBSC.MINOR.DATA
+*-----------------------------------------------------------------------------
+Y.AC.ID = ID.NEW
+D.OF.B	= R.NEW(EB.CUS.DATE.OF.BIRTH)	
+Y.OF.B = D.OF.B[1,4]
+NUM.YEAR = '21'
+L.OF.B = D.OF.B[5,8]
+Y.OF.M = Y.OF.B + NUM.YEAR
+D.OF.M = Y.OF.M:L.OF.B 	    	 
+T.DATE = TODAY
+FN.MBSC.MINOR.DATA = 'F.MBSC.MINOR.DATA'
+F.MBSC.MINOR.DATA = ''
+CALL OPF(FN.MBSC.MINOR.DATA,F.MBSC.MINOR.DATA)
+CALL F.READ(FN.MBSC.MINOR.DATA,Y.AC.ID,R.MBSC.MINOR.DATA,F.MBSC.MINOR.DATA,MBSC.MINOR.ERR)
+              IF D.OF.M GT T.DATE THEN
+                   R.MBSC.MINOR.DATA<CUS.MIN.CUS.BIRTH.DATE> = D.OF.B
+                   R.MBSC.MINOR.DATA<CUS.MIN.TARGET.DATE> = D.OF.M
+				   CALL F.WRITE (FN.MBSC.MINOR.DATA,Y.AC.ID,R.MBSC.MINOR.DATA)
+              END
+RETURN
+*-----------------------------------------------------------------------------
+END

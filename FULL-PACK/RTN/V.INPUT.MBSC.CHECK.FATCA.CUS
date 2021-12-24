@@ -1,0 +1,36 @@
+*  AUTHOR           : MAHMOUD WALEED
+*  DATE             : 21/1/2018
+*  CLIENT           : BDC
+*  DESCRIPTION      : Check Fatca Record by Customer ID
+*=====================================================================================================================	
+    SUBROUTINE V.INPUT.MBSC.CHECK.FATCA.CUS
+*=====================================================================================================================
+
+    $INSERT I_COMMON
+    $INSERT I_EQUATE
+    $INSERT I_F.FATCA.CUSTOMER.SUPPLEMENTARY.INFO
+    $INSERT I_F.CUSTOMER
+*=====================================================================================================================
+	FN.CUS = 'F.CUSTOMER'
+	F.CUS  = ''
+	CALL OPF(FN.CUS,F.CUS)
+	R.OTHER.NATION = ''
+	R.OTHER.NATION = R.NEW(EB.CUS.OTHER.NATIONALITY)
+	
+	CONVERT VM TO FM IN R.OTHER.NATION
+	LOCATE 'US' IN R.OTHER.NATION SETTING OTHER.POS ELSE OTHER.POS = ''
+	
+	IF  R.NEW(EB.CUS.NATIONALITY) EQ 'US' OR R.NEW(EB.CUS.RESIDENCE) EQ 'US' OR OTHER.POS NE '' THEN
+		Y.NEW.TASK = '' 
+		Y.NEW.TASK = "FATCA.CUSTOMER.SUPPLEMENTARY.INFO,MBSC.INPUT I ":ID.NEW
+		CALL EB.SET.NEW.TASK(Y.NEW.TASK)
+	END
+						 
+
+				
+	*CASE R.NEW(EB.CUS.SECTOR) GE '401' AND R.NEW(EB.CUS.SECTOR) LT '2000'
+							
+			
+			
+	RETURN	
+	END

@@ -1,0 +1,23 @@
+* I_F.MBSC.CUS.SUBIDUSTRY Created 07 MAY 20 at 03:45AM by t24dev/HASSAN8
+*      PREFIX[SUB.INDUST]
+                  EQU SUB.INDUST.DESCRIPTION TO 1,   MbscCusSubidustry_Description TO 1,
+                       SUB.INDUST.RESERVED.9 TO 2,   MbscCusSubidustry_Reserved9 TO 2,
+                       SUB.INDUST.RESERVED.8 TO 3,   MbscCusSubidustry_Reserved8 TO 3,
+                       SUB.INDUST.RESERVED.7 TO 4,   MbscCusSubidustry_Reserved7 TO 4,
+                       SUB.INDUST.RESERVED.6 TO 5,   MbscCusSubidustry_Reserved6 TO 5,
+                       SUB.INDUST.RESERVED.5 TO 6,   MbscCusSubidustry_Reserved5 TO 6,
+                       SUB.INDUST.RESERVED.4 TO 7,   MbscCusSubidustry_Reserved4 TO 7,
+                       SUB.INDUST.RESERVED.3 TO 8,   MbscCusSubidustry_Reserved3 TO 8,
+                       SUB.INDUST.RESERVED.2 TO 9,   MbscCusSubidustry_Reserved2 TO 9,
+                       SUB.INDUST.RESERVED.1 TO 10,  MbscCusSubidustry_Reserved1 TO 10,
+                        SUB.INDUST.LOCAL.REF TO 11,  MbscCusSubidustry_LocalRef TO 11,
+                         SUB.INDUST.OVERRIDE TO 12,  MbscCusSubidustry_Override TO 12,
+                    SUB.INDUST.RECORD.STATUS TO 13,  MbscCusSubidustry_RecordStatus TO 13,
+                          SUB.INDUST.CURR.NO TO 14,  MbscCusSubidustry_CurrNo TO 14,
+                         SUB.INDUST.INPUTTER TO 15,  MbscCusSubidustry_Inputter TO 15,
+                        SUB.INDUST.DATE.TIME TO 16,  MbscCusSubidustry_DateTime TO 16,
+                       SUB.INDUST.AUTHORISER TO 17,  MbscCusSubidustry_Authoriser TO 17,
+                          SUB.INDUST.CO.CODE TO 18,  MbscCusSubidustry_CoCode TO 18,
+                        SUB.INDUST.DEPT.CODE TO 19,  MbscCusSubidustry_DeptCode TO 19,
+                     SUB.INDUST.AUDITOR.CODE TO 20,  MbscCusSubidustry_AuditorCode TO 20,
+                  SUB.INDUST.AUDIT.DATE.TIME TO 21,  MbscCusSubidustry_AuditDateTime TO 21

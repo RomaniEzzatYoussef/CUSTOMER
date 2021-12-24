@@ -1,0 +1,72 @@
+*  AUTHOR           : HASSAN MOHAMED
+*  DATE             : 17 JUL 2019
+*  CLIENT           : BDC
+*  DESCRIPTION      : VALIDATE ON ADDRESS COUNTRY
+*-----------------------------------------------------------------------------
+    SUBROUTINE  V.MBSC.CUST.COUNTRY.INP
+*-----------------------------------------------------------------------------
+
+    $INSERT I_COMMON
+    $INSERT I_EQUATE
+	$INSERT I_F.CUSTOMER
+	*$INSERT I_F.MBSC.CUS.LEG.ID
+	$INSERT I_F.COUNTRY
+
+	$INSERT I_F.MBSC.GOV.CUS
+*-----------------------------------------------------------------------------
+
+
+
+*-----------------------------------------------------------------------------
+
+	CUST.COUNTRY = ''
+
+
+*============ Open Files ==============================================
+		FN.CUSTOMER = 'F.CUSTOMER'
+		F.CUSTOMER =''
+		CALL OPF(FN.CUSTOMER,F.CUSTOMER)
+
+		FN.COUNTRY = 'F.COUNTRY'
+		F.COUNTRY =''
+		CALL OPF(FN.COUNTRY,F.COUNTRY)
+		
+		CUST.COUNTRY = R.NEW(EB.CUS.COUNTRY)
+		
+IF CUST.COUNTRY NE '' THEN
+
+		CALL F.READ(FN.COUNTRY,CUST.COUNTRY,R.COUNTRY,F.COUNTRY,COUNTRY.ERR)
+		
+		IF R.COUNTRY THEN 
+
+			CALL GET.LOC.REF('CUSTOMER','PHY.REGION',PHY.REGION.POS)
+
+			IF R.NEW(EB.CUS.COUNTRY) NE 'EG' THEN
+				R.NEW(EB.CUS.LOCAL.REF)<1,PHY.REGION.POS> = '88'
+			END
+		
+			IF R.NEW(EB.CUS.COUNTRY) EQ 'EG' AND R.NEW(EB.CUS.LOCAL.REF)<1,PHY.REGION.POS> EQ '88' THEN
+				AF = EB.CUS.LOCAL.REF
+				AV = PHY.REGION.POS
+				ETEXT = 'EB-CUS.MBSC.COUNTRY.1'
+				CALL STORE.END.ERROR
+			END
+		
+			IF R.NEW(EB.CUS.COUNTRY) NE 'EG' AND R.NEW(EB.CUS.LOCAL.REF)<1,PHY.REGION.POS> NE '88' THEN
+				AF = EB.CUS.LOCAL.REF
+				AV = PHY.REGION.POS
+				ETEXT = 'EB-CUS.MBSC.COUNTRY.2'
+				CALL STORE.END.ERROR
+			END
+		END ELSE 
+				
+				AF = EB.CUS.COUNTRY
+				ETEXT = 'EB-CUS.MBSC.COUNTRY.3'
+				CALL STORE.END.ERROR
+		END 
+END
+
+RETURN
+END
+
+**********************

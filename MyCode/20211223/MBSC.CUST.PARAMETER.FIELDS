@@ -1,0 +1,59 @@
+  SUBROUTINE MBSC.CUST.PARAMETER.FIELDS
+*-----------------------------------------------------------------------------
+* Description           : CUSTOMER PARAMETER TABLE CONTAINS ALL VARIABLE VALUES 
+* Developed By          : HASSAN MOHAMED
+* Client                : BDC
+* Date                  : 20190806
+*-----------------------------------------------------------------------------
+ 
+	$INSERT I_COMMON
+    $INSERT I_EQUATE
+    $INSERT I_DataTypes
+    $INSERT I_GTS.COMMON
+$INSERT I_F.CUSTOMER.STATUS
+$INSERT I_F.POSTING.RESTRICT
+
+
+*-----------------------------------------------------------------------------
+   Z = 0
+    ID.F = "@ID" ; ID.N = "SYSTEM" ; ID.T = "ANY"
+*-----------------------------------------------------------------------------
+
+      
+	Z+=1 ; F(Z) = "XX.POSTING.RESTRICT"  ; N(Z) = "10" ; T(Z) = ""
+	CHECKFILE(Z) = "POSTING.RESTRICT"
+
+	Z+=1 ; F(Z) = "XX.CUST.STATUS"       ; N(Z) = "10" ; T(Z) = ""
+	CHECKFILE(Z) = "CUSTOMER.STATUS"
+
+	Z+=1 ; F(Z) = "XX.MINOR"            ; N(Z) = "10" ; T(Z) = ""
+	CHECKFILE(Z) = "CUSTOMER.STATUS"
+
+	Z+=1 ; F(Z) = "XX.MINOR.EMPLOYEE"   ; N(Z) = "10" ; T(Z) = ""
+	CHECKFILE(Z) = "CUSTOMER.STATUS"
+	
+	Z+=1 ; F(Z) = "INACTIVE.POSTING"  ; N(Z) = "10" ; T(Z) = ""
+	CHECKFILE(Z) = "POSTING.RESTRICT"
+
+	Z+=1 ; F(Z) = "XX.STAFF.STATUS"   ; N(Z) = "10" ; T(Z) = ""
+	CHECKFILE(Z) = "CUSTOMER.STATUS"
+	
+	Z+=1 ; F(Z) = "XX.KYC.POSTING"  ; N(Z) = "10" ; T(Z) = ""
+	CHECKFILE(Z) = "POSTING.RESTRICT"
+	
+	Z+=1 ; F(Z) = "XX.MINOR.POSTING"  ; N(Z) = "10" ; T(Z) = ""
+	CHECKFILE(Z) = "POSTING.RESTRICT"
+	
+	
+	Z+=1 ; F(Z) = "RESERVED.3"  ; N(Z) = "35" ; T(Z) = "" ; T(Z)<3> = 'NOINPUT'
+    Z+=1 ; F(Z) = "RESERVED.2"  ; N(Z) = "35" ; T(Z) = "" ; T(Z)<3> = 'NOINPUT'
+    Z+=1 ; F(Z) = "RESERVED.1"  ; N(Z) = "35" ; T(Z) = "" ; T(Z)<3> = 'NOINPUT'
+*-----------------------------------------------------------------------------
+    Z+=1  ; F(Z) = "XX.LOCAL.REF" ; N(Z)=  "35..C" ; T(Z)="A"
+    Z+=1  ; F(Z) = "XX.OVERRIDE" ; N(Z) = "35" ; T(Z) = "" ; T(Z)<3> = 'NOINPUT'
+*-----------------------------------------------------------------------------
+    V = Z + 9
+    RETURN
+
+*-----------------------------------------------------------------------------
+END

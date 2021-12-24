@@ -1,0 +1,82 @@
+4,19
+CUSTOMER
+
+
+
+@IDRESIDENCENATIONALITY
+Customer IdResidenceNationality
+
+
+
+ANDAND
+
+
+@IDRM.IDRM.NAMERM.AREAIHDRCOEFF.DATEHDR1HDR2CUST.IDSHORT.NAMENATIONALITYRESIDENCECUSINFAT.STATUSNUPNUKYC.STATUSVER.DECIDEVER1INDVJOINTINDVIDPROSBANKESTABCORP1CORPCORP2
+@IDACCOUNT.OFFICERF RM.IDF RM.ID"Existing Customer Details"!COMPANYF CO"FATCA Effective Date:"F EFF.DATEF @IDSHORT.NAMENATIONALITYRESIDENCECUSTOMER.SINCEF @ID"Not Updated"""IF FAT.STATUS EQ NU NUP FAT.STATUSIF SECTOR EQ 401 VER1 CORPIF CUSTOMER.TYPE EQ PROSPECT PROS INDVIF CUSTOMER.STATUS EQ 3 JOINT INDVID"CUSTOMER,MBSC.QUICK.CUST.JOINT.AMEND""CUSTOMER,MBSC.CUST.AMEND""CUSTOMER,MBSC.PROSPECT.AMEND""CUSTOMER,MBSC.BANK.AMEND""CUSTOMER,MBSC.CORP.AMEND""CUSTOMER,MBSC.CORP.AMEND"IF CUSTOMER.STATUS EQ 2 ESTAB CORP2IF CUSTOMER.STATUS EQ 76 BANK CORP1
+19481,11,226,28599138150163179
+10R7L35L35L50L25L11L35L35L9L9L11R35L
+L DEPT.ACCT.OFFICER,NAMEL FATCA.PARAMETER,EFFECTIVE.DATEL FATCA.CUSTOMER.SUPPLEMENTARY.INFO,FATCA.STATUSL FATCA.TAX.STATUS,DESCRIPTION
+
+DATEDATELANGUAGEDATE
+PAGEPAGE
+RM IDRM NameRM MarketCustomerCustomer NameNationalityResidenceCustomer SinceClassification
+CLASS-ENQ.H.TITLECLASS-ENQ.H.DATA.LABELCLASS-ENQ.H.DATA
+HEADERHEADERHEADER
+HIDDEN
+
+
+
+
+
+
+
+
+
+SSSSS
+FATCA.CUSTOMER.SUPPLEMENTARY.INFO,MBSC.FULL I CUST.IDCUSTOMER,MBSC.INPUT.PVT S CUST.IDVER.DECIDE I CUST.ID
+
+CUST.ID 10CUST.ID 10CUST.ID 10
+Update Details[edit.gifView Record[view.gifUpdate Customer[new.gif
+27 12346791011121314151617181920212223242526272829
+
+0 
+0 
+2 58
+0 
+2 1019
+
+
+
+
+
+
+
+
+
+NO.SELECTION
+
+FATCA Clients
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4
+151_HASSAN7__OFS_BROWSERTC
+2012272211
+151_HASSAN7_OFS_BROWSERTC
+EG0010020
+1

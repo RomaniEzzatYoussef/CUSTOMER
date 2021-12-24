@@ -1,0 +1,40 @@
+*  AUTHOR           : HASSAN MOHAMED
+*  DATE             : 17 JUL 2019
+*  CLIENT           : BDC
+*  DESCRIPTION      : VALIDATE NATIONAL ID CHANGES
+*-----------------------------------------------------------------------------
+    SUBROUTINE  V.MBSC.INP.LEGAL.CHANGE
+*-----------------------------------------------------------------------------
+
+    $INSERT I_COMMON
+    $INSERT I_EQUATE
+	$INSERT I_F.CUSTOMER
+*-----------------------------------------------------------------------------
+GOSUB INITIALISE
+RETURN
+*-----------------------------------------------------------------------------
+INITIALISE:
+*==========
+		LEGAL.DOC.OLD = R.OLD(EB.CUS.LEGAL.DOC.NAME)
+		CONVERT VM TO FM IN LEGAL.DOC.OLD
+		LOCATE 'NATIONAL.ID' IN LEGAL.DOC.OLD SETTING NATIONAL.OLD.POS ELSE NATIONAL.OLD.POS = '0'
+
+		LEGAL.DOC.NEW = R.NEW(EB.CUS.LEGAL.DOC.NAME)
+		CONVERT VM TO FM IN LEGAL.DOC.NEW
+		LOCATE 'NATIONAL.ID' IN LEGAL.DOC.NEW SETTING NATIONAL.NEW.POS ELSE NATIONAL.NEW.POS = '0'
+
+		IF NATIONAL.OLD.POS NE '0' AND NATIONAL.NEW.POS EQ '0' THEN
+			
+				AF = EB.CUS.LEGAL.DOC.NAME
+				ETEXT = 'Removing National ID not allowed.'
+				CALL STORE.END.ERROR
+			
+		END
+
+
+RETURN
+
+END
+*************************************************************************************************
+
+

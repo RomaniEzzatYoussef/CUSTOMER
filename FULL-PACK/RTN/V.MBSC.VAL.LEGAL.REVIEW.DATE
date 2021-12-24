@@ -1,0 +1,53 @@
+*  AUTHOR           : HASSAN MOHAMED
+*  DATE             : 17 SEP 2020
+*  CLIENT           : BDC
+*  DESCRIPTION      : V.MBSC.VAL.LEGAL.REVIEW.DATE
+*-----------------------------------------------------------------------------
+    SUBROUTINE  V.MBSC.VAL.LEGAL.REVIEW.DATE
+*-----------------------------------------------------------------------------
+
+    $INSERT I_COMMON
+    $INSERT I_EQUATE
+	$INSERT I_F.CUSTOMER
+	$INSERT I_F.MBSC.LEGAL.DOC.YEARS
+*-----------------------------------------------------------------------------
+GOSUB INITIALISE
+RETURN
+*-----------------------------------------------------------------------------
+INITIALISE:
+*==========
+LEGAL.COUNT = ""
+LEGAL.ID.TYPE = ""
+REV.DAYS = ""
+	    FN.LEGAL.PARAMETER = 'F.MBSC.LEGAL.DOC.YEARS'
+		F.LEGAL.PARAMETER =''
+		CALL OPF(FN.LEGAL.PARAMETER,F.LEGAL.PARAMETER)
+
+		
+				
+
+	            *LEGAL.COUNT = DCOUNT(R.NEW(EB.CUS.LEGAL.ID), @VM)
+				*FOR I = 1 TO LEGAL.COUNT
+				  
+				    EXP.DATE = R.NEW(EB.CUS.LEGAL.EXP.DATE)<1,1>
+				        IF EXP.DATE NE '' THEN
+				            LEGAL.ID.TYPE    = R.NEW(EB.CUS.LEGAL.DOC.NAME)<1,1>
+				            CALL F.READ(FN.LEGAL.PARAMETER,LEGAL.ID.TYPE,R.PARAM,F.LEGAL.PARAMETER,LEGAL.PARAMETER.ERR)
+						    IF R.PARAM THEN
+						        IF R.PARAM<DOC.YEARS.REVIEW.DAYS> GT '0' THEN
+				                   REV.DAYS = '-':R.PARAM<DOC.YEARS.REVIEW.DAYS>:'C'
+		                           CALL CDT('',EXP.DATE,REV.DAYS)
+					               COMI = EXP.DATE:'M0101'
+							    END
+							END 
+						END
+				
+                *NEXT I
+
+
+RETURN
+
+END
+*************************************************************************************************
+
+

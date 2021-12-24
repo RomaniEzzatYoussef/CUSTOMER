@@ -1,0 +1,82 @@
+4,99
+CUSTOMER.CHARGE$NAU
+
+
+
+@ID
+Customer No
+EQ
+
+
+
+
+
+CUST.IDDATE.TIMECUSTOMER.COMPANYVERSIONHEADERCUST.SHORT.NAMERCORD.STATUSINPUTTERZERONORECORDS
+@IDDATE.TIMECUSTOMER.COMPANYF CUST.ID"Unauthorised Customer Charge"F CUST.IDRECORD.STATUSINPUTTER"No Unauthorised Customer Charge "
+12341,01530401
+10R15R11L21L4L35L
+L CUSTOMER,VERSIONL CUSTOMER,SHORT.NAMEF _,2,1
+
+
+NONE
+Customer NoCreation DateCompany BookVersionNameStatusInputter
+CLASS-ENQ.H.TITLECLASS-ENQ.NORECS
+HEADERHEADER
+
+
+
+
+
+
+
+
+
+
+SMSSM
+CUSTOMER.CHARGE,MBSC.INPUT A CUST.IDCUSTOMER.CHARGE,MBSC.INPUT D CUST.ID
+
+CUST.ID 1CUST.ID 1
+Authorise[txnauthorise.gifDelete[txndelete.gif
+8 12345678
+
+2 28
+0 
+1 9
+0 
+1 1
+
+
+
+
+
+
+
+
+
+NO.SELECTIONZERORECORDDISPLAY
+
+Unauthorised Customer Charge
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3
+88_ENJY__OFS_BROWSERTC
+2009171535
+88_ENJY_OFS_BROWSERTC
+EG0010001
+1

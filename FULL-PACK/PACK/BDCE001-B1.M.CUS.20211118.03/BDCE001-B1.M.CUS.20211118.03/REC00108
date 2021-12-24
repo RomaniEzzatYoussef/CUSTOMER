@@ -1,0 +1,82 @@
+4,99
+CUSTOMER$NAU
+VERSION EQ ',MBDC.LI.CUS'
+
+
+
+
+
+
+
+
+
+CAD Customer Authorisation
+@IDSHORT.NAMETARGETCUSTOMER.RATINGDATE.TIMEVERSIONCOMPANY.BOOKZERORECORDS
+@IDSHORT.NAMETARGETCUSTOMER.RATINGDATE.TIMEIDESC VERSIONCOMPANY.BOOK"No Records to Display"
+1234571
+10L35L4L10L15L65L11L
+
+
+D
+NONE
+Customer No.Customer NameTargetCustomer RatingCreation DateVersionCompany Book
+CLASS-ENQ.NORECS
+HEADER
+
+
+
+
+
+
+
+
+
+
+SSMMSS
+CUSTOMER S @IDCUSTOMER,MBDC.LI.CUS A @IDCUSTOMER,MBDC.LI.CUS D @ID
+
+@ID 1@ID 1@ID 1
+View[view.gifAuthorise[txnauthorise.gifDelete[txndelete.gif
+7 1234567
+
+2 45
+0 
+1 8
+0 
+1 1
+
+
+
+
+
+
+
+
+CBE Classification
+ZERORECORDDISPLAY
+
+CBE Classification Authorization
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+14
+41_SAIF__OFS_BROWSERTC
+2106091650
+41_SAIF_OFS_BROWSERTC
+EG0010001
+1

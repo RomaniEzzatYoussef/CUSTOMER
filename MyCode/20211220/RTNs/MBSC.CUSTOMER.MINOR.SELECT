@@ -1,0 +1,21 @@
+*-----------------------------------------------------------------------------
+    SUBROUTINE MBSC.CUSTOMER.MINOR.SELECT
+*-----------------------------------------------------------------------------
+
+    $INSERT I_COMMON
+    $INSERT I_EQUATE
+    $INSERT I_F.CUSTOMER
+	$INSERT I_MBSC.CUSTOMER.MINOR.COMMON
+	$INSERT I_F.MBSC.MN.CUSTOMER
+    $INSERT I_F.DATES
+
+*-----------------------------------------------------------------------------	
+    Y.NXT.WR.DAYS = R.DATES(EB.DAT.NEXT.WORKING.DAY)
+    Y.TODAY	= TODAY
+
+    SEL.CMD = "SELECT ":FN.DATA:" WITH TARGET.DATE GT ":Y.TODAY:" AND TARGET.DATE LE ":Y.NXT.WR.DAYS
+    CALL EB.READLIST(SEL.CMD,Y.LIST,"",NO.OF.REC,REA.ERR)
+    CALL BATCH.BUILD.LIST("",Y.LIST)
+*-----------------------------------------------------------------------------	
+RETURN
+END

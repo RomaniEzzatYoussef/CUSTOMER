@@ -1,0 +1,23 @@
+* I_F.MBSC.CR.CLASSIFY.DEPT Created 11 JUL 21 at 09:13AM by t24dev/ROMANYEZZAT
+*      PREFIX[CR.CLASSIFY.DEPT]
+                  EQU CR.CLASSIFY.DEPT.DESCRIPTION TO 1,   MbscCrClassifyDept_Description TO 1,
+                       CR.CLASSIFY.DEPT.RESERVED.9 TO 2,   MbscCrClassifyDept_Reserved9 TO 2,
+                       CR.CLASSIFY.DEPT.RESERVED.8 TO 3,   MbscCrClassifyDept_Reserved8 TO 3,
+                       CR.CLASSIFY.DEPT.RESERVED.7 TO 4,   MbscCrClassifyDept_Reserved7 TO 4,
+                       CR.CLASSIFY.DEPT.RESERVED.6 TO 5,   MbscCrClassifyDept_Reserved6 TO 5,
+                       CR.CLASSIFY.DEPT.RESERVED.5 TO 6,   MbscCrClassifyDept_Reserved5 TO 6,
+                       CR.CLASSIFY.DEPT.RESERVED.4 TO 7,   MbscCrClassifyDept_Reserved4 TO 7,
+                       CR.CLASSIFY.DEPT.RESERVED.3 TO 8,   MbscCrClassifyDept_Reserved3 TO 8,
+                       CR.CLASSIFY.DEPT.RESERVED.2 TO 9,   MbscCrClassifyDept_Reserved2 TO 9,
+                       CR.CLASSIFY.DEPT.RESERVED.1 TO 10,  MbscCrClassifyDept_Reserved1 TO 10,
+                        CR.CLASSIFY.DEPT.LOCAL.REF TO 11,  MbscCrClassifyDept_LocalRef TO 11,
+                         CR.CLASSIFY.DEPT.OVERRIDE TO 12,  MbscCrClassifyDept_Override TO 12,
+                    CR.CLASSIFY.DEPT.RECORD.STATUS TO 13,  MbscCrClassifyDept_RecordStatus TO 13,
+                          CR.CLASSIFY.DEPT.CURR.NO TO 14,  MbscCrClassifyDept_CurrNo TO 14,
+                         CR.CLASSIFY.DEPT.INPUTTER TO 15,  MbscCrClassifyDept_Inputter TO 15,
+                        CR.CLASSIFY.DEPT.DATE.TIME TO 16,  MbscCrClassifyDept_DateTime TO 16,
+                       CR.CLASSIFY.DEPT.AUTHORISER TO 17,  MbscCrClassifyDept_Authoriser TO 17,
+                          CR.CLASSIFY.DEPT.CO.CODE TO 18,  MbscCrClassifyDept_CoCode TO 18,
+                        CR.CLASSIFY.DEPT.DEPT.CODE TO 19,  MbscCrClassifyDept_DeptCode TO 19,
+                     CR.CLASSIFY.DEPT.AUDITOR.CODE TO 20,  MbscCrClassifyDept_AuditorCode TO 20,
+                  CR.CLASSIFY.DEPT.AUDIT.DATE.TIME TO 21,  MbscCrClassifyDept_AuditDateTime TO 21

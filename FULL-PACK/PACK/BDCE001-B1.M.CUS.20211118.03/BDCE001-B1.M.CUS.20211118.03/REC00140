@@ -1,0 +1,82 @@
+4,99
+CUSTOMER
+
+
+
+@IDMNEMONICCUSTOMER.SINCE
+Customer NoMNEMONICCustomer open date
+EQ
+
+
+
+
+
+HEADER@IDSHORT.NAME
+"Amend Customer charge"@IDSHORT.NAME
+1,012
+10L35L
+
+
+L
+
+CustomerName
+CLASS-ENQ.H.TITLE
+HEADER
+
+
+
+
+
+
+
+
+
+
+S
+CUSTOMER.CHARGE,MBSC.INPUT I @ID
+
+@ID 2
+Amend[edit.gif
+3 123
+
+0 
+0 
+0 
+0 
+1 2
+
+
+
+
+
+
+
+
+Customer charge
+NO.SELECTION
+
+Customer Charge
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2
+37_HASSAN7__OFS_BROWSERTC
+2003051247
+37_HASSAN7_OFS_BROWSERTC
+EG0010001
+1

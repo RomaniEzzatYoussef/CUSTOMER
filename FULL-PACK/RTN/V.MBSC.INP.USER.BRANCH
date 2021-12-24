@@ -1,0 +1,40 @@
+*  AUTHOR           : HASSAN MOHAMED
+*  DATE             : 20200909
+*  CLIENT           : BDC
+*  DESCRIPTION      : SET USER.BRANCH WITH HO IN CASE HO FOUND IN BRANCH ACCESS LIST
+*-----------------------------------------------------------------------------
+    SUBROUTINE  V.MBSC.INP.USER.BRANCH
+*-----------------------------------------------------------------------------
+
+    $INSERT I_COMMON
+    $INSERT I_EQUATE
+	$INSERT I_F.CUSTOMER
+	$INSERT I_F.USER
+*-----------------------------------------------------------------------------
+
+
+		USER.BR = ''
+		L.COMPANY = R.USER<EB.USE.COMPANY.CODE>
+
+
+		FN.CUSTOMER = 'F.CUSTOMER'
+		F.CUSTOMER =''
+		CALL OPF(FN.CUSTOMER,F.CUSTOMER)
+		
+		CONVERT VM TO FM IN L.COMPANY
+		LOCATE 'EG0010001' IN L.COMPANY SETTING HO.POS ELSE HO.POS = '0' 
+		
+		LOCATE 'EG0010001' IN L.COMPANY SETTING ALL.POS ELSE ALL.POS = '0' 
+
+			IF HO.POS NE '0' OR ALL.POS NE '0' THEN
+				USER.BR = 'EG0010001'
+			END ELSE 
+				USER.BR = ID.COMPANY
+			END
+			
+			CALL GET.LOC.REF(APPLICATION,"USER.BRANCH",BRANCH.POS)
+			R.NEW(EB.CUS.LOCAL.REF)<1,BRANCH.POS> = USER.BR
+		
+		
+RETURN
+END

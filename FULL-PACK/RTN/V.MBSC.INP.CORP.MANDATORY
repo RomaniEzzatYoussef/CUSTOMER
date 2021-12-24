@@ -1,0 +1,50 @@
+*  AUTHOR           : HASSAN MOHAMED
+*  DATE             : 17 JUL 2019
+*  CLIENT           : BDC
+*  DESCRIPTION      : VALIDATE ON LEGAL ID FIELD
+*-----------------------------------------------------------------------------
+    SUBROUTINE  V.MBSC.INP.CORP.MANDATORY
+*-----------------------------------------------------------------------------
+
+    $INSERT I_COMMON
+    $INSERT I_EQUATE
+	$INSERT I_F.CUSTOMER
+	
+*-----------------------------------------------------------------------------
+
+
+*-----------------------------------------------------------------------------
+
+LEGAL.ID.TYPE = ''
+LEGAL.ID.NO = ''
+LEGAL.COUNT = ''
+RCORD.LEGAL.ID = ''
+ISSUE.DATE = ''
+EXP.DATE = ''
+LEGAL.AUTH = ''
+CHECK.COMM.REG = ''
+
+FN.CUSTOMER = 'F.CUSTOMER'
+F.CUSTOMER =''
+CALL OPF(FN.CUSTOMER,F.CUSTOMER)
+
+LEGAL.COUNT = DCOUNT(R.NEW(EB.CUS.LEGAL.ID), @VM)
+
+FOR I = 1 TO LEGAL.COUNT
+	LEGAL.ID.TYPE = R.NEW(EB.CUS.LEGAL.DOC.NAME)<1,I>
+    LEGAL.ID.NO = R.NEW(EB.CUS.LEGAL.ID)<1,I>
+	IF LEGAL.ID.TYPE = 'COMM.REGISTER' AND LEGAL.ID.NO NE '' THEN
+	   CHECK.COMM.REG = 1
+	END			
+NEXT I
+
+IF CHECK.COMM.REG EQ ''	THEN
+AF = 'LEGAL.ID'
+ETEXT = 'Please add Commercial Register ID'
+CALL STORE.END.ERROR
+END		
+
+RETURN
+END
+
+**********************

@@ -1,0 +1,82 @@
+4,99
+COUNTRY
+
+
+
+@IDSHORT.NAMECURRENCY.CODE
+IdShort NameCurrency Code
+
+
+
+
+
+
+@IDHEADERCOUNTRY.NAME@ID
+@ID"Country List"COUNTRY.NAME@ID
+41,07
+2L
+
+
+
+
+IDShort Name GB
+CLASS-ENQ.ID.LABEL
+HEADER
+
+
+
+
+
+
+
+
+
+
+S
+COUNTRY,ADMIN.INPUT I @IDCOUNTRY,ADMIN.INPUT I
+
+@ID 1@ID 1
+Amend[edit.gifInput[new.gif
+4 1234
+
+0 
+0 
+0 
+0 
+1 1
+
+
+
+
+
+
+
+
+
+NO.SELECTION
+ST
+COUNTRY Default List
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4
+110_HASSAN7__OFS_BROWSERTC
+2010121235
+110_HASSAN7_OFS_BROWSERTC
+EG0010001
+1

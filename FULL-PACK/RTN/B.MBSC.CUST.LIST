@@ -1,0 +1,26 @@
+*  AUTHOR           : MAHMOUD ABD ELMONIEM
+*  DATE             : 20200611
+*  CLIENT           : BDC
+*  MODULE			: LD.LOANS.AND.DEPOSTIS
+
+    SUBROUTINE B.MBSC.CUST.LIST(ENQ.LIST)
+*-----------------------------------------------------------------------------
+
+    $INSERT I_COMMON
+    $INSERT I_EQUATE
+	$INSERT I_ENQUIRY.COMMON
+
+*------------------------------------------------------------------------------	
+IF ENQ.LIST<4,1> EQ 'ALL' OR ENQ.LIST<4,2> EQ 'ALL' THEN
+ENQ.ERROR = "EB-CUS.MBSC.LEGAL.ID"
+
+RETURN
+END
+IF ENQ.LIST<4,1> EQ '' AND  ENQ.LIST<4,2> EQ '' THEN
+ENQ.ERROR = "EB-CUS.MBSC.LEGAL.ID"
+
+RETURN
+END
+*------------------------------------------------------------------------------
+RETURN
+END	

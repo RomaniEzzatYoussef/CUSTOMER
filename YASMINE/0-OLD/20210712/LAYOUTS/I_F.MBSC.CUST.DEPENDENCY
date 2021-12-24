@@ -1,0 +1,23 @@
+* I_F.MBSC.CUST.DEPENDENCY Created 11 JUL 21 at 09:03AM by t24dev/ROMANYEZZAT
+*      PREFIX[CUST.DEPNDCY]
+                  EQU CUST.DEPNDCY.DESCRIPTION TO 1,   MbscCustDependency_Description TO 1,
+                       CUST.DEPNDCY.RESERVED.9 TO 2,   MbscCustDependency_Reserved9 TO 2,
+                       CUST.DEPNDCY.RESERVED.8 TO 3,   MbscCustDependency_Reserved8 TO 3,
+                       CUST.DEPNDCY.RESERVED.7 TO 4,   MbscCustDependency_Reserved7 TO 4,
+                       CUST.DEPNDCY.RESERVED.6 TO 5,   MbscCustDependency_Reserved6 TO 5,
+                       CUST.DEPNDCY.RESERVED.5 TO 6,   MbscCustDependency_Reserved5 TO 6,
+                       CUST.DEPNDCY.RESERVED.4 TO 7,   MbscCustDependency_Reserved4 TO 7,
+                       CUST.DEPNDCY.RESERVED.3 TO 8,   MbscCustDependency_Reserved3 TO 8,
+                       CUST.DEPNDCY.RESERVED.2 TO 9,   MbscCustDependency_Reserved2 TO 9,
+                       CUST.DEPNDCY.RESERVED.1 TO 10,  MbscCustDependency_Reserved1 TO 10,
+                        CUST.DEPNDCY.LOCAL.REF TO 11,  MbscCustDependency_LocalRef TO 11,
+                         CUST.DEPNDCY.OVERRIDE TO 12,  MbscCustDependency_Override TO 12,
+                    CUST.DEPNDCY.RECORD.STATUS TO 13,  MbscCustDependency_RecordStatus TO 13,
+                          CUST.DEPNDCY.CURR.NO TO 14,  MbscCustDependency_CurrNo TO 14,
+                         CUST.DEPNDCY.INPUTTER TO 15,  MbscCustDependency_Inputter TO 15,
+                        CUST.DEPNDCY.DATE.TIME TO 16,  MbscCustDependency_DateTime TO 16,
+                       CUST.DEPNDCY.AUTHORISER TO 17,  MbscCustDependency_Authoriser TO 17,
+                          CUST.DEPNDCY.CO.CODE TO 18,  MbscCustDependency_CoCode TO 18,
+                        CUST.DEPNDCY.DEPT.CODE TO 19,  MbscCustDependency_DeptCode TO 19,
+                     CUST.DEPNDCY.AUDITOR.CODE TO 20,  MbscCustDependency_AuditorCode TO 20,
+                  CUST.DEPNDCY.AUDIT.DATE.TIME TO 21,  MbscCustDependency_AuditDateTime TO 21

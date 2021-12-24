@@ -1,0 +1,22 @@
+* I_F.MBSC.CUS.SALARY Created 13 MAY 20 at 05:40PM by t24dev/HASSAN8
+*      PREFIX[CUS.SALR]
+                  EQU CUS.SALR.DESCRIPTION TO 1,   MbscCusSalary_Description TO 1,
+                       CUS.SALR.RESERVED.8 TO 2,   MbscCusSalary_Reserved8 TO 2,
+                       CUS.SALR.RESERVED.7 TO 3,   MbscCusSalary_Reserved7 TO 3,
+                       CUS.SALR.RESERVED.6 TO 4,   MbscCusSalary_Reserved6 TO 4,
+                       CUS.SALR.RESERVED.5 TO 5,   MbscCusSalary_Reserved5 TO 5,
+                       CUS.SALR.RESERVED.4 TO 6,   MbscCusSalary_Reserved4 TO 6,
+                       CUS.SALR.RESERVED.3 TO 7,   MbscCusSalary_Reserved3 TO 7,
+                       CUS.SALR.RESERVED.2 TO 8,   MbscCusSalary_Reserved2 TO 8,
+                       CUS.SALR.RESERVED.1 TO 9,   MbscCusSalary_Reserved1 TO 9,
+                        CUS.SALR.LOCAL.REF TO 10,  MbscCusSalary_LocalRef TO 10,
+                         CUS.SALR.OVERRIDE TO 11,  MbscCusSalary_Override TO 11,
+                    CUS.SALR.RECORD.STATUS TO 12,  MbscCusSalary_RecordStatus TO 12,
+                          CUS.SALR.CURR.NO TO 13,  MbscCusSalary_CurrNo TO 13,
+                         CUS.SALR.INPUTTER TO 14,  MbscCusSalary_Inputter TO 14,
+                        CUS.SALR.DATE.TIME TO 15,  MbscCusSalary_DateTime TO 15,
+                       CUS.SALR.AUTHORISER TO 16,  MbscCusSalary_Authoriser TO 16,
+                          CUS.SALR.CO.CODE TO 17,  MbscCusSalary_CoCode TO 17,
+                        CUS.SALR.DEPT.CODE TO 18,  MbscCusSalary_DeptCode TO 18,
+                     CUS.SALR.AUDITOR.CODE TO 19,  MbscCusSalary_AuditorCode TO 19,
+                  CUS.SALR.AUDIT.DATE.TIME TO 20,  MbscCusSalary_AuditDateTime TO 20

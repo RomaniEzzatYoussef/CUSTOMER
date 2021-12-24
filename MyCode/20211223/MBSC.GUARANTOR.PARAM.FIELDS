@@ -1,0 +1,77 @@
+*-----------------------------------------------------------------------------
+* <Rating>-1</Rating>
+*-----------------------------------------------------------------------------
+    SUBROUTINE MBSC.GUARANTOR.PARAM.FIELDS
+*-----------------------------------------------------------------------------
+    $INSERT I_COMMON
+    $INSERT I_EQUATE
+    $INSERT I_DataTypes
+*** </region>
+*-----------------------------------------------------------------------------
+    CALL Table.defineId("TABLE.NAME.ID", T24_String) ;* Define Table id
+    ID.F ='@ID'
+    ID.N = '15'
+    ID.T = 'CUS'
+*-----------------------------------------------------------------------------
+    *
+ 	
+	fieldName   = 'XX<CUSTOMER'
+    fieldLength = '8'
+    fieldType   = 'ANY'
+    neighbour   = ''
+    CALL Table.addFieldDefinition(fieldName, fieldLength, fieldType, neighbour)
+	
+	fieldName   = 'XX-DATE.OF.GUARANTEE'
+	fieldLength = '8'
+	fieldType   = 'D'
+	neighbour   = ''
+	CALL Table.addFieldDefinition(fieldName, fieldLength, fieldType, neighbour)
+	
+	fieldName   = 'XX-PERC.OF.GUARANTEE'
+    fieldLength = '18'
+    fieldType   = ''
+    neighbour   = ''
+    CALL Table.addFieldDefinition(fieldName, fieldLength, fieldType, neighbour)
+	
+	fieldName   = 'XX-AMT.OF.GUARANTEE'
+    fieldLength = '18'
+    fieldType   = ''
+    neighbour   = ''
+    CALL Table.addFieldDefinition(fieldName, fieldLength, fieldType, neighbour)
+	
+	fieldName   = 'XX-COMPANY'
+    fieldLength = '18'
+    fieldType   = 'ANY'
+    neighbour   = ''
+    CALL Table.addFieldDefinition(fieldName, fieldLength, fieldType, neighbour)
+	
+	fieldName   = 'XX-LOAN.ID'
+    fieldLength = '22'
+    fieldType   = 'ANY'
+    neighbour   = ''
+    CALL Table.addFieldDefinition(fieldName, fieldLength, fieldType, neighbour)
+	
+	fieldName   = 'XX>LIMIT.REF'
+    fieldLength = '22'
+    fieldType   = 'ANY'
+    neighbour   = ''
+    CALL Table.addFieldDefinition(fieldName, fieldLength, fieldType, neighbour)
+	
+    *      
+    CALL Table.addReservedField("RESERVED.8")
+    CALL Table.addReservedField("RESERVED.7")
+    CALL Table.addReservedField("RESERVED.6")
+    CALL Table.addReservedField("RESERVED.5")
+    CALL Table.addReservedField("RESERVED.4")
+    CALL Table.addReservedField("RESERVED.3")
+    CALL Table.addReservedField("RESERVED.2")
+    CALL Table.addReservedField("RESERVED.1")
+*
+    CALL Table.addLocalReferenceField(XX.LOCAL.REF)
+    CALL Table.addOverrideField
+*-----------------------------------------------------------------------------
+    CALL Table.setAuditPosition ;* Poputale audit information
+*-----------------------------------------------------------------------------
+    RETURN
+*-----------------------------------------------------------------------------
+    END

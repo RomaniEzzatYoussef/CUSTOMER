@@ -1,0 +1,29 @@
+*  AUTHOR           : Amira_HEBA
+*  DATE             :
+*  MODIFIED         :
+*  CLIENT           :
+*  DESCRIPTION      : TO DEFAULT THE MNEMONIC OF THE CUSTOMER
+*  VERSION          :   CUSTOMER,MBSC.INPUT  , CUSTOMER,MBSC.CORP
+*  MODIFIED         :
+*-----------------------------------------------------------------------------
+    SUBROUTINE V.MBSC.VAL.MNEMONIC.CUS
+*-----------------------------------------------------------------------------
+
+    $INSERT I_COMMON
+    $INSERT I_EQUATE
+    $INSERT I_F.CUSTOMER
+
+
+
+         H = ID.NEW 
+         A= 'N':H
+         R.NEW(EB.CUS.MNEMONIC) = A
+
+
+
+ END
+    RETURN
+
+*-----------------------------------------------------------------------------
+END
+*---------------c--------------------------------------------------------------

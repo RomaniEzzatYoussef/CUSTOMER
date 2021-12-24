@@ -1,0 +1,53 @@
+*  AUTHOR           : FADY SHEREEN
+*  DATE             : 18 nov 2019
+*  EDITED BY        :
+*  CLIENT           : BDC
+*-----------------------------------------------------------------------------
+    SUBROUTINE V.MBSC.CUS.CITY
+*-----------------------------------------------------------------------------
+
+    $INSERT I_COMMON
+    $INSERT I_EQUATE
+    $INSERT I_F.CUSTOMER
+	$INSERT I_F.MBSC.GOV.CUS
+	
+*-----------------------------------------------------------------------------
+
+
+FN.CUS = 'F.CUSTOMER'
+F.CUS = ''
+CALL OPF(FN.CUS,F.CUS)
+
+FN.GOV = 'F.MBSC.GOV.CUS'
+F.GOV = ''
+CALL OPF(FN.GOV,F.GOV)
+
+CUS.ID = ''
+CUS.ID = ID.NEW
+
+
+		Y.CITY =''
+        Y.CITY = COMI
+		Y.REGION = ''
+
+		CALL GET.LOC.REF('CUSTOMER','PER.REGION',REGION.POS)
+		CALL GET.LOC.REF('CUSTOMER','PER.CITY',CITY.POS)
+
+		
+		
+		
+        
+		
+		IF Y.CITY NE '' THEN
+			CALL F.READ(FN.GOV,Y.CITY,R.CITY,F.CITY,CITY.ERR)
+			Y.REGION = R.CITY<GOV.REGION>
+		END
+
+		R.NEW(EB.CUS.LOCAL.REF)<1,REGION.POS> = Y.REGION
+		
+		
+		
+		
+		RETURN
+		END
+		

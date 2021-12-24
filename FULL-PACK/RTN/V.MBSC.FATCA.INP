@@ -1,0 +1,48 @@
+*-----------------------------------------------------------------------------
+    SUBROUTINE V.MBSC.FATCA.INP
+*-----------------------------------------------------------------------------
+
+    $INSERT I_COMMON
+    $INSERT I_EQUATE
+    $INSERT I_F.CUSTOMER
+	$INSERT I_F.FATCA.CUSTOMER.SUPPLEMENTARY.INFO
+	
+
+*-----------------------------------------------------------------------------
+
+
+FN.CUS = 'F.CUSTOMER'
+F.CUS = ''
+CALL OPF(FN.CUS,F.CUS)
+
+CUS.ID = ID.NEW 
+CALL F.READ(FN.CUS,CUS.ID,R.CU,F.CUS,ERR.CUS)
+
+
+			IF R.NEW(FA.FI.CITIZENSHIP)	NE R.CU<EB.CUS.NATIONALITY> THEN
+					CURR.NO = ''
+					TEXT = "MBSC.FATCA.CITIZENSHIP"
+					CALL STORE.OVERRIDE(CURR.NO)
+			END
+
+			IF R.NEW(FA.FI.ADDR.COUNTRY) NE R.CU<EB.CUS.COUNTRY> THEN
+					CURR.NO = ''
+					TEXT = "MBSC.FATCA.COUNTRY"
+					CALL STORE.OVERRIDE(CURR.NO)
+			END
+
+			IF R.NEW(FA.FI.ADDRESS) NE R.CU<EB.CUS.ADDRESS> THEN
+					CURR.NO = ''
+					TEXT = "MBSC.FATCA.ADDRESS"
+					CALL STORE.OVERRIDE(CURR.NO)
+
+			END
+
+RETURN	
+
+*-----------------------------------------------------------------------------
+END
+
+ 
+
+

@@ -1,0 +1,23 @@
+* I_F.MBSC.LEGAL.DOC.PARAM Created 14 OCT 19 at 06:39AM by t24dev/HASSAN7
+*      PREFIX[LEGAL.PARAM]
+                EQU LEGAL.PARAM.DOCUMENT.NAME TO 1,   MbscLegalDocParam_DocumentName TO 1,
+                       LEGAL.PARAM.RESERVED.9 TO 2,   MbscLegalDocParam_Reserved9 TO 2,
+                       LEGAL.PARAM.RESERVED.8 TO 3,   MbscLegalDocParam_Reserved8 TO 3,
+                       LEGAL.PARAM.RESERVED.7 TO 4,   MbscLegalDocParam_Reserved7 TO 4,
+                       LEGAL.PARAM.RESERVED.6 TO 5,   MbscLegalDocParam_Reserved6 TO 5,
+                       LEGAL.PARAM.RESERVED.5 TO 6,   MbscLegalDocParam_Reserved5 TO 6,
+                       LEGAL.PARAM.RESERVED.4 TO 7,   MbscLegalDocParam_Reserved4 TO 7,
+                       LEGAL.PARAM.RESERVED.3 TO 8,   MbscLegalDocParam_Reserved3 TO 8,
+                       LEGAL.PARAM.RESERVED.2 TO 9,   MbscLegalDocParam_Reserved2 TO 9,
+                       LEGAL.PARAM.RESERVED.1 TO 10,  MbscLegalDocParam_Reserved1 TO 10,
+                        LEGAL.PARAM.LOCAL.REF TO 11,  MbscLegalDocParam_LocalRef TO 11,
+                         LEGAL.PARAM.OVERRIDE TO 12,  MbscLegalDocParam_Override TO 12,
+                    LEGAL.PARAM.RECORD.STATUS TO 13,  MbscLegalDocParam_RecordStatus TO 13,
+                          LEGAL.PARAM.CURR.NO TO 14,  MbscLegalDocParam_CurrNo TO 14,
+                         LEGAL.PARAM.INPUTTER TO 15,  MbscLegalDocParam_Inputter TO 15,
+                        LEGAL.PARAM.DATE.TIME TO 16,  MbscLegalDocParam_DateTime TO 16,
+                       LEGAL.PARAM.AUTHORISER TO 17,  MbscLegalDocParam_Authoriser TO 17,
+                          LEGAL.PARAM.CO.CODE TO 18,  MbscLegalDocParam_CoCode TO 18,
+                        LEGAL.PARAM.DEPT.CODE TO 19,  MbscLegalDocParam_DeptCode TO 19,
+                     LEGAL.PARAM.AUDITOR.CODE TO 20,  MbscLegalDocParam_AuditorCode TO 20,
+                  LEGAL.PARAM.AUDIT.DATE.TIME TO 21,  MbscLegalDocParam_AuditDateTime TO 21

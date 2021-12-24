@@ -1,0 +1,42 @@
+*  AUTHOR           : HASSAN MOHAMED
+*  DATE             : 17 JUL 2019
+*  CLIENT           : BDC
+*  DESCRIPTION      : VALIDATE NATIONALITY AND CHANGES
+*-----------------------------------------------------------------------------
+    SUBROUTINE  V.MBSC.INP.NATION.CHANGE
+*-----------------------------------------------------------------------------
+
+    $INSERT I_COMMON
+    $INSERT I_EQUATE
+	$INSERT I_F.CUSTOMER
+*-----------------------------------------------------------------------------
+GOSUB INITIALISE
+RETURN
+*-----------------------------------------------------------------------------
+INITIALISE:
+*==========
+
+CUST.NATIONALITY = R.NEW(EB.CUS.NATIONALITY)
+CUST.OTHER.NATIONALITY = R.NEW(EB.CUS.OTHER.NATIONALITY)
+
+CONVERT VM TO FM IN CUST.OTHER.NATIONALITY
+LOCATE CUST.NATIONALITY IN CUST.OTHER.NATIONALITY SETTING NATIONAL.POS ELSE NATIONAL.POS = '0'
+
+IF R.OLD(EB.CUS.NATIONALITY) NE R.NEW(EB.CUS.NATIONALITY) AND R.OLD(EB.CUS.NATIONALITY) NE '' THEN
+			CURR.NO = ''
+            TEXT = "EB-CUS.NATIONALITY.CHANGE.1"
+            CALL STORE.OVERRIDE(CURR.NO)
+
+END
+
+IF NATIONAL.POS NE 0 THEN
+			AF = EB.CUS.NATIONALITY
+	   		ETEXT = 'EB-CUS.MBSC.LEGAL.16'
+            CALL STORE.END.ERROR
+
+RETURN
+
+END
+*************************************************************************************************
+
+

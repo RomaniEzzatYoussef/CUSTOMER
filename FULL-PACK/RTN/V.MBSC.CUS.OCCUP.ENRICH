@@ -1,0 +1,42 @@
+*-----------------------------------------------------------------------------
+    SUBROUTINE V.MBSC.CUS.OCCUP.ENRICH
+*-----------------------------------------------------------------------------
+
+    $INSERT I_COMMON
+    $INSERT I_EQUATE
+    $INSERT I_F.CUSTOMER
+    $INSERT I_GTS.COMMON
+    $INSERT I_F.JOB.TITLE
+*-----------------------------------------------------------------------------
+
+
+	CUS.OCCUPATION = ''
+	OCCUPATION.DESC = '' 
+*--------CUSTOMER SALARY ENRICHMENT------------------------------------------------------
+	CUS.OCCUPATION = R.NEW(EB.CUS.OCCUPATION)
+	
+	FN.JOB.TITLE = 'F.JOB.TITLE'
+    F.JOB.TITLE = ''
+    CALL OPF(FN.JOB.TITLE,F.JOB.TITLE)
+	
+	CALL F.READ(FN.JOB.TITLE,CUS.OCCUPATION,R.OCCUPATION,F.JOB.TITLE,ERR.OCCUPATION)
+	
+	
+	OCCUPATION.DESC = R.OCCUPATION<EB.JTI.DESCRIPTION> 
+        OFS$ENRI<EB.CUS.OCCUPATION> = OCCUPATION.DESC
+	*COMI.ENRI 
+
+CALL REBUILD.SCREEN
+	
+*-----------------------------------------------------------------------------
+
+
+RETURN	
+*----------------------------------------------------------------------------------------------
+
+*-----------------------------------------------------------------------------
+END
+
+ 
+
+

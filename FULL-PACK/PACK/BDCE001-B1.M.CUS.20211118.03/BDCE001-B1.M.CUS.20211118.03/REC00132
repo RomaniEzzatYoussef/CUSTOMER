@@ -1,0 +1,82 @@
+4,99
+CUSTOMER
+
+
+
+LEGAL.IDLEGAL.DOC.NAMECUSTOMER.SINCE
+Legal IDDocument NameCustomer Open
+
+Y
+
+
+
+
+CTYPE@IDHEADERMNEMONICSHORT.NAMEACCOUNT.OFFICERTARGETTARGET.DESCSECTORSECTOR.NAMENATIONALITYRESIDENCECUSTOMER.TYPENULLPROSGENVER1VER2VER3VER.DEC1SEC.RANGEVER.DECIDEVER.FINALZERORECORDSCOMPANY.BOOKSTATUSCUSTOMER.SINCE
+CUSTOMER.TYPE@ID"Customer Details"MNEMONICSHORT.NAMEACCOUNT.OFFICERTARGETF TARGETSECTORF SECTORNATIONALITYRESIDENCECUSTOMER.TYPE"""PROSPECT"GENDER"CUSTOMER,INPUT""CUSTOMER,CORP""CUSTOMER,PROSPECT"IF GEN NE NULL VER1 VER.DECIDE"1001 1100"IF SECTOR RG SEC.RANGE VER1 VER2IF CTYPE EQ PROS VER3 VER.DECIDE"No Customer records to display "COMPANY.BOOKCUSTOMER.STATUSCUSTOMER.SINCE
+11,023911131416171181920
+35R10R10L30LR4R25L4R25L30L30L35L6R11L35L11R
+L DEPT.ACCT.OFFICER,NAMEL TARGET,SHORT.NAMEL SECTOR,SHORT.NAMEL COUNTRY,COUNTRY.NAMEL COUNTRY,COUNTRY.NAMEL CUSTOMER.STATUS,DESCRIPTION
+
+LLANGUAGELANGUAGELANGUAGELANGUAGE
+NONE
+Customer No# Customer MnemonicShort NameAccount Officer# TargetTarget NameSectorSector Name# Nationality# ResidenceCustomer TypeCustomer Branch NameCustomer Open
+CLASS-ENQ.H.TITLECLASS-ENQ.NORECS
+HEADERHEADER
+HIDDENHIDDENHIDDENHIDDENHIDDEN
+
+
+
+
+
+
+
+
+
+SSSMSSSSSSSSSSS
+VER.FINAL S @ID
+
+@ID 2
+View Record[view.gif
+26 1234567891011121314151617181920212223252627
+
+1 5
+0 
+1 24
+0 
+2 232
+
+
+
+
+
+
+
+
+Customer Details
+NO.SELECTION
+
+Customer Details
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6
+93_HASSAN7__OFS_BROWSERTC
+2009171728
+93_HASSAN7_OFS_BROWSERTC
+EG0010001
+1

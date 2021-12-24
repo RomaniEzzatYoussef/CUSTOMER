@@ -1,0 +1,23 @@
+* I_F.MBSC.CUS.ACC.OPEN.PURP Created 10 JUN 20 at 01:28AM by t24dev/HASSAN8
+*      PREFIX[CUS.ACC.PURP]
+                  EQU CUS.ACC.PURP.DESCRIPTION TO 1,   MbscCusAccOpenPurp_Description TO 1,
+                       CUS.ACC.PURP.RESERVED.9 TO 2,   MbscCusAccOpenPurp_Reserved9 TO 2,
+                       CUS.ACC.PURP.RESERVED.8 TO 3,   MbscCusAccOpenPurp_Reserved8 TO 3,
+                       CUS.ACC.PURP.RESERVED.7 TO 4,   MbscCusAccOpenPurp_Reserved7 TO 4,
+                       CUS.ACC.PURP.RESERVED.6 TO 5,   MbscCusAccOpenPurp_Reserved6 TO 5,
+                       CUS.ACC.PURP.RESERVED.5 TO 6,   MbscCusAccOpenPurp_Reserved5 TO 6,
+                       CUS.ACC.PURP.RESERVED.4 TO 7,   MbscCusAccOpenPurp_Reserved4 TO 7,
+                       CUS.ACC.PURP.RESERVED.3 TO 8,   MbscCusAccOpenPurp_Reserved3 TO 8,
+                       CUS.ACC.PURP.RESERVED.2 TO 9,   MbscCusAccOpenPurp_Reserved2 TO 9,
+                       CUS.ACC.PURP.RESERVED.1 TO 10,  MbscCusAccOpenPurp_Reserved1 TO 10,
+                        CUS.ACC.PURP.LOCAL.REF TO 11,  MbscCusAccOpenPurp_LocalRef TO 11,
+                         CUS.ACC.PURP.OVERRIDE TO 12,  MbscCusAccOpenPurp_Override TO 12,
+                    CUS.ACC.PURP.RECORD.STATUS TO 13,  MbscCusAccOpenPurp_RecordStatus TO 13,
+                          CUS.ACC.PURP.CURR.NO TO 14,  MbscCusAccOpenPurp_CurrNo TO 14,
+                         CUS.ACC.PURP.INPUTTER TO 15,  MbscCusAccOpenPurp_Inputter TO 15,
+                        CUS.ACC.PURP.DATE.TIME TO 16,  MbscCusAccOpenPurp_DateTime TO 16,
+                       CUS.ACC.PURP.AUTHORISER TO 17,  MbscCusAccOpenPurp_Authoriser TO 17,
+                          CUS.ACC.PURP.CO.CODE TO 18,  MbscCusAccOpenPurp_CoCode TO 18,
+                        CUS.ACC.PURP.DEPT.CODE TO 19,  MbscCusAccOpenPurp_DeptCode TO 19,
+                     CUS.ACC.PURP.AUDITOR.CODE TO 20,  MbscCusAccOpenPurp_AuditorCode TO 20,
+                  CUS.ACC.PURP.AUDIT.DATE.TIME TO 21,  MbscCusAccOpenPurp_AuditDateTime TO 21

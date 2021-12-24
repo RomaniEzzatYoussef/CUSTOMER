@@ -1,0 +1,23 @@
+* I_F.MBSC.CUS.ACTIVITYTYPE Created 07 MAY 20 at 02:11PM by t24dev/HASSAN8
+*      PREFIX[ACTIVITY.TYPE]
+                  EQU ACTIVITY.TYPE.DESCRIPTION TO 1,   MbscCusActivitytype_Description TO 1,
+                         ACTIVITY.TYPE.ACT.TYPE TO 2,   MbscCusActivitytype_ActType TO 2,
+                       ACTIVITY.TYPE.RESERVED.8 TO 3,   MbscCusActivitytype_Reserved8 TO 3,
+                       ACTIVITY.TYPE.RESERVED.7 TO 4,   MbscCusActivitytype_Reserved7 TO 4,
+                       ACTIVITY.TYPE.RESERVED.6 TO 5,   MbscCusActivitytype_Reserved6 TO 5,
+                       ACTIVITY.TYPE.RESERVED.5 TO 6,   MbscCusActivitytype_Reserved5 TO 6,
+                       ACTIVITY.TYPE.RESERVED.4 TO 7,   MbscCusActivitytype_Reserved4 TO 7,
+                       ACTIVITY.TYPE.RESERVED.3 TO 8,   MbscCusActivitytype_Reserved3 TO 8,
+                       ACTIVITY.TYPE.RESERVED.2 TO 9,   MbscCusActivitytype_Reserved2 TO 9,
+                       ACTIVITY.TYPE.RESERVED.1 TO 10,  MbscCusActivitytype_Reserved1 TO 10,
+                        ACTIVITY.TYPE.LOCAL.REF TO 11,  MbscCusActivitytype_LocalRef TO 11,
+                         ACTIVITY.TYPE.OVERRIDE TO 12,  MbscCusActivitytype_Override TO 12,
+                    ACTIVITY.TYPE.RECORD.STATUS TO 13,  MbscCusActivitytype_RecordStatus TO 13,
+                          ACTIVITY.TYPE.CURR.NO TO 14,  MbscCusActivitytype_CurrNo TO 14,
+                         ACTIVITY.TYPE.INPUTTER TO 15,  MbscCusActivitytype_Inputter TO 15,
+                        ACTIVITY.TYPE.DATE.TIME TO 16,  MbscCusActivitytype_DateTime TO 16,
+                       ACTIVITY.TYPE.AUTHORISER TO 17,  MbscCusActivitytype_Authoriser TO 17,
+                          ACTIVITY.TYPE.CO.CODE TO 18,  MbscCusActivitytype_CoCode TO 18,
+                        ACTIVITY.TYPE.DEPT.CODE TO 19,  MbscCusActivitytype_DeptCode TO 19,
+                     ACTIVITY.TYPE.AUDITOR.CODE TO 20,  MbscCusActivitytype_AuditorCode TO 20,
+                  ACTIVITY.TYPE.AUDIT.DATE.TIME TO 21,  MbscCusActivitytype_AuditDateTime TO 21

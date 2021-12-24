@@ -1,0 +1,82 @@
+4,99
+CUSTOMER
+SECTOR EQ 401
+
+
+@IDMNEMONICCUSTOMER.SINCE
+Customer NoMNEMONICCustomer Open
+
+
+
+
+
+
+CUSTIDHEADERSHORT.NAMEMNEMONICACCT.OFFICERACCT.OFF.NAMEHYPHENDAO.HYPHENDISP.DAOSECTORZERONORECORDSNULLVER.1VER.2GENVER.CHECKSEC.RANGEVER.DECIDECOMPANY.BOOKCUSTOMER.SINCE
+@ID"Amend Customer"SHORT.NAMEMNEMONICACCOUNT.OFFICERF ACCT.OFFICER" - "C ACCT.OFFICER : HYPHENC DAO.HYPHEN : ACCT.OFF.NAMESECTOR"No Customers to display""""CUSTOMER,MBSC.CUST.AMEND""CUSTOMER,MBSC.CORP.AMEND"GENDERIF GEN NE NULL VER.1 VER.DECIDE"1001 1100"IF SECTOR RG SEC.RANGE VER.1 VER.2COMPANY.BOOKCUSTOMER.SINCE
+11,0234156
+10R35L10L4R4R6R11L11R
+L DEPT.ACCT.OFFICER,NAME
+
+LANGUAGE
+NONE
+Customer NoShort Name# Customer MnemonicAcct OfficerRelationship OfficerSectorCustomer Branch NameCustomer Open
+CLASS-ENQ.H.TITLECLASS-ENQ.NORECS
+HEADERHEADER
+
+
+
+
+
+
+
+
+
+
+SMSSSSSS
+CUSTOMER,MBSC.CUST.AMEND I CUSTID
+
+CUSTID 1
+Amend[edit.gif
+19 12345678910121314151617181920
+
+1 3
+0 
+1 11
+0 
+1 1
+
+
+
+
+
+
+
+
+Amend Customer
+ZERORECORDDISPLAYNO.SELECTION
+
+Amend Customer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7
+14_GADO__OFS_BROWSERTC
+1910170828
+14_GADO_OFS_BROWSERTC
+EG0010001
+1

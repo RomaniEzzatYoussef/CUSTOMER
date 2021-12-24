@@ -1,0 +1,82 @@
+2,4
+CUSTOMER$NAU
+
+
+
+@ID
+Customer
+
+
+
+
+
+Authorise/Delete Posting Restrict of Customer
+@IDHDRMNEMONICSHORT.NAMEPOSTING.RESTRICTRECORD.STATUSINPUTTERZERONORECORDS
+@ID"Authorise/Delete Posting Restrict of Customer"MNEMONICSHORT.NAMEPOSTING.RESTRICTRECORD.STATUSINPUTTER"No Unauthorised Posting Restriction Records"
+11,013256268741
+10R10L35L5L35L
+L POSTING.RESTRICT,DESCRIPTIONF _,2,1
+
+L
+NONE
+CustomerMnemonicNamePosting RestrictStatusInputter
+CLASS-ENQ.H.TITLECLASS-ENQ.NORECS
+HEADERHEADER
+
+
+
+
+
+
+
+
+
+
+SSMMSM
+CUSTOMER,MBSC.PO.AUTH A @IDCUSTOMER,MBSC.PO.AUTH D @ID
+
+@ID 1@ID 1
+Authorise[txnauthorise.gifDelete[txndelete.gif
+7 1234567
+
+3 457
+0 
+1 8
+0 
+1 1
+
+
+
+
+
+
+
+
+Authorise/Delete Posting Restrict of Customer
+NO.SELECTIONZERORECORDDISPLAY
+
+Authorise/Delete Posting Restrict
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2
+56_HASSAN7__OFS_BROWSERTC
+2004301335
+56_HASSAN7_OFS_BROWSERTC
+EG0010001
+1

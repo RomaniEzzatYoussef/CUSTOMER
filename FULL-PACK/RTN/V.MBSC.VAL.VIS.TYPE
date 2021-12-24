@@ -1,0 +1,29 @@
+*  AUTHOR           : HASSAN MOHAMED
+*  DATE             : 12 OCT 2020
+*  CLIENT           : BDC
+*  DESCRIPTION      : V.MBSC.VAL.VIS.TYPE
+*-----------------------------------------------------------------------------
+    SUBROUTINE  V.MBSC.VAL.VIS.TYPE
+*-----------------------------------------------------------------------------
+
+    $INSERT I_COMMON
+    $INSERT I_EQUATE
+	$INSERT I_F.CUSTOMER
+*-----------------------------------------------------------------------------
+GOSUB INITIALISE
+RETURN
+*-----------------------------------------------------------------------------
+INITIALISE:
+*==========
+COUNT.VIS = DCOUNT(COMI, @VM)
+			IF COUNT.VIS EQ '' OR COUNT.VIS EQ '0' THEN
+					AF = EB.CUS.VIS.TYPE
+					ETEXT = 'EB-CUS.MBSC.VIS.TYPE.1'
+					CALL STORE.END.ERROR
+			END
+RETURN
+
+END
+*************************************************************************************************
+
+

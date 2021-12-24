@@ -1,0 +1,84 @@
+*  AUTHOR           : HASSAN MOHAMED
+*  DATE             : 15 JAN 2020
+*  EDITED BY        :
+*  CLIENT           : BDC
+*-----------------------------------------------------------------------------
+    SUBROUTINE V.MBSC.VAL.CUST.REL.LEGALID
+*-----------------------------------------------------------------------------
+
+    $INSERT I_COMMON
+    $INSERT I_EQUATE
+    $INSERT I_F.CUSTOMER
+	
+	
+*-----------------------------------------------------------------------------
+
+			REL.ID = ''
+			REL.COUNT = ''
+			CUST.ID = ''
+			LEGAL.ID.NO   = ''
+			LEGAL.ID.TYPE = ''
+			EXP.DATE      = ''
+			ISSUE.DATE    = ''
+			LEGAL.AUTH    = ''
+			
+			FN.CUS = 'F.CUSTOMER'
+			F.CUS = ''
+			CALL OPF(FN.CUS,F.CUS)
+
+			
+
+
+
+REL.ID = COMI
+CONVERT VM TO FM IN REL.ID
+*REL.COUNT = DCOUNT(REL.ID, @VM)
+
+
+REL.COUNT = DCOUNT(R.NEW(EB.CUS.REL.CUSTOMER), @VM)
+
+IF REL.COUNT LE '1' THEN
+AF = EB.CUS.REL.CUSTOMER
+
+*ETEXT = 'Customer Releation must be more than one '
+ETEXT = 'EB-CUS.MBSC.RELATION.1'
+CALL STORE.END.ERROR
+END
+
+FOR I = 1 TO REL.COUNT
+		CUST.ID = R.NEW(EB.CUS.REL.CUSTOMER)<1,I>
+		CALL F.READ(FN.CUS,CUST.ID,R.REL,F.CUS,CUS.ERR)
+		R.REL.DOC.NAME	= R.REL<EB.CUS.LEGAL.DOC.NAME>
+		CONVERT VM TO FM IN R.REL.DOC.NAME
+		LOCATE 'NATIONAL.ID' IN R.REL.DOC.NAME SETTING DOC.POS ELSE DOC.POS = ''
+
+		IF DOC.POS NE '' THEN
+	
+	        LEGAL.ID.NO   = R.REL<EB.CUS.LEGAL.ID,DOC.POS>
+			LEGAL.ID.TYPE = R.REL<EB.CUS.LEGAL.DOC.NAME,DOC.POS>
+			EXP.DATE      = R.REL<EB.CUS.LEGAL.EXP.DATE,DOC.POS>
+			ISSUE.DATE    = R.REL<EB.CUS.LEGAL.ISS.DATE,DOC.POS>
+			LEGAL.AUTH    = R.REL<EB.CUS.LEGAL.ISS.AUTH,DOC.POS>
+			
+		END ELSE
+			LEGAL.ID.NO   = R.REL<EB.CUS.LEGAL.ID,1>
+			LEGAL.ID.TYPE = R.REL<EB.CUS.LEGAL.DOC.NAME,1>
+			EXP.DATE 	  = R.REL<EB.CUS.LEGAL.EXP.DATE,1>
+			ISSUE.DATE    = R.REL<EB.CUS.LEGAL.ISS.DATE,1>
+			LEGAL.AUTH    = R.REL<EB.CUS.LEGAL.ISS.AUTH,1>
+		END
+			R.NEW(EB.CUS.LEGAL.ID)<1,I>			  =LEGAL.ID.NO
+			R.NEW(EB.CUS.LEGAL.DOC.NAME)<1,I>	  =LEGAL.ID.TYPE
+			R.NEW(EB.CUS.LEGAL.EXP.DATE)<1,I>	  =EXP.DATE 	 
+			R.NEW(EB.CUS.LEGAL.ISS.DATE)<1,I>	  =ISSUE.DATE   
+			R.NEW(EB.CUS.LEGAL.ISS.AUTH)<1,I>	  =LEGAL.AUTH   
+				  
+NEXT I
+
+
+
+
+		
+		RETURN
+		END
+		

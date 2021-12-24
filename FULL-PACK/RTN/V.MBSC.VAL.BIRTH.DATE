@@ -1,0 +1,78 @@
+*  AUTHOR           : HASSAN MOHAMED
+*  DATE             : 17 SEP 2020
+*  CLIENT           : BDC
+*  DESCRIPTION      : V.MBSC.VAL.BIRTH.DATE
+*-----------------------------------------------------------------------------
+    SUBROUTINE  V.MBSC.VAL.BIRTH.DATE
+*-----------------------------------------------------------------------------
+
+    $INSERT I_COMMON
+    $INSERT I_EQUATE
+	$INSERT I_F.CUSTOMER
+*-----------------------------------------------------------------------------
+GOSUB INITIALISE
+RETURN
+*-----------------------------------------------------------------------------
+INITIALISE:
+*==========
+				LEGAL.COUNT = DCOUNT(R.NEW(EB.CUS.LEGAL.ID), @VM)
+				FOR I = 1 TO LEGAL.COUNT
+				  
+				  LEGAL.ID.NO = R.NEW(EB.CUS.LEGAL.ID)<1,I>
+				  LEGAL.ID.TYPE    = R.NEW(EB.CUS.LEGAL.DOC.NAME)<1,I>
+				  
+				  EXP.DATE = R.NEW(EB.CUS.LEGAL.EXP.DATE)<1,I>
+				  ISSUE.DATE    = R.NEW(EB.CUS.LEGAL.ISS.DATE)<1,I>
+				  LEGAL.AUTH    = R.NEW(EB.CUS.LEGAL.ISS.AUTH)<1,I>
+		
+		
+IF LEGAL.ID.TYPE EQ 'NATIONAL.ID' OR LEGAL.ID.TYPE EQ 'BIRTH.CERTIFICATE' THEN
+		
+
+		  IF LEGAL.ID.NO[1,1] EQ 2 THEN
+                   BIRTH.DATE = '19':LEGAL.ID.NO[2,6]
+                END ELSE
+                   BIRTH.DATE = '20':LEGAL.ID.NO[2,6]
+          END
+
+                R.NEW(EB.CUS.DATE.OF.BIRTH) = BIRTH.DATE
+				
+				
+		***********************DEFAULT GENDER FOR CUSTOMER******************************
+
+                GENDER.CODE = LEGAL.ID.NO[13,1]
+                RES = GENDER.CODE / 2
+                GENDER.MY.REM = FIELD(RES,'.',2)
+				
+				TEMP.GENDER =''
+				
+				IF GENDER.MY.REM EQ 0 OR GENDER.MY.REM EQ '' THEN
+                   TEMP.GENDER = 'FEMALE'
+                END ELSE
+                   TEMP.GENDER = 'MALE'
+                END
+				
+				*IF R.NEW(EB.CUS.GENDER) NE '' THEN
+				*	IF R.NEW(EB.CUS.GENDER) NE TEMP.GENDER THEN
+      			*	AF = EB.CUS.GENDER
+				*	ETEXT = 'GENDER NOT MATCH NATIONLAL ID!'
+				*	END
+				*END
+
+			*IF R.NEW(EB.CUS.GENDER) EQ '' THEN
+                IF GENDER.MY.REM EQ 0 OR GENDER.MY.REM EQ '' THEN
+                   R.NEW(EB.CUS.GENDER) = 'FEMALE'
+                END ELSE
+                   R.NEW(EB.CUS.GENDER) = 'MALE'
+                END
+			*END
+END
+
+NEXT I
+
+RETURN
+
+END
+*************************************************************************************************
+
+

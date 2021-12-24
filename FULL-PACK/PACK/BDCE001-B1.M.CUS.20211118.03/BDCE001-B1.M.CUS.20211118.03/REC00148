@@ -1,0 +1,82 @@
+4,19
+FATCA.CUSTOMER.SUPPLEMENTARY.INFO
+
+
+
+@IDCLIENT.TYPEFATCA.STATUSPOTENTIAL.USPROVEN.USPROVEN.NONUSINDICIA.STRENGTH
+Customer IdClient TypeFATCA ClassificationPotential USProven USProven Non USIndicia Strength
+
+
+
+ANDANDANDANDANDAND
+
+
+@IDDAODAO.NAMEDAO.AREACUST.IDIHDRIHDR1IHDR3CUS.NAMENATIONALITYRESIDENCETAX.RESIDENCECLIENT.TYPEFATCA.STATUST1T2T3R1R2R3NULLP1P2P3KYCFINAL.KYCSTATUSINDICIA.STRENGTHZERONORECORDS
+@IDF @IDF DAOF DAOF @ID"Customer Details with FATCA Classificationon""Date"!TODAYF CUST.IDF CUST.IDF CUST.IDTAX.RESIDENCECLIENT.TYPEFATCA.STATUSPOTENTIAL.USPROVEN.USPROVEN.NONUS"Potential US""Proven US""Proven Non US"""IF T1 EQ "YES" R1 NULLIF T2 EQ "YES" R2 NULLIF T3 EQ "YES" R3 NULLC P1 : P2 : P3IF FATCA.STATUS EQ "" KYC ""FATCA.STATUSINDICIA.STRENGTH"No records available for current selection"
+1948851,11,210,2991381501631762152352751
+35L7L35L35L35L35L9L9L9L35L35L3L3L3L15L35L35L
+L CUSTOMER,ACCOUNT.OFFICERL DEPT.ACCT.OFFICER,NAMEL DEPT.ACCT.OFFICER,AREAL CUSTOMER,SHORT.NAMEL CUSTOMER,NATIONALITYL CUSTOMER,RESIDENCEL FATCA.CUSTOMER.TYPE,DESCRIPTIONL FATCA.TAX.STATUS,DESCRIPTIONL FATCA.TAX.STATUS,DESCRIPTIONO MCT
+
+DATELANGUAGELANGUAGE
+NONE
+RM IdRM NameRM MarketCustomer IdCustomer NameNationalityResidenceTax ResidenceClient TypeKYC StatusFATCA ClassificationIndicia Strength
+CLASS-ENQ.H.TITLECLASS-ENQ.H.TITLECLASS-ENQ.H.TITLECLASS-ENQ.NORECS
+HEADERHEADERHEADERHEADER
+HIDDENHIDDENHIDDEN
+
+
+
+
+
+
+
+
+
+SSMMSSSSSSSSS
+FATCA.CUSTOMER.SUPPLEMENTARY.INFO,FULL I CUST.IDFATCA.CUSTOMER.SUPPLEMENTARY.INFO,FULL S CUST.ID
+
+CUST.ID 5CUST.ID 5
+Update Details[edit.gifSee Details[view.gif
+28 12345678910111213141516171819202122232425262728
+
+0 
+0 
+1 29
+0 
+1 5
+
+
+
+
+
+
+
+
+
+ZERORECORDDISPLAYNO.SELECTION
+
+FATCA Clients
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1
+116_HASSAN7__OFS_BROWSERTC
+2010301614
+116_HASSAN7_OFS_BROWSERTC
+EG0010001
+1

@@ -1,0 +1,673 @@
+*  AUTHOR           : HASSAN MOHAMED
+*  DATE             : 17 JUL 2019
+*  CLIENT           : BDC
+*  DESCRIPTION      : VALIDATE ON LEGAL ID FIELD
+*-----------------------------------------------------------------------------
+    SUBROUTINE  V.MBSC.INP.LEGALID
+*-----------------------------------------------------------------------------
+
+    $INSERT I_COMMON
+    $INSERT I_EQUATE
+	$INSERT I_F.CUSTOMER
+	*$INSERT I_F.MBSC.CUS.LEG.ID
+	$INSERT I_F.MBSC.CUST.DUPLICATE
+	$INSERT I_F.MBSC.LEGAL.DOC.YEARS
+	$INSERT I_F.MBSC.CUST.PARAMETER
+	$INSERT I_F.MBSC.GOV.CUS
+*-----------------------------------------------------------------------------
+GOSUB INITIALISE
+GOSUB MINOR.VALIDATION
+*GOSUB PHY.REGION.VAL -- ADDED TO NEW ROUTINE FOR ALL VAERSION
+*GOSUB NATIONALIDVAL
+
+
+*-----------------------------------------------------------------------------
+INITIALISE:
+		LEGAL.ID.TYPE = ''
+		LEGAL.ID.NO = ''
+		LEGAL.COUNT = ''
+		DOC.SEQ = ''
+		RCORD.LEGAL.ID = ''
+		ISSUE.DATE = ''
+		EXP.DATE = ''
+		LEGAL.AUTH = ''
+		RCORD.CBE.ID = ''
+		RCORD.ARCHIVE.ID = ''
+		D.OF.B	= ''	
+		Y.OF.B = ''
+		NUM.YEAR = ''
+		L.OF.B = ''
+		Y.OF.M = ''
+		D.OF.M = ''	    	 
+		T.DATE = ''
+		MINOR.POS = ''
+		MINOR.EMP.POS = ''
+		DOC.POS = ''
+		CUST.STATUS = ''
+		NATIONALID.FLAG = COMI
+		LEGALTYPE = ''
+
+
+*============ Open Files ==============================================
+		FN.CUSTOMER = 'F.CUSTOMER'
+		F.CUSTOMER =''
+		CALL OPF(FN.CUSTOMER,F.CUSTOMER)
+
+		FN.MBSC.CUST.PARAMETER = 'F.MBSC.CUST.PARAMETER'
+		F.MBSC.CUST.PARAMETER =''
+		CALL OPF(FN.MBSC.CUST.PARAMETER,F.MBSC.CUST.PARAMETER)
+
+		FN.MBSC.CUST.DUPLICATE = 'F.MBSC.CUST.DUPLICATE'
+		F.MBSC.CUST.DUPLICATE =''
+		CALL OPF(FN.MBSC.CUST.DUPLICATE,F.MBSC.CUST.DUPLICATE)
+
+		FN.MBSC.LEGAL.DOC.YEARS = 'F.MBSC.LEGAL.DOC.YEARS'
+		F.MBSC.LEGAL.DOC.YEARS =''
+		CALL OPF(FN.MBSC.LEGAL.DOC.YEARS,F.MBSC.LEGAL.DOC.YEARS)
+*============ End Of Open Files ========================================
+
+
+
+*================== Get Minor Flags ======================================
+				CALL F.READ(FN.MBSC.CUST.PARAMETER,'SYSTEM',R.CUST.PARAM,F.MBSC.CUST.PARAMETER,MBSC.CUST.PARAMETER.ERR)
+              
+			  
+				CUST.STATUS = R.NEW(EB.CUS.CUSTOMER.STATUS)
+				MINOR.ARR = R.CUST.PARAM<CUS.PA.MINOR>
+				MINOR.EMP.ARR = R.CUST.PARAM<CUS.PA.MINOR.EMPLOYEE>
+			  
+				CONVERT VM TO FM IN MINOR.ARR
+				CONVERT VM TO FM IN MINOR.EMP.ARR
+				LOCATE CUST.STATUS IN MINOR.ARR SETTING MINOR.POS ELSE MINOR.POS = '0' 
+				LOCATE CUST.STATUS IN MINOR.EMP.ARR SETTING MINOR.EMP.POS ELSE MINOR.EMP.POS = '0'
+*================= End Of Get Minor Flags =================================
+
+*=================GET NATIONAL ID POSITION AND VALIDATE NATIONAL ID IS MANDATORY FOR EG=================================
+				*LEGALTYPE = R.NEW(EB.CUS.LEGAL.DOC.NAME)
+				*LOCATE 'NATIONAL.ID' IN LEGALTYPE SETTING DOC.POS ELSE DOC.POS = '0' 
+				*IF R.NEW(EB.CUS.NATIONALITY) EQ 'EG' AND DOC.POS EQ '0' AND R.NEW(EB.CUS.SECTOR) EQ '401' THEN 
+				*		AF = EB.CUS.LEGAL.ID
+				*		ETEXT = 'Please Add National ID'
+				*		CALL STORE.END.ERROR
+				*END
+
+*======================END=================================================
+
+
+
+
+
+PLACE.POS = ''
+CALL GET.LOC.REF(APPLICATION,"PLACEOFBIRTH",PLACE.POS)
+
+*=============== CHECK CBE NUMBER==================
+CALL GET.LOC.REF(APPLICATION,"CBE.NUMBER",CBE.POS)
+CALL GET.LOC.REF(APPLICATION,"ARCHIVE.NUM",ARCH.POS)
+
+RCORD.CBE.ID = R.NEW(EB.CUS.LOCAL.REF)<1,CBE.POS>
+
+IF RCORD.CBE.ID NE '' THEN	
+
+RCORD.CBE.ID = 'CBE':RCORD.CBE.ID     
+CALL F.READ(FN.MBSC.CUST.DUPLICATE,RCORD.CBE.ID,R.LEGAL.ID,F.MBSC.CUST.DUPLICATE,MBSC.LEGAL.ID.ERR)
+		
+
+
+
+
+IF R.LEGAL.ID THEN
+IF R.LEGAL.ID NE ID.NEW THEN  
+AF = EB.CUS.LOCAL.REF
+AV = CBE.POS
+*ETEXT = 'CBE NUMBER FOUND WITH ANOTHER CUSTOMER '
+ETEXT = 'EB-CUS.MBSC.LEGAL.1'
+CALL STORE.END.ERROR
+END
+END
+END
+
+*=========================ARCHIVE NUMBER CHECK======================================
+*RCORD.ARCHIVE.ID = R.NEW(EB.CUS.LOCAL.REF)<1,ARCH.POS>	
+ *IF RCORD.ARCHIVE.ID NE '' THEN      
+	*	RCORD.ARCHIVE.ID = 'ARCHIVE':RCORD.ARCHIVE.ID
+		*CALL F.READ(FN.MBSC.CUST.DUPLICATE,RCORD.ARCHIVE.ID,R.LEGAL.ID,F.MBSC.CUST.DUPLICATE,MBSC.LEGAL.ID.ERR)
+
+
+
+	*IF R.LEGAL.ID THEN
+	*	IF R.LEGAL.ID NE ID.NEW THEN 
+		*	AF = EB.CUS.LOCAL.REF
+		*	AV = ARCH.POS
+		*	*ETEXT = 'ARCHIVE NUMBER FOUND WITH ANOTHER CUSTOMER '
+		*	ETEXT = 'EB-CUS.MBSC.LEGAL.2'
+		*	CALL STORE.END.ERROR
+		*END
+	*END
+*END
+*==========================END=======================================================
+
+
+AF = EB.CUS.LEGAL.DOC.NAME
+CALL DUP
+
+
+
+				LEGAL.COUNT = DCOUNT(R.NEW(EB.CUS.LEGAL.ID), @VM)
+				FOR I = 1 TO LEGAL.COUNT
+				  DOC.SEQ = I
+				  LEGAL.ID.NO = R.NEW(EB.CUS.LEGAL.ID)<1,I>
+				  LEGAL.ID.TYPE    = R.NEW(EB.CUS.LEGAL.DOC.NAME)<1,I>
+				  
+				  EXP.DATE = R.NEW(EB.CUS.LEGAL.EXP.DATE)<1,I>
+				  ISSUE.DATE    = R.NEW(EB.CUS.LEGAL.ISS.DATE)<1,I>
+				  LEGAL.AUTH    = R.NEW(EB.CUS.LEGAL.ISS.AUTH)<1,I>
+				  
+				  
+				  
+				GOSUB CHECK.CHAR
+				  
+				  IF LEGAL.ID.TYPE EQ 'NATIONAL.ID' AND  NOT(NUM(LEGAL.ID.NO))  THEN
+						
+							*ETEXT = 'Legal ID wrong format!'
+							AF = EB.CUS.LEGAL.ID
+							AV = I
+							ETEXT = 'EB-CUS.NATIONAL.ID.FORMAT'
+							CALL STORE.END.ERROR
+				  END
+				  IF LEGAL.ID.TYPE EQ 'BIRTH.CERTIFICATE' AND  NOT(NUM(LEGAL.ID.NO))  THEN
+						
+							*ETEXT = 'Legal ID wrong format!'
+							AF = EB.CUS.LEGAL.DOC.NAME
+							AV = I
+							ETEXT = 'EB-CUS.NATIONAL.ID.FORMAT'
+							CALL STORE.END.ERROR
+				  END
+
+				***Update 20200808 By Hassan Mohamed - REGRESSION TEST ***
+				* validate that passport used only with Egyptian nationality 
+				IF LEGAL.ID.TYPE EQ 'PASSPORT' AND R.NEW(EB.CUS.NATIONALITY) NE 'EG'  THEN
+						AF = EB.CUS.LEGAL.ID
+						AV = I
+						ETEXT = 'EB-CUS.MBSC.LEGAL.13'
+						CALL STORE.END.ERROR
+
+				END	
+
+
+				*check Egyptian passport format 			
+				IF LEGAL.ID.TYPE EQ 'PASSPORT' AND R.NEW(EB.CUS.NATIONALITY) EQ 'EG'  THEN
+				  
+				  
+					IF LEN(R.NEW(EB.CUS.LEGAL.ID)<1,I>) GT "10" THEN 
+						AF = EB.CUS.LEGAL.ID
+						AV = I
+						ETEXT = 'EB-CUS.MBSC.LEGAL.3'
+						CALL STORE.END.ERROR
+					END
+				  
+					IF ISDIGIT(R.NEW(EB.CUS.LEGAL.ID)<1,I>) THEN 
+						AF = EB.CUS.LEGAL.ID
+						AV = I
+						ETEXT = 'EB-CUS.MBSC.LEGAL.3'
+						CALL STORE.END.ERROR
+					END
+					IF ISALPHA(R.NEW(EB.CUS.LEGAL.ID)<1,I>) THEN 
+						AF = EB.CUS.LEGAL.ID
+						AV = I
+						ETEXT = 'EB-CUS.MBSC.LEGAL.3'
+						CALL STORE.END.ERROR
+					END 
+					
+					IF ISALNUM(R.NEW(EB.CUS.LEGAL.ID)<1,I>)  THEN
+						GOSUB LEGALIDVALIDATE
+					END ELSE 
+						AF = EB.CUS.LEGAL.ID
+						AV = I
+						ETEXT = 'EB-CUS.MBSC.LEGAL.3'
+						CALL STORE.END.ERROR
+						END 
+				END ELSE 
+					GOSUB LEGALIDVALIDATE
+				END
+				
+				NEXT I
+				
+RETURN
+
+********************************************************************************
+
+				
+				
+LEGALIDVALIDATE:	
+
+CALL F.READ(FN.MBSC.LEGAL.DOC.YEARS,LEGAL.ID.TYPE ,R.EXP , F.MBSC.LEGAL.DOC.YEARS, ERR.EXP)
+IF R.EXP THEN
+			EXP.YEARS = ''
+			ISSUE.YEAR = ''
+			EXPIR.YEAR = ''
+			DIFF.YEAR = ''
+			EXP.YEARS = R.EXP<DOC.YEARS.VALID.YEARS>
+			ISSUE.YEAR = ISSUE.DATE[1,4]
+			EXPIR.YEAR = ISSUE.YEAR + EXP.YEARS 
+            EXPIR.DATE  = ''
+			
+			EXPIR.DATE = EXPIR.YEAR:ISSUE.DATE[5,4]
+			
+			IF EXP.DATE NE EXPIR.DATE  THEN
+			***Update 20200808 By Hassan Mohamed - REGRESSION TEST ***
+				IF LEGAL.ID.TYPE EQ 'NATIONAL.ID' AND DOC.SEQ NE '1' THEN
+					***No Errors if national ID is the second document
+				END ELSE
+					AF = EB.CUS.LEGAL.ID
+					AV = I
+					ETEXT = 'Valid Years For The Selected Legal Document must be ':EXP.YEARS
+					CALL STORE.END.ERROR
+				END
+            END
+END
+
+BEGIN CASE
+CASE LEGAL.ID.TYPE = 'COMM.REGISTER' 
+
+CALL GET.LOC.REF(APPLICATION,"CUS.CR.CITY",CITY.POS)
+
+RCORD.LEGAL.ID = 'CR':R.NEW(EB.CUS.LOCAL.REF)<1,CITY.POS>:LEGAL.ID.NO	
+        
+CALL F.READ(FN.MBSC.CUST.DUPLICATE,RCORD.LEGAL.ID,R.LEGAL.ID,F.MBSC.CUST.DUPLICATE,MBSC.LEGAL.ID.ERR)
+		
+
+
+
+
+IF R.LEGAL.ID THEN
+IF R.LEGAL.ID NE ID.NEW THEN 
+AF = EB.CUS.LEGAL.ID
+AV = I
+ETEXT = 'EB-CUS.MBSC.COMM.REG.EXIST'
+CALL STORE.END.ERROR
+END
+
+END
+
+			IF LEN(LEGAL.ID.NO) GT 15 THEN
+				AF = EB.CUS.LEGAL.ID
+				AV = I
+	   		   *ETEXT = 'COMMERCIAL REGISTER MUST BE 15 CHAR.'
+			   ETEXT = 'EB-CUS.MBSC.COMM.REG.LENGTH.ERROR'
+			 
+               CALL STORE.END.ERROR
+			END 
+			*================= CHECK ISSUE AND EXPIRY DATE=========================
+			IF ISSUE.DATE EQ ''  THEN
+				AF = EB.CUS.LEGAL.ID
+				AV = I
+	   		  *ETEXT = 'KINDLY SET COMMERCIAL REGISTER ISSUE AND EXPIRY DATE!.'
+			  ETEXT = 'EB-CUS.MBSC.LEGAL.4'
+               CALL STORE.END.ERROR
+			END 
+			
+			IF EXP.DATE EQ ''  THEN
+				AF = EB.CUS.LEGAL.ID
+				AV = I
+	   		   *ETEXT = 'KINDLY SET COMMERCIAL REGISTER ISSUE AND EXPIRY DATE!.'
+			   ETEXT = 'EB-CUS.MBSC.LEGAL.4'
+			  
+               CALL STORE.END.ERROR
+			END
+			*===========================END=========================================
+			
+*CASE LEGAL.ID.TYPE = 'PASSPORT' 
+
+
+
+*RCORD.LEGAL.ID = 'PASSPORT':LEGAL.ID.NO	
+        
+*CALL F.READ(FN.MBSC.CUST.DUPLICATE,RCORD.LEGAL.ID,R.LEGAL.ID,F.MBSC.CUST.DUPLICATE,MBSC.LEGAL.ID.ERR)
+		
+
+
+
+
+*IF R.LEGAL.ID THEN
+*IF R.LEGAL.ID NE ID.NEW THEN 
+*AF = EB.CUS.LEGAL.ID
+*AV = I
+*ETEXT = 'Passport Number FOUND WITH ANOTHER CUSTOMER'
+*ETEXT = 'EB-CUS.MBSC.LEGAL.5'
+*CALL STORE.END.ERROR
+*END
+*END
+
+			
+*===========================END=========================================
+
+	
+CASE LEGAL.ID.TYPE = 'NATIONAL.ID' OR LEGAL.ID.TYPE = 'BIRTH.CERTIFICATE'
+NATIONALID.FLAG = '1'
+
+*IF ISALNUM(LEGAL.ID.NO) THEN
+*AF = EB.CUS.LEGAL.ID
+*ETEXT = 'Invalid National Id Format'
+*CALL STORE.END.ERROR
+*END
+
+IF LEGAL.ID.TYPE = 'NATIONAL.ID' THEN
+RCORD.LEGAL.ID = 'NATIONALID':LEGAL.ID.NO
+END	
+
+IF LEGAL.ID.TYPE = 'BIRTH.CERTIFICATE' THEN
+RCORD.LEGAL.ID = 'BIRTHCERT':LEGAL.ID.NO
+END	
+        
+		CALL F.READ(FN.MBSC.CUST.DUPLICATE,RCORD.LEGAL.ID,R.LEGAL.ID,F.MBSC.CUST.DUPLICATE,MBSC.LEGAL.ID.ERR)
+	
+
+
+IF R.LEGAL.ID THEN
+IF R.LEGAL.ID NE ID.NEW THEN 
+AF = EB.CUS.LEGAL.ID
+AV = I
+ETEXT = LEGAL.ID.TYPE:' EXIST BEFORE'
+CALL STORE.END.ERROR
+END
+
+END
+
+
+
+
+
+			IF LEN(LEGAL.ID.NO) NE 14 THEN
+			   AF = EB.CUS.LEGAL.ID
+			   AV = I
+			   *ETEXT = 'NATIONAL ID MUST BE 14 CHAR.'
+			   ETEXT = 'EB-CUS.MBSC.LEGAL.6'
+			   CALL STORE.END.ERROR
+			END
+			
+			*================= CHECK ISSUE AND EXPIRY DATE=========================
+			IF ISSUE.DATE EQ ''  THEN
+				AF = EB.CUS.LEGAL.ID
+				AV = I
+	   		   *ETEXT = 'KINDLY SET NATIONAL ID ISSUE AND EXPIRY DATE!.'
+			  ETEXT = 'EB-CUS.MBSC.LEGAL.7'
+               CALL STORE.END.ERROR
+			END 
+			
+			***Update 20200808 By Hassan Mohamed - REGRESSION TEST *** 
+			***Remove the error in this case we validate before in parameter table
+			*IF EXP.DATE EQ ''  THEN
+				AF = EB.CUS.LEGAL.ID
+	   		   *ETEXT = 'KINDLY SET NATIONAL ID ISSUE AND EXPIRY DATE!.'
+			  *ETEXT = 'EB-CUS.MBSC.LEGAL.7'
+              * CALL STORE.END.ERROR
+			*END
+			*===========================END=========================================
+			
+			
+			
+			
+			
+	**********************CHECK THE LENGTH OF LEGAL ID*****************************
+
+        IF LEN(LEGAL.ID.NO) EQ 14 THEN
+
+**********************CHECK THE CHECK DIGIT EQUATION***************************
+           MY.FLAG = 'FALSE'
+*           GOSUB CHK.DIG
+******************************************
+ CHK.NO = LEGAL.ID.NO[14,1]
+       MY.TOTAL   = '0'
+       MY.REM     = '0'
+       DIV.RES = '0'
+
+       MY.TOTAL = 2 * LEGAL.ID.NO[1,1]
+       MY.TOTAL += 7 * LEGAL.ID.NO[2,1]
+       MY.TOTAL += 6 * LEGAL.ID.NO[3,1]
+       MY.TOTAL += 5 * LEGAL.ID.NO[4,1]
+       MY.TOTAL += 4 * LEGAL.ID.NO[5,1]
+       MY.TOTAL += 3 * LEGAL.ID.NO[6,1]
+       MY.TOTAL += 2 * LEGAL.ID.NO[7,1]
+       MY.TOTAL += 7 * LEGAL.ID.NO[8,1]
+       MY.TOTAL += 6 * LEGAL.ID.NO[9,1]
+       MY.TOTAL += 5 * LEGAL.ID.NO[10,1]
+       MY.TOTAL += 4 * LEGAL.ID.NO[11,1]
+       MY.TOTAL += 3 * LEGAL.ID.NO[12,1]
+       MY.TOTAL += 2 * LEGAL.ID.NO[13,1]
+
+       DIV.RES = MY.TOTAL / 11
+       MY.REM = FIELD(DIV.RES,'.',2)
+       IF MY.REM EQ '' THEN MY.REM = '0'
+       MY.REM = '0.':MY.REM
+       MY.REM = MY.REM * 11
+
+       DES.NO = FIELD(MY.REM,'.',2)
+       INT.NO = FIELD(MY.REM,'.',1)
+
+       IF DES.NO NE '' THEN 
+
+        MY.REM = INT.NO + 1
+
+       END
+
+       CHECK.NO.CAL = 11 - MY.REM
+
+       IF LEN(CHECK.NO.CAL) EQ 2 THEN
+
+        CHECK.NO.CAL = CHECK.NO.CAL[2,1]
+
+       END
+
+       IF CHECK.NO.CAL EQ CHK.NO THEN
+          MY.FLAG = 'TRUE'
+       END
+
+******************************************
+
+
+           IF MY.FLAG EQ 'TRUE'  THEN
+		   
+		    *IF LEGAL.ID.NO[8,2] EQ '88' THEN
+	        *   CURR.NO = ''
+            *   TEXT = "EB-CUS.CHECK.BIRTH.CERT"
+            *   CALL STORE.OVERRIDE(CURR.NO)
+	        *END
+			
+*====================BIRTH COUNTRY CHECK======================================
+			GOSUB BIRTH.CUNT.VAL
+*====================END======================================
+
+               * IF LEGAL.ID.NO[1,1] EQ 2 THEN
+               *    BIRTH.DATE = '19':LEGAL.ID.NO[2,6]
+               * END ELSE
+               *    BIRTH.DATE = '20':LEGAL.ID.NO[2,6]
+               * END
+			   *
+               * R.NEW(EB.CUS.DATE.OF.BIRTH) = BIRTH.DATE
+
+**********************DEFAULT PLACE OF BIRTH FOR CUSTOMER***********************
+           R.NEW(EB.CUS.LOCAL.REF)<1,PLACE.POS> = LEGAL.ID.NO[8,2]
+		  
+
+           END ELSE
+		   AF = EB.CUS.LEGAL.ID
+		   AV = I
+              ETEXT = 'EB-CUS.NATIONAL.ID.FORMAT'
+			  *ETEXT = 'EB-MBSC.FALSE.ID.CHECK'
+              CALL STORE.END.ERROR
+           END
+
+         END ELSE
+		 AF = EB.CUS.LEGAL.ID
+		 AV = I
+         ETEXT = 'EB-CUS.NATIONAL.ID.FORMAT'
+		 *ETEXT = 'EB-MBSC.NATIONAL.ID.CHECK'
+         CALL STORE.END.ERROR
+
+         END
+
+    
+	
+END CASE
+
+
+
+RETURN 
+*================================================================
+MINOR.VALIDATION:
+*===============
+***Update 20200808 By Hassan Mohamed - REGRESSION TEST *** 
+***Add if date of birth NE '' to validate only after enter birth date***
+	IF R.NEW(EB.CUS.DATE.OF.BIRTH) NE '' THEN
+				D.OF.B	= R.NEW(EB.CUS.DATE.OF.BIRTH)	
+				Y.OF.B = D.OF.B[1,4]
+				NUM.YEAR = '21'
+				L.OF.B = D.OF.B[5,8]
+				Y.OF.M = Y.OF.B + NUM.YEAR 
+				D.OF.M = Y.OF.M:L.OF.B 	  	 
+				T.DATE = TODAY
+				MINOR.ARR = ''
+				MINOR.EMP.ARR = ''
+
+				
+				CALL F.READ(FN.MBSC.CUST.PARAMETER,'SYSTEM',R.CUST.PARAM,F.MBSC.CUST.PARAMETER,MBSC.CUST.PARAMETER.ERR)
+              
+			  
+				*CUST.STATUS = R.NEW(EB.CUS.CUSTOMER.STATUS)
+				*MINOR.ARR = R.CUST.PARAM<CUS.PA.MINOR>
+				*MINOR.EMP.ARR = R.CUST.PARAM<CUS.PA.MINOR.EMPLOYEE>
+				*
+				*CONVERT VM TO FM IN MINOR.ARR
+				*CONVERT VM TO FM IN MINOR.EMP.ARR
+				*LOCATE CUST.STATUS IN MINOR.ARR SETTING MINOR.POS ELSE MINOR.POS = '0' 
+				*LOCATE CUST.STATUS IN MINOR.EMP.ARR SETTING MINOR.EMP.POS ELSE MINOR.EMP.POS = '0' 
+			  
+			 
+			  
+				IF D.OF.M GT T.DATE THEN  
+					IF  MINOR.POS EQ '0'  AND  MINOR.EMP.POS EQ '0'  THEN
+						AF = EB.CUS.CUSTOMER.STATUS
+						*ETEXT = 'Customer Status Must be MINOR !'
+						ETEXT = 'EB-CUS.MBSC.LEGAL.9'
+						CALL STORE.END.ERROR
+					END
+				END
+			  
+				IF D.OF.M LE T.DATE THEN 
+					IF  MINOR.POS GT '0'  OR  MINOR.EMP.POS GT '0'  THEN
+						AF = EB.CUS.CUSTOMER.STATUS
+						*ETEXT = 'Wrong status MINOR !'
+						ETEXT = 'EB-CUS.MBSC.LEGAL.10'
+						CALL STORE.END.ERROR
+					END
+				END
+			  
+*================ CHECK CUSTOMER STATUS 70 MINOR ===============
+				IF MINOR.POS GT 0 THEN
+					IF  R.NEW(EB.CUS.REL.CUSTOMER) EQ '' THEN 
+						AF = EB.CUS.REL.CUSTOMER
+						*ETEXT = 'Please Enter Relation Customer ID'
+						ETEXT = 'EB-CUS.MBSC.LEGAL.11'
+						CALL STORE.END.ERROR
+					END
+				END
+	END
+
+RETURN
+
+*============================================================
+BIRTH.CUNT.VAL:
+*===============
+***Update 20200808 By Hassan Mohamed - REGRESSION TEST ***
+***Check the birth country null or EG not accepted in case 88***
+	CALL GET.LOC.REF(APPLICATION,"BIRTH.COUNTRY",COUNTRY.POS)
+		IF LEGAL.ID.NO[8,2] EQ '88'AND R.NEW(EB.CUS.SECTOR) EQ '401' THEN
+			IF  R.NEW(EB.CUS.LOCAL.REF)<1,COUNTRY.POS> EQ '' OR R.NEW(EB.CUS.LOCAL.REF)<1,COUNTRY.POS> EQ 'EG' THEN
+				AF = EB.CUS.LOCAL.REF
+				AV = COUNTRY.POS
+				*ETEXT = 'PLEASE SELECT BIRTH COUNTRY!'
+				ETEXT = 'EB-CUS.MBSC.LEGAL.8'
+				CALL STORE.END.ERROR
+			END
+		END ELSE 
+		R.NEW(EB.CUS.LOCAL.REF)<1,COUNTRY.POS> = 'EG'
+		END 
+RETURN
+
+NATIONALIDVAL:
+*===============
+		IF R.NEW(EB.CUS.NATIONALITY) EQ 'EG' AND DOC.POS EQ '0' AND R.NEW(EB.CUS.SECTOR) EQ '401' THEN 
+			AF = EB.CUS.LEGAL.ID
+			ETEXT = 'Please Add National ID'
+			CALL STORE.END.ERROR
+		END
+RETURN
+
+*============================================================
+CHECK.CHAR:
+*===============
+					AF = EB.CUS.LEGAL.ID
+					AV = I
+					DOC.LEN = LEN(LEGAL.ID.NO)
+					
+        FOR Y = 1 TO DOC.LEN
+
+            CHARACTER =  LEGAL.ID.NO[ Y, 1]
+			
+	
+		
+		IF ( CHARACTER <= CHAR(47)) THEN 
+		ETEXT = 'Invalid Character Number ' : Y 
+		CALL STORE.END.ERROR
+		END
+	    
+		IF ( CHARACTER <= CHAR(64) AND CHARACTER >= CHAR(58)) THEN 
+		ETEXT = 'Invalid Character Number ' : Y 
+		CALL STORE.END.ERROR
+		END
+		
+	    IF ( CHARACTER >= CHAR(91) AND CHARACTER <= CHAR(96)) THEN 
+		ETEXT = 'Invalid Character Number ' : Y 
+		CALL STORE.END.ERROR
+		END
+		
+        IF ( CHARACTER > CHAR(122)) THEN 
+		ETEXT = 'Invalid Character Number ' : Y 
+		CALL STORE.END.ERROR
+		END
+		
+        IF ( CHARACTER >= CHAR(123))  THEN 
+		ETEXT = 'Invalid Character Number ' : Y 
+		CALL STORE.END.ERROR
+		END
+		
+		NEXT Y
+RETURN
+
+*============================================================
+PHY.REGION.VAL:
+*===============
+CALL GET.LOC.REF('CUSTOMER','PHY.REGION',PHY.REGION.POS)
+
+		IF R.NEW(EB.CUS.COUNTRY) NE 'EG' THEN
+			R.NEW(EB.CUS.LOCAL.REF)<1,PHY.REGION.POS> = '88'
+		END
+		
+		IF R.NEW(EB.CUS.COUNTRY) EQ 'EG' AND R.NEW(EB.CUS.LOCAL.REF)<1,PHY.REGION.POS> EQ '88' THEN
+			AF = EB.CUS.LOCAL.REF
+			AV = PHY.REGION.POS
+			ETEXT = 'Invalid Region Outside Egypt'
+			CALL STORE.END.ERROR
+		END
+		
+		IF R.NEW(EB.CUS.COUNTRY) NE 'EG' AND R.NEW(EB.CUS.LOCAL.REF)<1,PHY.REGION.POS> NE '88' THEN
+			AF = EB.CUS.LOCAL.REF
+			AV = PHY.REGION.POS
+			ETEXT = 'Invalid Region Outside Egypt'
+			CALL STORE.END.ERROR
+		END
+
+RETURN
+END
+
+**********************

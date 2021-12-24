@@ -1,0 +1,82 @@
+4,99
+CUSTOMER$NAU
+VERSION EQ ',MBSC.CBE.CLASS'
+
+
+
+
+
+
+
+
+
+CAD Customer Authorisation
+@IDSHORT.NAMECBE.CLASSCBE.CLASS.DESDATE.TIMEVERSIONCOMPANY.BOOKZERORECORDS
+@IDSHORT.NAMEIDESC CBE.CLASSIDESC CBE.CLASSDATE.TIMEIDESC VERSIONCOMPANY.BOOK"No Records to Display"
+1234571
+10L35L8R8R15L65L11L
+L MBSC.CBE.CLASS,DESCRIPTIONVALUE 2,1
+
+LD
+NONE
+Customer No.Customer NameCBE.CLASSCBE ClassificationCreation DateVersionCompany Book
+CLASS-ENQ.NORECS
+HEADER
+
+
+
+
+
+
+
+
+
+
+SSSMSS
+CUSTOMER S @IDCUSTOMER,MBSC.CBE.CLASS A @IDCUSTOMER,MBSC.CBE.CLASS D @ID
+
+@ID 1@ID 1@ID 1
+View[view.gifAuthorise[txnauthorise.gifDelete[txndelete.gif
+7 1234567
+
+1 5
+0 
+1 8
+0 
+1 1
+
+
+
+
+
+
+
+
+CBE Classification
+ZERORECORDDISPLAY
+
+CBE Classification Authorization
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9
+67_ROMANIEZZAT__OFS_BROWSERTC
+2108041456
+67_ROMANIEZZAT_OFS_BROWSERTC
+EG0010001
+1

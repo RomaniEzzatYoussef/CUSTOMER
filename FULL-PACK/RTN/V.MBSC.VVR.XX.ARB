@@ -1,0 +1,41 @@
+*-----------------------------------------------------------------------------
+* <Rating>297</Rating>
+*-----------------------------------------------------------------------------
+    SUBROUTINE V.MBSC.VVR.XX.ARB
+
+    $INSERT I_COMMON
+    $INSERT I_EQUATE
+    $INSERT I_F.IM.DOCUMENT.IMAGE
+
+
+    *VAR.XX = 1
+    *IF VAR.XX NE 1 THEN
+        IF COMI THEN
+
+            LEN.COMI = LEN( COMI)
+			
+            FOR I = 1 TO LEN.COMI
+
+                CHARACTER = COMI[ I, 1]
+ 
+ X = SEQ(CHARACTER)
+            *IF ( CHARACTER >= CHAR(33) AND CHARACTER <= CHAR(152)) THEN ETEXT = 'Only Arabic Letter' ; EXIT
+	    * IF ( CHARACTER >= CHAR(33) AND CHARACTER <= CHAR(47)) THEN ETEXT = 'Only Arabic Letter' ; EXIT
+	     IF ( CHARACTER >= CHAR(65) AND CHARACTER <= CHAR(152)) THEN ETEXT = 'Only Arabic Letter' ; EXIT
+             IF ( CHARACTER >= CHAR(160) AND CHARACTER <= CHAR(161)) THEN ETEXT = 'Only Arabic Letter'; EXIT
+             IF ( CHARACTER >= CHAR(163) AND CHARACTER <= CHAR(164)) THEN ETEXT = 'Only Arabic Letter' ; EXIT
+             IF ( CHARACTER >= CHAR(191) AND CHARACTER <= CHAR(192)) THEN ETEXT = 'Only Arabic Letter'; EXIT
+             IF ( CHARACTER >= CHAR(219) AND CHARACTER <= CHAR(222)) THEN ETEXT = 'Only Arabic Letter' ; EXIT
+             IF ( CHARACTER >= CHAR(240) AND CHARACTER <= CHAR(241)) THEN ETEXT = 'Only Arabic Letter' ; EXIT
+	  IF ( CHARACTER >= CHAR(48) AND CHARACTER <= CHAR(57)) THEN ETEXT = 'Only Arabic Letter' ; EXIT
+             *IF ( CHARACTER = CHAR(172) AND CHARACTER = CHAR(187) AND CHARACTER = CHAR(224)) THEN ETEXT = 'Only Arabic Letter' ; EXIT
+             * ( CHARACTER >= CHAR(194) AND CHARACTER <= CHAR(195)) THEN ETEXT = 'Write ALF Without HAMZA' ; EXIT
+             *IF ( CHARACTER >= CHAR(201) AND CHARACTER <= CHAR(195)) THEN ETEXT = 'Write Arabic Letter HEH' ; EXIT
+             *IF ( CHARACTER = CHAR(224)) THEN ETEXT = 'Please Remove TATWEEL' ; EXIT
+
+NEXT I
+
+    END
+    RETURN
+END
+

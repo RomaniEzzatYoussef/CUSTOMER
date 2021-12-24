@@ -1,0 +1,82 @@
+4,99
+CUSTOMER$NAU
+VERSION EQ CUSTOMER,MBSC.QUICK.BANK CUSTOMER,MBSC.BANK.AMEND
+
+
+
+
+
+
+
+
+
+
+CUSTOMERIDHDRCUST.SHORT.NAMEACCT.OFFICERACCT.OFF.NAMEHYPHENDAO.HYPHENDISP.DAORECORD.STATUSINPUTTERZERORECORDSCUSTOMER.SINCE
+@ID"Unauthorised Customer"SHORT.NAMEACCOUNT.OFFICERF ACCT.OFFICER" - "C ACCT.OFFICER : HYPHENC DAO.HYPHEN : ACCT.OFF.NAMERECORD.STATUSINPUTTER"No Unauthorised Customers "CUSTOMER.SINCE
+11,0234516
+10R35L4R4L35L11R
+L DEPT.ACCT.OFFICER,NAMEF _,2,1
+
+L
+NONE
+Customer NoNameRelationship OfficerStatusInputterCustomer Open
+CLASS-ENQ.H.TITLECLASS-ENQ.NORECS
+HEADERHEADER
+
+
+
+
+
+
+
+
+
+
+SSSMS
+CUSTOMER,MBSC.QUICK.BANK A CUSTOMERIDCUSTOMER,MBSC.QUICK.BANK D CUSTOMERIDCUSTOMER,MBSC.BANK.AMEND I CUSTOMERID
+
+CUSTOMERID 1CUSTOMERID 1CUSTOMERID 1
+Authorise[txnauthorise.gifDelete[txndelete.gifAmend[edit.gif
+11 1234567891012
+
+1 10
+0 
+1 11
+0 
+1 1
+
+
+
+
+
+
+
+
+Unauthorised Customer
+NO.SELECTIONZERORECORDDISPLAY
+
+Unauthorised Customer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8
+36_HASSAN7__OFS_BROWSERTC
+2007211053
+36_HASSAN7_OFS_BROWSERTC
+EG0010001
+1

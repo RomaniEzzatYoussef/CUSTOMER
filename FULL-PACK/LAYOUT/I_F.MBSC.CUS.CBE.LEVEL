@@ -1,0 +1,23 @@
+* I_F.MBSC.CUS.CBE.LEVEL Created 21 JUL 19 at 03:56AM by t24dev/HANYA
+*      PREFIX[CBE.LVL]
+                  EQU CBE.LVL.DESCRIPTION TO 1,   MbscCusCbeLevel_Description TO 1,
+                       CBE.LVL.RESERVED.9 TO 2,   MbscCusCbeLevel_Reserved9 TO 2,
+                       CBE.LVL.RESERVED.8 TO 3,   MbscCusCbeLevel_Reserved8 TO 3,
+                       CBE.LVL.RESERVED.7 TO 4,   MbscCusCbeLevel_Reserved7 TO 4,
+                       CBE.LVL.RESERVED.6 TO 5,   MbscCusCbeLevel_Reserved6 TO 5,
+                       CBE.LVL.RESERVED.5 TO 6,   MbscCusCbeLevel_Reserved5 TO 6,
+                       CBE.LVL.RESERVED.4 TO 7,   MbscCusCbeLevel_Reserved4 TO 7,
+                       CBE.LVL.RESERVED.3 TO 8,   MbscCusCbeLevel_Reserved3 TO 8,
+                       CBE.LVL.RESERVED.2 TO 9,   MbscCusCbeLevel_Reserved2 TO 9,
+                       CBE.LVL.RESERVED.1 TO 10,  MbscCusCbeLevel_Reserved1 TO 10,
+                        CBE.LVL.LOCAL.REF TO 11,  MbscCusCbeLevel_LocalRef TO 11,
+                         CBE.LVL.OVERRIDE TO 12,  MbscCusCbeLevel_Override TO 12,
+                    CBE.LVL.RECORD.STATUS TO 13,  MbscCusCbeLevel_RecordStatus TO 13,
+                          CBE.LVL.CURR.NO TO 14,  MbscCusCbeLevel_CurrNo TO 14,
+                         CBE.LVL.INPUTTER TO 15,  MbscCusCbeLevel_Inputter TO 15,
+                        CBE.LVL.DATE.TIME TO 16,  MbscCusCbeLevel_DateTime TO 16,
+                       CBE.LVL.AUTHORISER TO 17,  MbscCusCbeLevel_Authoriser TO 17,
+                          CBE.LVL.CO.CODE TO 18,  MbscCusCbeLevel_CoCode TO 18,
+                        CBE.LVL.DEPT.CODE TO 19,  MbscCusCbeLevel_DeptCode TO 19,
+                     CBE.LVL.AUDITOR.CODE TO 20,  MbscCusCbeLevel_AuditorCode TO 20,
+                  CBE.LVL.AUDIT.DATE.TIME TO 21,  MbscCusCbeLevel_AuditDateTime TO 21

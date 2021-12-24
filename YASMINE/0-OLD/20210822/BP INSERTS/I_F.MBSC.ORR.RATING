@@ -1,0 +1,23 @@
+* I_F.MBSC.ORR.RATING Created 21 AUG 21 at 08:53PM by t24dev/ROMANYEZZAT
+*      PREFIX[ORR.RATING]
+                  EQU ORR.RATING.DESCRIPTION TO 1,   MbscOrrRating_Description TO 1,
+                       ORR.RATING.RESERVED.9 TO 2,   MbscOrrRating_Reserved9 TO 2,
+                       ORR.RATING.RESERVED.8 TO 3,   MbscOrrRating_Reserved8 TO 3,
+                       ORR.RATING.RESERVED.7 TO 4,   MbscOrrRating_Reserved7 TO 4,
+                       ORR.RATING.RESERVED.6 TO 5,   MbscOrrRating_Reserved6 TO 5,
+                       ORR.RATING.RESERVED.5 TO 6,   MbscOrrRating_Reserved5 TO 6,
+                       ORR.RATING.RESERVED.4 TO 7,   MbscOrrRating_Reserved4 TO 7,
+                       ORR.RATING.RESERVED.3 TO 8,   MbscOrrRating_Reserved3 TO 8,
+                       ORR.RATING.RESERVED.2 TO 9,   MbscOrrRating_Reserved2 TO 9,
+                       ORR.RATING.RESERVED.1 TO 10,  MbscOrrRating_Reserved1 TO 10,
+                        ORR.RATING.LOCAL.REF TO 11,  MbscOrrRating_LocalRef TO 11,
+                         ORR.RATING.OVERRIDE TO 12,  MbscOrrRating_Override TO 12,
+                    ORR.RATING.RECORD.STATUS TO 13,  MbscOrrRating_RecordStatus TO 13,
+                          ORR.RATING.CURR.NO TO 14,  MbscOrrRating_CurrNo TO 14,
+                         ORR.RATING.INPUTTER TO 15,  MbscOrrRating_Inputter TO 15,
+                        ORR.RATING.DATE.TIME TO 16,  MbscOrrRating_DateTime TO 16,
+                       ORR.RATING.AUTHORISER TO 17,  MbscOrrRating_Authoriser TO 17,
+                          ORR.RATING.CO.CODE TO 18,  MbscOrrRating_CoCode TO 18,
+                        ORR.RATING.DEPT.CODE TO 19,  MbscOrrRating_DeptCode TO 19,
+                     ORR.RATING.AUDITOR.CODE TO 20,  MbscOrrRating_AuditorCode TO 20,
+                  ORR.RATING.AUDIT.DATE.TIME TO 21,  MbscOrrRating_AuditDateTime TO 21

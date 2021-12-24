@@ -1,0 +1,41 @@
+*-----------------------------------------------------------------------------
+* <Rating>400</Rating>
+*-----------------------------------------------------------------------------
+* Modified By: Mohammed Fawzy
+* Date       : 20160427
+*-----------------------------------------------------------------------------
+
+    SUBROUTINE V.MBSC.VVR.XX.ENG
+
+    $INSERT I_COMMON
+    $INSERT I_EQUATE
+    $INSERT I_F.IM.DOCUMENT.IMAGE
+
+
+
+    IF COMI THEN
+
+        COMI.LEN = LEN(COMI)
+        FOR I = 1 TO COMI.LEN
+
+            CHARACTER =  COMI[ I, 1]
+			
+		IF ( CHARACTER <= CHAR(47) AND CHARACTER >= CHAR(33)) THEN ETEXT = 'ONLY.ENGLISH.LETTERS' ; EXIT
+	    IF ( CHARACTER <= CHAR(64) AND CHARACTER >= CHAR(58)) THEN ETEXT = 'ONLY.ENGLISH.LETTERS' ; EXIT
+		
+		
+	
+		IF ( CHARACTER <= CHAR(31)) THEN ETEXT = 'ONLY.ENGLISH.LETTERS' ; EXIT
+	    IF ( CHARACTER > CHAR(90) AND CHARACTER < CHAR(97)) THEN ETEXT = 'ONLY.ENGLISH.LETTERS' ; EXIT
+        IF ( CHARACTER > CHAR(122) ) THEN ETEXT = 'ONLY.ENGLISH.LETTERS' ; EXIT
+           * IF ( CHARACTER >= CHAR(123) AND CHARACTER <= CHAR(127)) THEN ETEXT = 'ONLY.ENGLISH.LETTERS' ; EXIT
+
+        NEXT I
+
+        IF NOT(ETEXT) THEN COMI = TRIM(COMI)
+
+    END
+
+    RETURN
+END
+

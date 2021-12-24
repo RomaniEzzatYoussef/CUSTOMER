@@ -1,0 +1,23 @@
+* I_F.MBSC.CUST.CR.VALUATION Created 11 JUL 21 at 09:13AM by t24dev/ROMANYEZZAT
+*      PREFIX[CR.VALUATION]
+                  EQU CR.VALUATION.DESCRIPTION TO 1,   MbscCustCrValuation_Description TO 1,
+                       CR.VALUATION.RESERVED.9 TO 2,   MbscCustCrValuation_Reserved9 TO 2,
+                       CR.VALUATION.RESERVED.8 TO 3,   MbscCustCrValuation_Reserved8 TO 3,
+                       CR.VALUATION.RESERVED.7 TO 4,   MbscCustCrValuation_Reserved7 TO 4,
+                       CR.VALUATION.RESERVED.6 TO 5,   MbscCustCrValuation_Reserved6 TO 5,
+                       CR.VALUATION.RESERVED.5 TO 6,   MbscCustCrValuation_Reserved5 TO 6,
+                       CR.VALUATION.RESERVED.4 TO 7,   MbscCustCrValuation_Reserved4 TO 7,
+                       CR.VALUATION.RESERVED.3 TO 8,   MbscCustCrValuation_Reserved3 TO 8,
+                       CR.VALUATION.RESERVED.2 TO 9,   MbscCustCrValuation_Reserved2 TO 9,
+                       CR.VALUATION.RESERVED.1 TO 10,  MbscCustCrValuation_Reserved1 TO 10,
+                        CR.VALUATION.LOCAL.REF TO 11,  MbscCustCrValuation_LocalRef TO 11,
+                         CR.VALUATION.OVERRIDE TO 12,  MbscCustCrValuation_Override TO 12,
+                    CR.VALUATION.RECORD.STATUS TO 13,  MbscCustCrValuation_RecordStatus TO 13,
+                          CR.VALUATION.CURR.NO TO 14,  MbscCustCrValuation_CurrNo TO 14,
+                         CR.VALUATION.INPUTTER TO 15,  MbscCustCrValuation_Inputter TO 15,
+                        CR.VALUATION.DATE.TIME TO 16,  MbscCustCrValuation_DateTime TO 16,
+                       CR.VALUATION.AUTHORISER TO 17,  MbscCustCrValuation_Authoriser TO 17,
+                          CR.VALUATION.CO.CODE TO 18,  MbscCustCrValuation_CoCode TO 18,
+                        CR.VALUATION.DEPT.CODE TO 19,  MbscCustCrValuation_DeptCode TO 19,
+                     CR.VALUATION.AUDITOR.CODE TO 20,  MbscCustCrValuation_AuditorCode TO 20,
+                  CR.VALUATION.AUDIT.DATE.TIME TO 21,  MbscCustCrValuation_AuditDateTime TO 21

@@ -1,0 +1,54 @@
+  SUBROUTINE MBSC.SME.CAT.PARAM.FIELDS
+	*-----------------------------------------------------------------------------
+	* Description           : This Template is to save company details.
+    * Developed By          :HANYA ABDELLATIF
+	* Client                : BDC
+	* Date                  : 20190721
+	*-----------------------------------------------------------------------------
+	$INSERT I_COMMON
+    $INSERT I_EQUATE
+    $INSERT I_DataTypes
+    $INSERT I_GTS.COMMON
+    $INSERT I_F.CUSTOMER
+*-----------------------------------------------------------------------------
+   * GOSUB INITIALISE
+    GOSUB DEFINE.FIELDS
+    RETURN
+*-----------------------------------------------------------------------------
+DEFINE.FIELDS:
+*-----------------------------------------------------------------------------
+    Z = 0
+    ID.F = "@ID" ; ID.N = "2" ; ID.T = ""
+*-----------------------------------------------------------------------------
+     
+	 Z+=1 ; F(Z) = "XX.LL.DESC"   ; N(Z) = "35" ; T(Z) = "ANY"
+	 Z+=1 ; F(Z) = "ACT.TYPE"   ; N(Z) = "35" ; T(Z)<2> = "INDUSTRIAL_NON-INDUSTRIAL"
+	 Z+=1 ; F(Z) = "MIN.PAID.CAPTIAL"   ; N(Z) = "35" ; T(Z) = "AMT"
+        Z+=1 ; F(Z) = "MAX.PAID.CAPTIAL"   ; N(Z) = "35" ; T(Z) = "AMT"
+	 Z+=1 ; F(Z) = "MIN.TURN.OVER"   ; N(Z) = "35" ; T(Z) = "AMT"
+	 Z+=1 ; F(Z) = "MAX.TURN.OVER"   ; N(Z) = "35" ; T(Z) = "AMT"
+	 Z+=1 ; F(Z) = "SME.TYPE"   ; N(Z) = "15" ; T(Z)<2> = "OLD_NEW"
+
+	
+	 
+
+    Z+=1 ; F(Z) = "RESERVED.9"  ; N(Z) = "35" ; T(Z) = "" ; T(Z)<3> = 'NOINPUT'
+	Z+=1 ; F(Z) = "RESERVED.8"  ; N(Z) = "35" ; T(Z) = "" ; T(Z)<3> = 'NOINPUT'
+	Z+=1 ; F(Z) = "RESERVED.7"  ; N(Z) = "35" ; T(Z) = "" ; T(Z)<3> = 'NOINPUT'
+	Z+=1 ; F(Z) = "RESERVED.6"  ; N(Z) = "35" ; T(Z) = "" ; T(Z)<3> = 'NOINPUT'
+	Z+=1 ; F(Z) = "RESERVED.5"  ; N(Z) = "35" ; T(Z) = "" ; T(Z)<3> = 'NOINPUT'
+	Z+=1 ; F(Z) = "RESERVED.4"  ; N(Z) = "35" ; T(Z) = "" ; T(Z)<3> = 'NOINPUT'
+	Z+=1 ; F(Z) = "RESERVED.3"  ; N(Z) = "35" ; T(Z) = "" ; T(Z)<3> = 'NOINPUT'
+    Z+=1 ; F(Z) = "RESERVED.2"  ; N(Z) = "35" ; T(Z) = "" ; T(Z)<3> = 'NOINPUT'
+    Z+=1 ; F(Z) = "RESERVED.1"  ; N(Z) = "35" ; T(Z) = "" ; T(Z)<3> = 'NOINPUT'
+*-----------------------------------------------------------------------------
+    Z+=1  ; F(Z) = "XX.LOCAL.REF" ; N(Z)=  "35..C" ; T(Z)="A"
+    Z+=1  ; F(Z) = "XX.OVERRIDE" ; N(Z) = "35" ; T(Z) = "" ; T(Z)<3> = 'NOINPUT'
+*-----------------------------------------------------------------------------
+    V = Z + 9
+    RETURN
+
+    RETURN
+
+*-----------------------------------------------------------------------------
+END

@@ -1,0 +1,74 @@
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+MNEMONIC.CUSTOMER
+HELPTEXT.MAINMENU, 15
+HELPTEXT.MENU, MBSC.CUSTOMER.MAIN.MENU
+HELPTEXT.MENU, MBSC.NEWCUST.MENU        ==> Create New Customer
+HELPTEXT.MENU, MBSC.AMENDCUST.MENU      ==> Amend Customer
+HELPTEXT.MENU, MBSC.CUSTOMER.ENQ        ==> Enquiry
+HELPTEXT.MENU, MBSC.CUSTOMER.PARAM      ==> Parameter
+HELPTEXT.MENU, MBSC.CUSTOMER.PARAM.AUTH ==> Authorize Parameters
+HELPTEXT.MENU, MBSC.FATCA.MENU          ==> FATCA
+--------------------
+ED, MBSC.AMENDCUST.ENQ
+ENQ MBSC.AMENDCUST.ENQ
+---
+CUSTOMER,MBSC.CUST.AMEND
+CUSTOMER,MBSC.INPUT          ==> Individual Customer
+CUSTOMER,MBSC.QUICK.CUST     ==> Create Quick Customer
+CUSTOMER,MBSC.QUICK.CUST.AMEND
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+********************************************************************************************************************
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+PACK::-
+
+ 1- After creating SAVE-LIST file then copy it to /t24/t24dev/T24/UD/&SAVEDLISTS&
+ 2- login to tRun EX 
+ 3- DL.DEFINE I B1.M.CUST.20211101
+		1- GB DESCRIPTN     <save-list-name>
+		2- GB SHORT.DESC    <save-list-name>
+		6- SELECT.LIST      <save-list-name> + Enter
+		Ctrl + V
+		
+ 4- BUILD.CONTROL I BDCE001-B1.M.CUST.20211101
+ ------
+BDCE001-B1.M.CUS.20211104.01
+BDCE001-B1.M.CUS.20211104.02
+BDCE001-B1.M.CUS.20211104.03
+BDCE001-B1.M.CUS.20211104.04
+ ======
+	    1- Description <pack-name>
+	    2- Mnemonic    <pack-name>
+	    3- ACTION      SAVE
+		
+			Ctrl + F  to field 19
+		19- DL.DEFINE  <pack-name>
+		
+			Ctrl + V  to field 80
+		80- Y + Enter   Ctrl + V
+		
+		V <pack-name> Ctrl + V
+-------------------------------
+ 5- go to /t24/t24dev/T24/UD/F.BCON.DATA/SAVE/BDCE001-B1.S2.M.ACC.20210518.1
+ 6- copy BDCE001-MBSC.ROM.SAVE.LIST AND PASTE IT IN /UD/F.BCON.DATA/RELEASE/
+ 7- copy LAYOUTS TO UD/BP
+ 8- copy SOURCE RTNs
+ 9- copy FILES
+ 10- compile and jar SOURCE RTNs
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+RELEASE::-
+
+ 1- login to tRun EX
+ 2- BUILD.CONTROL I BDCE001-B1.M.CUS.20211101
+		1- Description <pack-name>
+	    2- Mnemonic    <pack-name>
+	    3- ACTION      RELEASE
+		6- RELEASE.PATH ./F.BCON.DATA/RELEASE  Enter + Y
+		18- OFS.SOURCE.ID BUILD.CONTROL
+		21- CTRL V
+		V <pack-name> Ctrl + V
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------

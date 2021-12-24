@@ -1,0 +1,23 @@
+*  AUTHOR           : HASSAN MOHAMED     H.MOHAMED@MASAREF-BSC.COM
+*  DATE             : 11- SEP- 19
+*  CLIENT           : BDC
+*  MODULE			: CUSTOMER
+*  DESCRIPTION      : ROUTINE TO VALIDATE GUARANTOR ID 
+*  ATTACHED TO		: CUSTOMER,MBSC.CORP.INPUT
+*-----------------------------------------------------------------------------
+    SUBROUTINE V.MBSC.CUS.GUR
+*-----------------------------------------------------------------------------
+    $INSERT I_COMMON
+    $INSERT I_EQUATE
+	$INSERT I_F.CUSTOMER
+   
+*-----------------------------------------------------------------------------
+
+IF ID.NEW = COMI THEN
+AF = 'GUARANTOR'
+ETEXT = 'INVALED GUARANTOR ID.'
+CALL STORE.END.ERROR
+END
+RETURN
+*-----------------------------------------------------------------------------
+END

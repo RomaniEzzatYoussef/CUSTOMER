@@ -1,0 +1,23 @@
+* I_F.MBSC.LEGAL.DOC.YEARS Created 29 MAY 21 at 04:38AM by t24dev/HASSAN8
+*      PREFIX[DOC.YEARS]
+                  EQU DOC.YEARS.VALID.YEARS TO 1,   MbscLegalDocYears_ValidYears TO 1,
+                      DOC.YEARS.REVIEW.DAYS TO 2,   MbscLegalDocYears_ReviewDays TO 2,
+                       DOC.YEARS.RESERVED.8 TO 3,   MbscLegalDocYears_Reserved8 TO 3,
+                       DOC.YEARS.RESERVED.7 TO 4,   MbscLegalDocYears_Reserved7 TO 4,
+                       DOC.YEARS.RESERVED.6 TO 5,   MbscLegalDocYears_Reserved6 TO 5,
+                       DOC.YEARS.RESERVED.5 TO 6,   MbscLegalDocYears_Reserved5 TO 6,
+                       DOC.YEARS.RESERVED.4 TO 7,   MbscLegalDocYears_Reserved4 TO 7,
+                       DOC.YEARS.RESERVED.3 TO 8,   MbscLegalDocYears_Reserved3 TO 8,
+                       DOC.YEARS.RESERVED.2 TO 9,   MbscLegalDocYears_Reserved2 TO 9,
+                       DOC.YEARS.RESERVED.1 TO 10,  MbscLegalDocYears_Reserved1 TO 10,
+                        DOC.YEARS.LOCAL.REF TO 11,  MbscLegalDocYears_LocalRef TO 11,
+                         DOC.YEARS.OVERRIDE TO 12,  MbscLegalDocYears_Override TO 12,
+                    DOC.YEARS.RECORD.STATUS TO 13,  MbscLegalDocYears_RecordStatus TO 13,
+                          DOC.YEARS.CURR.NO TO 14,  MbscLegalDocYears_CurrNo TO 14,
+                         DOC.YEARS.INPUTTER TO 15,  MbscLegalDocYears_Inputter TO 15,
+                        DOC.YEARS.DATE.TIME TO 16,  MbscLegalDocYears_DateTime TO 16,
+                       DOC.YEARS.AUTHORISER TO 17,  MbscLegalDocYears_Authoriser TO 17,
+                          DOC.YEARS.CO.CODE TO 18,  MbscLegalDocYears_CoCode TO 18,
+                        DOC.YEARS.DEPT.CODE TO 19,  MbscLegalDocYears_DeptCode TO 19,
+                     DOC.YEARS.AUDITOR.CODE TO 20,  MbscLegalDocYears_AuditorCode TO 20,
+                  DOC.YEARS.AUDIT.DATE.TIME TO 21,  MbscLegalDocYears_AuditDateTime TO 21

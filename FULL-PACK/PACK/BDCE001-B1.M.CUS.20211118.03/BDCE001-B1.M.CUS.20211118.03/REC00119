@@ -1,0 +1,82 @@
+4,99
+MBSC.CUS.EXP.CHARGE
+
+
+
+
+
+
+
+
+
+
+
+@IDCHQ.CODEFIXED.AMOUNTPERCENTAGE
+@IDCHQ.CODEFIXED.AMOUNTPERCENTAGE
+1234
+15L25L10R10L
+
+
+
+
+IdChq CodeFixed AmountPercentage
+
+
+
+
+
+
+
+
+
+
+
+
+SMMM
+MBSC.CUS.EXP.CHARGE A @ID
+@ID EQ ID
+@ID 1
+Authorise[txnauthorise.gif
+4 1234
+
+3 234
+0 
+0 
+0 
+1 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1
+109_ENGY2__OFS_BROWSERTC
+2009221741
+109_ENGY2_OFS_BROWSERTC
+EG0010001
+1

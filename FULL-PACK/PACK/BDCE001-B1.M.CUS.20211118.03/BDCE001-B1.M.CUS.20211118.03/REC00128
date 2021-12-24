@@ -1,0 +1,82 @@
+4,99
+CUSTOMER
+
+
+
+CUSTOMER.CODEMNEMONICCUSTOMER.SINCE
+CustomerMNEMONICCustomer open date
+
+
+
+
+
+Update Customer Company Book
+@IDHDRMNEMONICSHORT.NAMECOMPANY.BOOKZERONORECORDS
+@ID"Update Customer Company Book"MNEMONICSHORT.NAMECOMPANY.BOOK"No Posting Restiction for the customer"
+11,01325621
+10R10L35L
+L COMPANY,COMPANY.NAME
+
+L
+NONE
+CustomerMnemonicNameCompany Book
+CLASS-ENQ.H.TITLECLASS-ENQ.NORECS
+HEADERHEADER
+
+
+
+
+
+
+
+
+
+
+SSMS
+CUSTOMER,MBSC.UPDATE.COMPANY I @ID
+
+@ID 1
+Company Book[action.gif
+5 12345
+
+1 4
+0 
+1 6
+0 
+1 1
+
+
+
+
+
+
+
+
+Update Customer Company Book
+NO.SELECTIONZERORECORDDISPLAY
+
+Update Customer Company Book
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5
+3_HASSAN8__OFS_BROWSERTC
+2103271530
+3_HASSAN8_OFS_BROWSERTC
+EG0010001
+1

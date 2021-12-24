@@ -1,0 +1,50 @@
+*-----------------------------------------------------------------------------
+* <Rating>-22</Rating>
+*-----------------------------------------------------------------------------
+*  AUTHOR           : ROMANI EZZAT
+*  DATE             : 10 AUG 2021
+*  CLIENT           : BDC
+*  MODULE			: CUSTOMER
+*  DESCRIPTION      : shareholder name auto filled incase of inserting customer cif
+*  ATTACHED TO		: 
+*-----------------------------------------------------------------------------
+    SUBROUTINE V.MBSC.VAL.SHAREHOLDER.NAME
+*-----------------------------------------------------------------------------
+    $INSERT I_COMMON
+    $INSERT I_EQUATE
+    $INSERT I_F.CUSTOMER
+*-----------------------------------------------------------------------------
+	*DEBUG
+*-----------------------------------------------------------------------------
+
+	FN.CUSTOMER = 'F.CUSTOMER'
+	F.CUSTOMER  = ''
+	CALL OPF(FN.CUSTOMER,F.CUSTOMER)
+	
+	CALL GET.LOC.REF("CUSTOMER","SHAREHOLDER",SHAREHOLDER.POS)
+	CALL GET.LOC.REF("CUSTOMER","SHARE.PERCENT",SHARE.PERCENT.POS)
+	
+	SHAREHOLDERS = R.NEW(EB.CUS.LOCAL.REF)<1,SHAREHOLDER.POS>
+	
+	SH.LEN = DCOUNT(SHAREHOLDERS,SM)
+	
+	I = 1
+	LOOP
+
+		CUS.ID = FIELD(SHAREHOLDERS,SM,I)
+		CALL F.READ(FN.CUSTOMER,CUS.ID,R.CUSTOMER,F.CUSTOMER,CUSTOMER.ERROR)
+		
+		SHORT.NAME    = R.CUSTOMER<EB.CUS.SHORT.NAME>
+		GB.SHORT.NAME = FIELD(SHORT.NAME,VM,1)
+		AR.SHORT.NAME = FIELD(SHORT.NAME,VM,2)
+		
+		IF CUS.ID NE '' THEN
+			R.NEW(EB.CUS.LOCAL.REF)<1,SHARE.PERCENT.POS,I> = GB.SHORT.NAME
+		END
+	I++
+	UNTIL I GT SH.LEN
+	REPEAT
+	
+*-----------------------------------------------------------------------------
+RETURN
+END

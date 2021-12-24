@@ -1,0 +1,39 @@
+*  AUTHOR           : AHMED ALAA
+*  DATE             : 19/12/2019
+*  CLIENT           : BDC
+*  DESCRIPTION      :
+*  VERSION	        :
+*-----------------------------------------------------------------------------
+    SUBROUTINE B.MBSC.CUST.BANK.SECTOR(ENQ.LIST)
+*-----------------------------------------------------------------------------
+    $INSERT I_COMMON
+    $INSERT I_EQUATE
+	$INSERT I_ENQUIRY.COMMON
+	$INSERT I_F.CATEGORY
+	$INSERT I_F.ACCOUNT.CLASS
+*-----------------------------------------------------------------------------
+*X	= ENQ.LIST<2,1>
+*Y	=ENQ.LIST<3,1> 
+
+ ACC.CLASS  = 'BANK'
+	FN.ACC.CL = "F.ACCOUNT.CLASS"
+	F.ACC.CL = ""
+	CALL OPF(FN.ACC.CL, F.ACC.CL)
+	 
+	
+	CALL F.READ(FN.ACC.CL,ACC.CLASS ,R.ACC.CL, F.ACC.CL,ERR.CL)
+	
+	SECTORS	=	R.ACC.CL<AC.CLS.SECTOR>
+*CALL AA.REMOVE.DUPLICATE.VALUES(CATEGORIES)
+	R.SELECT<-1>	=	SECTORS
+	
+	CONVERT VM TO " " IN R.SELECT
+	
+	ENQ.LIST<2,1> = "@ID"
+	ENQ.LIST<3,1> = "EQ"
+	ENQ.LIST<4,1> = R.SELECT
+	
+
+	RETURN 
+*-------------------------------------------------------------------------------------------- 
+END 

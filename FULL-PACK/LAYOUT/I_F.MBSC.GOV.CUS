@@ -1,0 +1,23 @@
+* I_F.MBSC.GOV.CUS Created 26 JAN 21 at 03:01PM by t24dev/HASSAN8
+*      PREFIX[GOV]
+                     EQU GOV.GOV.NAME TO 1,   MbscGovCus_GovName TO 1,
+                           GOV.REGION TO 2,   MbscGovCus_Region TO 2,
+                       GOV.RESERVED.9 TO 3,   MbscGovCus_Reserved9 TO 3,
+                       GOV.RESERVED.8 TO 4,   MbscGovCus_Reserved8 TO 4,
+                       GOV.RESERVED.7 TO 5,   MbscGovCus_Reserved7 TO 5,
+                       GOV.RESERVED.6 TO 6,   MbscGovCus_Reserved6 TO 6,
+                       GOV.RESERVED.5 TO 7,   MbscGovCus_Reserved5 TO 7,
+                       GOV.RESERVED.4 TO 8,   MbscGovCus_Reserved4 TO 8,
+                       GOV.RESERVED.3 TO 9,   MbscGovCus_Reserved3 TO 9,
+                       GOV.RESERVED.2 TO 10,  MbscGovCus_Reserved2 TO 10,
+                        GOV.LOCAL.REF TO 11,  MbscGovCus_LocalRef TO 11,
+                         GOV.OVERRIDE TO 12,  MbscGovCus_Override TO 12,
+                    GOV.RECORD.STATUS TO 13,  MbscGovCus_RecordStatus TO 13,
+                          GOV.CURR.NO TO 14,  MbscGovCus_CurrNo TO 14,
+                         GOV.INPUTTER TO 15,  MbscGovCus_Inputter TO 15,
+                        GOV.DATE.TIME TO 16,  MbscGovCus_DateTime TO 16,
+                       GOV.AUTHORISER TO 17,  MbscGovCus_Authoriser TO 17,
+                          GOV.CO.CODE TO 18,  MbscGovCus_CoCode TO 18,
+                        GOV.DEPT.CODE TO 19,  MbscGovCus_DeptCode TO 19,
+                     GOV.AUDITOR.CODE TO 20,  MbscGovCus_AuditorCode TO 20,
+                  GOV.AUDIT.DATE.TIME TO 21,  MbscGovCus_AuditDateTime TO 21

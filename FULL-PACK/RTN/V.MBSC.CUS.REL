@@ -1,0 +1,24 @@
+*  AUTHOR           : HASSAN MOHAMED     H.MOHAMED@MASAREF-BSC.COM
+*  DATE             : 11- SEP- 19
+*  CLIENT           : BDC
+*  MODULE			: CUSTOMER
+*  DESCRIPTION      : ROUTINE TO VALIDATE GUARANTOR ID 
+*  ATTACHED TO		: CUSTOMER,MBSC.CORP.INPUT
+*-----------------------------------------------------------------------------
+    SUBROUTINE V.MBSC.CUS.REL
+*-----------------------------------------------------------------------------
+    $INSERT I_COMMON
+    $INSERT I_EQUATE
+	$INSERT I_F.CUSTOMER
+   
+*-----------------------------------------------------------------------------
+
+IF COMI = '' AND R.NEW(EB.CUS.CUSTOMER.STATUS) EQ '70' THEN
+AF = 'REL.CUSTOMER'
+*ETEXT = 'Select Guardian for minor customer'
+ETEXT = 'EB-CUS.MBSC.Guardian.1'
+
+END
+RETURN
+*-----------------------------------------------------------------------------
+END

@@ -1,0 +1,23 @@
+* I_F.MBSC.INTERNAL.CORP.SIZE Created 11 JUL 21 at 09:13AM by t24dev/ROMANYEZZAT
+*      PREFIX[INT.CORP.SIZE]
+                  EQU INT.CORP.SIZE.DESCRIPTION TO 1,   MbscInternalCorpSize_Description TO 1,
+                       INT.CORP.SIZE.RESERVED.9 TO 2,   MbscInternalCorpSize_Reserved9 TO 2,
+                       INT.CORP.SIZE.RESERVED.8 TO 3,   MbscInternalCorpSize_Reserved8 TO 3,
+                       INT.CORP.SIZE.RESERVED.7 TO 4,   MbscInternalCorpSize_Reserved7 TO 4,
+                       INT.CORP.SIZE.RESERVED.6 TO 5,   MbscInternalCorpSize_Reserved6 TO 5,
+                       INT.CORP.SIZE.RESERVED.5 TO 6,   MbscInternalCorpSize_Reserved5 TO 6,
+                       INT.CORP.SIZE.RESERVED.4 TO 7,   MbscInternalCorpSize_Reserved4 TO 7,
+                       INT.CORP.SIZE.RESERVED.3 TO 8,   MbscInternalCorpSize_Reserved3 TO 8,
+                       INT.CORP.SIZE.RESERVED.2 TO 9,   MbscInternalCorpSize_Reserved2 TO 9,
+                       INT.CORP.SIZE.RESERVED.1 TO 10,  MbscInternalCorpSize_Reserved1 TO 10,
+                        INT.CORP.SIZE.LOCAL.REF TO 11,  MbscInternalCorpSize_LocalRef TO 11,
+                         INT.CORP.SIZE.OVERRIDE TO 12,  MbscInternalCorpSize_Override TO 12,
+                    INT.CORP.SIZE.RECORD.STATUS TO 13,  MbscInternalCorpSize_RecordStatus TO 13,
+                          INT.CORP.SIZE.CURR.NO TO 14,  MbscInternalCorpSize_CurrNo TO 14,
+                         INT.CORP.SIZE.INPUTTER TO 15,  MbscInternalCorpSize_Inputter TO 15,
+                        INT.CORP.SIZE.DATE.TIME TO 16,  MbscInternalCorpSize_DateTime TO 16,
+                       INT.CORP.SIZE.AUTHORISER TO 17,  MbscInternalCorpSize_Authoriser TO 17,
+                          INT.CORP.SIZE.CO.CODE TO 18,  MbscInternalCorpSize_CoCode TO 18,
+                        INT.CORP.SIZE.DEPT.CODE TO 19,  MbscInternalCorpSize_DeptCode TO 19,
+                     INT.CORP.SIZE.AUDITOR.CODE TO 20,  MbscInternalCorpSize_AuditorCode TO 20,
+                  INT.CORP.SIZE.AUDIT.DATE.TIME TO 21,  MbscInternalCorpSize_AuditDateTime TO 21

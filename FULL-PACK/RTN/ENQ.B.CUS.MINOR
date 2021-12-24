@@ -1,0 +1,71 @@
+*-----------------------------------------------------------------------------
+* <Rating>0</Rating>
+*-----------------------------------------------------------------------------
+    SUBROUTINE ENQ.B.CUS.MINOR(ENQ)
+
+*********************************** AUDIT INFORMATION ********************************
+* 1. Author&Date created  : 
+* 2. Site name            : CIB UGANDA
+* 3. Product              :
+* 4. Routine type         : BUILD ROUTINE
+* 5. Installed            : STANDARD.SELECTION
+* 6. E.V.B record         : NOFILE.ENQ.B.CUS.MINOR
+***************************************************************************************
+
+********************************** PROGRAM DESCRIPTION ********************************
+* 7. Description
+* -------------------
+*
+*
+*  The enquiry for that routine is
+*
+* 8. Incoming arguments
+* -------------------------------
+* a)
+*
+* 9. Outgoing arguments
+* -------------------------------
+* a) GET.ARRAY  : Array of the enquiry
+*
+****************************************************************************************
+* Include files
+    $INSERT I_COMMON
+    $INSERT I_EQUATE
+    $INSERT I_ENQUIRY.COMMON
+    $INSERT I_F.CUSTOMER
+
+*******************************************
+
+    S.DATE = TODAY
+    YEARS = ''
+    YEARS = S.DATE[1,4]
+    YEARS = YEARS - 21
+
+    B.DATE = YEARS:S.DATE[5,2]
+    T.SEL = ''
+    T.SEL = "SELECT F.MBSC.MINOR.DATA WITH TARGET.DATE LE ":S.DATE:"" 
+    
+*********************************************
+    KEY.LIST = '' ; SELECTED = '' ; S.VR = ''
+    CALL EB.READLIST(T.SEL, KEY.LIST, '', SELECTED, S.VR)
+    IF SELECTED = "0" THEN
+
+        ENQ.ERROR = "THERE ARE NO MATCHED RECORDS"
+    END
+*********************************************
+
+    ENQ.LP=1
+    CRIT.CNT = DCOUNT(ENQ<2>, VM)
+
+
+    FOR ENQ.LP=1 TO SELECTED
+        OFSET = ENQ.LP + CRIT.CNT
+        ENQ<2,OFSET> = '@ID'
+        ENQ<3,OFSET> = 'EQ'
+        ENQ<4,OFSET> = KEY.LIST<ENQ.LP>
+    NEXT ENQ.LP
+
+
+**********************************************
+    RETURN
+END

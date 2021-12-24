@@ -1,0 +1,82 @@
+4,99
+CUSTOMER$NAU
+CURR.NO NE 1USER.BRANCH EQ !COMPANYVERSION NE ',MBDC.LI.CUS'
+
+
+
+
+
+
+
+
+
+
+CUSTOMERIDHDRCUST.SHORT.NAMEACCT.OFFICERACCT.OFF.NAMEHYPHENDAO.HYPHENDISP.DAORECORD.STATUSINPUTTERZERORECORDSCUSTOMER.SINCECUSTOMER.STATUSCUSTOMER.TYPEDATE.TIMEVERSIONCOMPANY.BOOKPROSVER.VALUEINDINDVJOINTINDVIDBANK1BANKESTABCORP1CORP2CORPVER1VER2VER3VER4VER5VER.DECIDEDELETE.DECIDEAUTH.DECIDE
+@ID"Unauthorised Customer"SHORT.NAMEACCOUNT.OFFICERF ACCT.OFFICER" - "C ACCT.OFFICER : HYPHENC DAO.HYPHEN : ACCT.OFF.NAMERECORD.STATUSINPUTTER"No Unauthorised Customers "CUSTOMER.SINCECUSTOMER.STATUSCUSTOMER.TYPEDATE.TIMEIDESC VERSIONCOMPANY.BOOK"CUSTOMER,MBSC.PROSPECT.INPUTT"",MBSC.QUICK.CUST.JOINT"IF VERSION EQ VER.VALUE JOINT INDVIDIF CUSTOMER.STATUS EQ 3 JOINT INDVID"CUSTOMER,MBSC.QUICK.CUST.JOINT.AMEND""CUSTOMER,MBSC.CUST.AMEND"",MBSC.QUICK.BANK""CUSTOMER,MBSC.BANK.AMEND""CUSTOMER,MBSC.CORP.AMEND""CUSTOMER,MBSC.CORP.AMEND"IF VERSION EQ BANK1 BANK CORP1IF CUSTOMER.STATUS EQ 2 ESTAB CORP2IF CUSTOMER.TYPE EQ PROSPECT PROS IND"CUSTOMER,MBSC.CORP.AMEND""CUSTOMER,MBSC.INPUT""CUSTOMER,MBSC.CORP.INPUT""CUSTOMER,MBSC.QUICK.CUST.JOINT.AMEND"IF SECTOR EQ 401 VER1 CORPIF SECTOR EQ 401 VER5 VER4IF SECTOR EQ 401 VER3 VER4
+11,02345167891011
+10R35L4R4L35L11R35L35L15R65L11L
+L DEPT.ACCT.OFFICER,NAMEF _,2,1L CUSTOMER.STATUS,DESCRIPTION
+
+L
+NONE
+Customer NoNameRelationship OfficerStatusInputterCustomer OpenCreation DateVersionCompany Book
+CLASS-ENQ.H.TITLECLASS-ENQ.NORECS
+HEADERHEADER
+
+
+
+
+
+
+
+
+
+
+SSSMSSSMSS
+VER.DECIDE A CUSTOMERIDVER.DECIDE D CUSTOMERIDVER.DECIDE I CUSTOMERID
+
+CUSTOMERID 1CUSTOMERID 1CUSTOMERID 1
+Authorise[txnauthorise.gifDelete[txndelete.gifAmend[edit.gif
+36 123456789101213141516171819202122232425262728293031323334353637
+
+2 1015
+0 
+1 11
+0 
+2 351
+
+
+
+
+
+
+
+
+Unauthorised Customer
+NO.SELECTIONZERORECORDDISPLAY
+
+Unauthorised Customer
+
+NO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+18
+59_ROMANIEZZAT__OFS_BROWSERTC
+2107041204
+59_ROMANIEZZAT_OFS_BROWSERTC
+EG0010001
+1

@@ -1,0 +1,22 @@
+* I_F.MBSC.CUST.DUPLICATE Created 16 OCT 21 at 08:42AM by t24dev/ROMANYEZZAT
+*      PREFIX[CUST]
+                  EQU CUST.CUSTOMER.ID TO 1,   MbscCustDuplicate_CustomerId TO 1,
+                      CUST.RESERVED.17 TO 2,   MbscCustDuplicate_Reserved17 TO 2,
+                      CUST.RESERVED.16 TO 3,   MbscCustDuplicate_Reserved16 TO 3,
+                      CUST.RESERVED.15 TO 4,   MbscCustDuplicate_Reserved15 TO 4,
+                      CUST.RESERVED.14 TO 5,   MbscCustDuplicate_Reserved14 TO 5,
+                      CUST.RESERVED.13 TO 6,   MbscCustDuplicate_Reserved13 TO 6,
+                      CUST.RESERVED.12 TO 7,   MbscCustDuplicate_Reserved12 TO 7,
+                      CUST.RESERVED.11 TO 8,   MbscCustDuplicate_Reserved11 TO 8,
+                      CUST.RESERVED.10 TO 9,   MbscCustDuplicate_Reserved10 TO 9,
+                       CUST.RESERVED.9 TO 10,  MbscCustDuplicate_Reserved9 TO 10,
+                       CUST.RESERVED.8 TO 11,  MbscCustDuplicate_Reserved8 TO 11,
+                       CUST.RESERVED.7 TO 12,  MbscCustDuplicate_Reserved7 TO 12,
+                       CUST.RESERVED.6 TO 13,  MbscCustDuplicate_Reserved6 TO 13,
+                       CUST.RESERVED.5 TO 14,  MbscCustDuplicate_Reserved5 TO 14,
+                       CUST.RESERVED.4 TO 15,  MbscCustDuplicate_Reserved4 TO 15,
+                       CUST.RESERVED.3 TO 16,  MbscCustDuplicate_Reserved3 TO 16,
+                       CUST.RESERVED.2 TO 17,  MbscCustDuplicate_Reserved2 TO 17,
+                       CUST.RESERVED.1 TO 18,  MbscCustDuplicate_Reserved1 TO 18,
+                        CUST.LOCAL.REF TO 19,  MbscCustDuplicate_LocalRef TO 19,
+                         CUST.OVERRIDE TO 20,  MbscCustDuplicate_Override TO 20

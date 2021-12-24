@@ -1,0 +1,22 @@
+* I_F.MBSC.CUS.LEGAL.ENTITY Created 26 JAN 21 at 03:39PM by t24dev/HASSAN8
+*      PREFIX[LEGAL.ENT]
+                  EQU LEGAL.ENT.DESCRIPTION TO 1,   MbscCusLegalEntity_Description TO 1,
+                       LEGAL.ENT.RESERVED.8 TO 2,   MbscCusLegalEntity_Reserved8 TO 2,
+                       LEGAL.ENT.RESERVED.7 TO 3,   MbscCusLegalEntity_Reserved7 TO 3,
+                       LEGAL.ENT.RESERVED.6 TO 4,   MbscCusLegalEntity_Reserved6 TO 4,
+                       LEGAL.ENT.RESERVED.5 TO 5,   MbscCusLegalEntity_Reserved5 TO 5,
+                       LEGAL.ENT.RESERVED.4 TO 6,   MbscCusLegalEntity_Reserved4 TO 6,
+                       LEGAL.ENT.RESERVED.3 TO 7,   MbscCusLegalEntity_Reserved3 TO 7,
+                       LEGAL.ENT.RESERVED.2 TO 8,   MbscCusLegalEntity_Reserved2 TO 8,
+                       LEGAL.ENT.RESERVED.1 TO 9,   MbscCusLegalEntity_Reserved1 TO 9,
+                        LEGAL.ENT.LOCAL.REF TO 10,  MbscCusLegalEntity_LocalRef TO 10,
+                         LEGAL.ENT.OVERRIDE TO 11,  MbscCusLegalEntity_Override TO 11,
+                    LEGAL.ENT.RECORD.STATUS TO 12,  MbscCusLegalEntity_RecordStatus TO 12,
+                          LEGAL.ENT.CURR.NO TO 13,  MbscCusLegalEntity_CurrNo TO 13,
+                         LEGAL.ENT.INPUTTER TO 14,  MbscCusLegalEntity_Inputter TO 14,
+                        LEGAL.ENT.DATE.TIME TO 15,  MbscCusLegalEntity_DateTime TO 15,
+                       LEGAL.ENT.AUTHORISER TO 16,  MbscCusLegalEntity_Authoriser TO 16,
+                          LEGAL.ENT.CO.CODE TO 17,  MbscCusLegalEntity_CoCode TO 17,
+                        LEGAL.ENT.DEPT.CODE TO 18,  MbscCusLegalEntity_DeptCode TO 18,
+                     LEGAL.ENT.AUDITOR.CODE TO 19,  MbscCusLegalEntity_AuditorCode TO 19,
+                  LEGAL.ENT.AUDIT.DATE.TIME TO 20,  MbscCusLegalEntity_AuditDateTime TO 20
